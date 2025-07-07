@@ -1,9 +1,9 @@
 {
   "name": "project-dev",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "sever.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon backend/server.js",
     "dev": "nodemon backend/server.js"
   },
   "type": "module",
@@ -17,6 +17,7 @@
     "express": "^5.1.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.0",
+    "nodemailer": "^7.0.4",
     "nodemon": "^3.1.10"
   }
 }
