@@ -155,7 +155,7 @@ export const getDashboardStats = async(req, res) => {
 
     try {
         const totalModules = await Module.countDocuments({});
-        const totalReviews = await Review.countDocuments({});
+        const totalReviews = await Review.countDocuments({status: 'Completed'});
         const completedModulesResult = await Module.aggregate([
             {
                 $lookup: {
