@@ -25,7 +25,7 @@ export const findModuleByCode = async(req, res) => {
 export const getModules = async(req, res) => {
 
     try {
-        // EXACT FILTER MATCH + text search filter + date range filter
+        // EXACT FILTER MATCH + text search filter + date range filter (Extract filter criteria from the query string)
         const {area, level, period, status, moduleSearch, leadSearch, year} = req.query;
         // Build the query for fields in the ORIGINAL Module collection
         const initMatch = {};
@@ -33,6 +33,7 @@ export const getModules = async(req, res) => {
         if (level) { initMatch.level = parseInt(level) };
         if (period) { initMatch.period = period };
         if (moduleSearch) {
+            // tells MongoDB to find any document where the code field contains the search string. The $options: 'i' makes the search case-insensitive.
             initMatch.$or = [{code: {$regex: moduleSearch, $options: "i"}}, {title: {$regex: moduleSearch, $options: "i"}}];
         }
         // Build the query for fields CALCULATED after lookups
