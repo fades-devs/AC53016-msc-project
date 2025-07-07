@@ -13,6 +13,8 @@ import {
     Divider
 } from '@mui/material';
 
+import { useParams, useSearchParams } from "react-router-dom";
+
 // Reusable component to display themed points
 const ThemedPointDisplay = ({ title, points }) => {
     if (!points || points.length === 0) {
@@ -49,17 +51,22 @@ const GetReview = () => {
     };
 
     // STATE - for module lookup
-    const [moduleCode, setModuleCode] = useState('');
     const [reviewData, setReviewData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     // Debounce the module code input
-    const debModuleCode = useDebounce(moduleCode, 500) // 500ms delay
+    // const debModuleCode = useDebounce(mCode, 500) // 500ms delay
+
+    // Get the moduleCode from the URL path
+    const {moduleCode} = useParams();
+    // Get the 'year' from the query string
+    const [searchParams] = useSearchParams();
+    const dateFilter = searchParams.get('year');
 
     // Effect to trigger the review lookup
     useEffect(() => {
         const fetchReview = async () => {
-            if (!debModuleCode) {
+            if (!moduleCode) {
                 setReviewData(null);
                 setError('');
                 return;
@@ -69,8 +76,14 @@ const GetReview = () => {
             setReviewData(null);
 
             try {
-            const response = await axios.get(`http://localhost:5000/api/reviews/lookup/by-module?code=${debModuleCode}`);
-            setReviewData(response.data);
+                // Build the URL dynamically and safely
+                let apiURL = `http://localhost:5000/api/reviews/lookup/by-module?code=${moduleCode}`;
+                if (dateFilter) {
+                    apiURL += `&year=${dateFilter}`;
+                }
+                const response = await axios.get(apiURL);
+                // const response = await axios.get(`http://localhost:5000/api/reviews/lookup/by-module?code=${moduleCode}&year=${dateFilter}`);
+                setReviewData(response.data);
             }
             catch(err) {
                 setReviewData(null);
@@ -86,18 +99,14 @@ const GetReview = () => {
         };
         fetchReview();
 
-    }, [debModuleCode])
+    }, [moduleCode, dateFilter])
 
 
     return (
     <Stack>
         <Typography variant="h4">Module Review</Typography>
         {/* Module Search Input */}
-        <Box>
-            <TextField fullWidth label="Enter Module Code" variant="outlined" value={moduleCode}
-            onChange={(e) => setModuleCode(e.target.value.toUpperCase())}/>
-            {loading && <CircularProgress size={24} sx={{ mt: 1 }} />}
-        </Box>
+        
         {/* Error Display */}
         <Collapse in={!!error}><Alert severity="warning">{error}</Alert></Collapse>
         {/* Review Details Display */}

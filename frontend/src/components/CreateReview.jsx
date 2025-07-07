@@ -1,5 +1,8 @@
 
 import {useState, useEffect} from 'react';
+
+import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 // MUI Components
 import {
@@ -40,6 +43,9 @@ const CreateReview = () => {
     const [foundModule, setFoundModule] = useState(null);
     const [lookupLoading, setLookupLoading] = useState(false);
     const [lookupError, setLookupError] = useState('');
+
+    // state for date filter
+    const [dateFilter, setDateFilter] = useState('');
     // State for the review form fields
     const [enhanceUpdate, setEnhanceUpdate] = useState('')
     const [studentAttainment, setStudentAttainment] = useState('')
@@ -55,6 +61,8 @@ const CreateReview = () => {
 
     // Debounce the module code input to prevent API calls on every keystroke
     const debModuleCode = useDebounce(moduleCode, 500) // 500ms delay
+
+    const yearDeb = useDebounce(dateFilter, 500)
 
     // Effect to trigger the module lookup when the debounced code changes
     useEffect(() => {
@@ -195,6 +203,10 @@ const CreateReview = () => {
        </Stack>
    );
 
+   const handledateFilterChange = (e) => {
+        setDateFilter(e.target.value);
+    };
+
     return (
         <Box component="form" onSubmit={handleSubmit}>
             <Typography>1. Module Details</Typography>
@@ -205,6 +217,11 @@ const CreateReview = () => {
                 <Typography>Area: {foundModule?.area}</Typography>
                 <Typography>Level: {foundModule?.level}</Typography>
                 <Typography>Module Lead: {foundModule?.lead.firstName} {foundModule?.lead.lastName}</Typography>
+
+                <Grid item xs={12} sm={6} md={3}>
+                    <TextField label="Year" name="year" type="number" value={dateFilter} onChange={handledateFilterChange} />
+                </Grid>
+                <Link to={`/get-review/${moduleCode}?year=${dateFilter}`} target="_blank" rel="noopener noreferrer"><Typography>View {dateFilter} Report</Typography></Link>
             </Collapse>
 
             {/* Review Details Section */}

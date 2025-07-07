@@ -15,8 +15,9 @@ function App() {
       <Routes>
         <Route path="/module-list" element={<ModuleListPage />} />
         <Route path="/create-review" element={<CreateReview />} />
-        <Route path="/get-review" element={<GetReview />} />
+        <Route path="/get-review/:moduleCode" element={<GetReview />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+
       </Routes>
       </BrowserRouter>
     </>
