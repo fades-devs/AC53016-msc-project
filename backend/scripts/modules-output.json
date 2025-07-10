@@ -1,0 +1,6380 @@
+[
+  {
+    "title": "Academic Physics Experiment 2 (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22006",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Academic Physics Experiment I (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21006",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Access and Control of Assistive Technology",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52059",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Accessible User Experience",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Advanced Big Data Analysis",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41011",
+        "level": 4
+      },
+      {
+        "code": "AC51047",
+        "level": 5
+      },
+      {
+        "code": "CS42003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Advanced Biomedical Imaging Technologies",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME52004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Design and Manufacture",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA41008",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Advanced Device Technology and Nanoelectronics",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG40002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Advanced Fluid Dynamics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA52005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Manufacturing",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME52005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Mathematics I (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Advanced Mathematics II (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE12009",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Advanced Maths (Summer School)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "SS03010",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "Advanced Medical and Surgical Technologies",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME52001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Offshore Geotechnical Engineering",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52028",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Photovoltaics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE51004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Product Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA41009",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Advanced Programming Concepts",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Advanced Programming Techniques",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Robotics",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME51013",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Advanced Structural Analysis",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50005",
+        "level": 5
+      },
+      {
+        "code": "GA41004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Agile Engineering",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Agile Methodology",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31013",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Agile Software Engineering",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC31007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Algorithms and Artificial Intelligence",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC21007",
+        "level": 2
+      },
+      {
+        "code": "DI22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Analogue Electronic Systems",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EE31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Analogue Electronics Technology Basis",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Analysis",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Analytical database models and design",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52040",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Analytical Laboratory Methods",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV51002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Anatomical Techniques",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Anatomy Dissertation",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Anatomy of the Individual",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA42004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Anatomy: Body Systems",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51010",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Anatomy: Head and Neck",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Applications for Microcontrollers",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI21001",
+        "level": 2
+      },
+      {
+        "code": "ME21004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Applications of Forensic Art",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52016",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Applied Anatomy Topics",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA42005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Applied Toxicology and Drug Analysis",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV51003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Argumentation and Computers: Tools for Arguing and Critical Thinking",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Artificial Intelligence and Data Analytics",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA41010",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Aspire in Art, Science and Technology",
+    "variants": [
+      {
+        "code": "EG13001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Assessment for AT",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51044",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Assistive Technology for complex communication, physical and learning needs",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52058",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Assistive Technology Interaction",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52054",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "AT in educational programmes",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52053",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "AT partner relationships",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51043",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Augmentative and Alternative Communication (AAC)",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52057",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Beginner Python Online",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC13001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Bidding & Business Development",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42009",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Big Data Analysis",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51011",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Big Data Analysis (MSc Business Intelligence)",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52043",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Big Data Analysis and Distributed Programming",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51048",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biochemistry and Proteomics (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31015",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Biological Anthropology",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52018",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biomaterials",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME51008",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biomechanical Systems",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME51006",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biomechanics and Biomaterials",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Biomechanics and Biomaterials (JEP)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Acoustics and Photonics",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Electronics and Instrumentation",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Engineering Design",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Engineering Project",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME41002",
+        "level": 4
+      },
+      {
+        "code": "ME52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Engineering Project (Diploma)",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME52003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Instrumentation",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME51011",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Sensors and Measurement",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Biomedical Signal and Image Processing",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Biophotonics",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE41001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Brand Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Business and the Environment",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Business Communication",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Business Ethics",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Business Finance",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA23001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Business Intelligence Systems",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52048",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Business Management Honours Project",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40015",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Business Management Work Based Learning I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Business Management Work Based Learning II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA23002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Business Management Work Based Learning III",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA30007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Business Management Work-based Learning IV",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "C Language Programming",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE12002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "C Programming Language (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE11004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "C&C++ Advanced Programming Language (NEU)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "BE12010",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "CAHID MSc Research Project Dissertation",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA53006",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Calculus",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA12005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Calculus for Science and Engineering",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI11007",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Calculus II",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI12001",
+        "level": 1
+      },
+      {
+        "code": "DI12007",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Change Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Circuit Principles",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Design Software",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Group Project I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Group Project II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA23003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Hydraulics",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Materials and the Environment",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31001",
+        "level": 3
+      },
+      {
+        "code": "DI31004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Materials in the Environment",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE12004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Project I",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE21004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Project II",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE22008",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Project II (with English)",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI12004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Project III",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "DI22002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Work Based Learning II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA20008",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Work-based Learning I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA10008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Work-based Learning III",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA30008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Civil Engineering Work-based Learning IV",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40009",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Classical and Quantum Matter and Radiation",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Classical Mechanics and Relativity",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH42008",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Clinical and Surgical Anatomy Topics",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Cloud Application Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS50002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Cloud Foundations",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC11005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Cloud Machine Learning for Natural Language Processing",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS50001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Cloud Machine Learning Foundations",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS30001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "CMOS VLSI Chip Design",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EE40001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Coastal Processes and Engineering Applications",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51044",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Communicating for Psychology",
+    "variants": [
+      {
+        "code": "AG11081",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Communication and Advances in Biomedical Research",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME40006",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Communication and Engagement",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51022",
+        "level": 5
+      },
+      {
+        "code": "LV50004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Communication in Professional Practice",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Communication of Forensic Science",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV50001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Communication Skills",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Comparative Anatomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Complex Analysis",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA32006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Complex Function (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computational Astrophysics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH32010",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Computational Geotechnics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51042",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Computational Mechanics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Computational Modelling and Programming",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA51004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Computational Physics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH32005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Computational Physics II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH51001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Computer Aided Design",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI21003",
+        "level": 2
+      },
+      {
+        "code": "GA22007",
+        "level": 2
+      },
+      {
+        "code": "ME21003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Aided Engineering",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME40001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Computer Algebra and Dynamical Systems",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI22003",
+        "level": 2
+      },
+      {
+        "code": "MA21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Analysis for Engineering Design & Simulations",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Computer Graphics and Visualisation (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21008",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Networking & Data Communications",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22010",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Systems 2A: Architecture Fundamentals and Unix",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC21009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer systems 2A: Architecture fundamentals and Unix",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI21004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Systems 2B",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI22004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Systems 2B: Architecture and Operating Systems",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC22005",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Computer Vision",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41002",
+        "level": 4
+      },
+      {
+        "code": "AC51007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Computing and Society",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Computing Industrial Placement",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS33001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Computing Science (Summer School)",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "LD02004",
+        "level": 0
+      },
+      {
+        "code": "SS03009",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "Concept Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA33002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Conceptual Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52029",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Conceptual Design Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40017",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Concrete : Construction Systems I and II",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50018",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Concrete Assessment & Repair",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51043",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Concrete Durability and Repair",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Concrete Durability and Repair Technology",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40008",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Condensed Matter Physics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH41007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Condensed Matter Physics II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH52012",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Construction Management I",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Consultancy Project",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Consumer Behaviour",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA41002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Contemporary UX and Interactions",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS42002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Control and Dynamical Systems",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Control and Dynamical Systems  II",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG40004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Creative Interactions",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC21011",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Creativity, Innovation and New Venture Creation",
+    "variants": [
+      {
+        "code": "EG31004",
+        "level": 3
+      },
+      {
+        "code": "EG51001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Data Analysis & Visualisation",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA33003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Data Engineering",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Data Science Research Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC53011",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Data Structure (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Data Structures and Algorithms",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Data Structures and Algorithms equals Programming",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC22007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Data Visualisation",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS41003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Data Visualisation Analytics",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Database Principles (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Database Systems",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC32006",
+        "level": 3
+      },
+      {
+        "code": "AC52001",
+        "level": 5
+      },
+      {
+        "code": "CS22001",
+        "level": 2
+      },
+      {
+        "code": "DI31003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Database Systems Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51049",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Databases",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31014",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Deep Learning for Medical Imaging",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE41003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Design & Manufacturing Project I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Design Analysis I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA12006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Design Analysis II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22006",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Design Centred Learning",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE23001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Design for Durability",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51030",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Design for Durability, Assessment and Repair",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50017",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Design for Thermofluidic Applications",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA23005",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Design Internship in Industry",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50035",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Design Methods",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS31005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Developmental Juvenile Osteology",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "DevOps and Cloud Services",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42010",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Devops and MicroServices",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51041",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Differential Equations",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Differential Geometry",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA32007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Digital Business and New Technologies",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA12001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Digital Electronic Systems",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EE32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Digital Evidence",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV32001",
+        "level": 3
+      },
+      {
+        "code": "LV52001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Digital Image Processing",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Digital Signal Processing",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Digital Structural Analysis and Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE32005",
+        "level": 3
+      },
+      {
+        "code": "CE32008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Disaster Victim Identification (Online)",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA50002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Discrete Mathematics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI21005",
+        "level": 2
+      },
+      {
+        "code": "MA21003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Dynamical Systems",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA51003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Economies, Markets and Enterprise",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "EDA Technology for Programmable Logic Devices (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32010",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Educational Assistive Technology MSc Dissertation",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC50003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Electric Traction Drive and Control",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME42002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Electrical & Electronics Design Principles",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21015",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Electrical and Electronics Design Principle",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Electrodynamics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH31007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Electrodynamics II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH51007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Electromagnetism and Circuits",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG11006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Electromagnetism and Light",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "EG21008",
+        "level": 2
+      },
+      {
+        "code": "PH21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Electronics and Instrumentation",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI22005",
+        "level": 2
+      },
+      {
+        "code": "EG22009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Electronics Project",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG40005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Embedded Systems Development and Networking",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS12001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Embedded Systems Technology (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Embryology",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Embryology and Developmental Anatomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Employability for Computing Professionals",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design and Manufacture Honours Project",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design and Manufacture Work-based Learning I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA10009",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design and Manufacture Work-based Learning II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA20009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design and Manufacture Work-based Learning III",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA30009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design and Manufacture Work-based Learning IV",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40010",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design I",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI31013",
+        "level": 3
+      },
+      {
+        "code": "ME31004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design II",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design Practice",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11011",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Engineering Design Software",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Engineering Materials",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE12005",
+        "level": 1
+      },
+      {
+        "code": "DI21006",
+        "level": 2
+      },
+      {
+        "code": "GA11005",
+        "level": 1
+      },
+      {
+        "code": "DI31014",
+        "level": 3
+      },
+      {
+        "code": "ME31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Engineering Practice",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA10007",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Engineering Project 1",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG11005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Engineering Project and Report (Industrial Placement)",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME53001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Engineering Project II",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "EG12007",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "English for Academic Skills I",
+    "variants": [
+      {
+        "code": "DI11001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "English for Academic Skills II",
+    "variants": [
+      {
+        "code": "DI11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "English for Biomedical Engineering 1",
+    "variants": [
+      {
+        "code": "AG21034",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "English for Biomedical Engineering 2",
+    "variants": [
+      {
+        "code": "AG22040",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "English for Law",
+    "variants": [
+      {
+        "code": "AG00002",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "English with Engineering Context",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EG12008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Experimental and Professional Astrophysics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH31016",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Experimental and Professional Astrophysics II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH32016",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Experimental and Professional Physics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH31006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Experimental and Professional Physics II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH32006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Exploring Scotland's Economy",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Finite Element Modelling",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52031",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Fluid Mechanics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31003",
+        "level": 3
+      },
+      {
+        "code": "EG21006",
+        "level": 2
+      },
+      {
+        "code": "ME40002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Fluid Mechanics for Civil Engineers",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Fluid Mechanics I",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "DI21007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Forensic Anthropology as Expert Evidence",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51013",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Anthropology Dissertation",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Forensic Archaeology: Application and Practice",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52014",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Archaeology: Principles and Theory",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51016",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Art Techniques",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52013",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Environments (MFDont)",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51023",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Environments (MLitt)",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51024",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Facial Imaging, Analysis and Comparison",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52011",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Human Identification",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA42001",
+        "level": 4
+      },
+      {
+        "code": "CA52009",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Human Identification: Application and Practice",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52019",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Human Osteology",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51017",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Osteology",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41001",
+        "level": 4
+      },
+      {
+        "code": "CA51011",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Science and the Law",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA42002",
+        "level": 4
+      },
+      {
+        "code": "CA52010",
+        "level": 5
+      },
+      {
+        "code": "CA52015",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Science and the Law (part-time)",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "FM52004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Science for Legal Professionals",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV30001",
+        "level": 3
+      },
+      {
+        "code": "LV50002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Forensic Taphonomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51018",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Foundations of User Engagement",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS20001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Front End Website Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS11001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Functional Analysis",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA52006",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Functional and Clinical Anatomy of the Limbs",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Fundamental Algebra and Calculus",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Brain Science (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32011",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Civil Engineering Materials",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Digital Electronic Technique (NEU)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "BE31010",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Fluid Mechanics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Geotechnical Engineering",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE41002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Scientific Computing",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA32005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Soil Mechanics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE32007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Fundamentals of Structural Analysis",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Galaxies and The Universe",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH41009",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Games Programming",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC31009",
+        "level": 3
+      },
+      {
+        "code": "AC52060",
+        "level": 5
+      },
+      {
+        "code": "CS31004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "General Anaesthesia Technology",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE42002",
+        "level": 4
+      },
+      {
+        "code": "BE52001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Geomechanics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "EG22005",
+        "level": 2
+      },
+      {
+        "code": "DI22006",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Geotechnical Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40002",
+        "level": 4
+      },
+      {
+        "code": "GA41005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Global Challenges in Engineering and Technology",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "EG23001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Globalisation and Political Context",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Graph Theory",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA41007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Graphics",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41001",
+        "level": 4
+      },
+      {
+        "code": "AC51008",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Gross Anatomy 1",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA31003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Gross Anatomy 2",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Health and Safety and Environmental Management",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Health System Management Engineering (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32012",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Healthcare Data Analysis (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31011",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Histology 1",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Histology 2",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Honours Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS41001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Human Anatomy (NEU)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "BE21009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Human Anatomy MSc Dissertation",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA53001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Human Computer Interaction",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC32005",
+        "level": 3
+      },
+      {
+        "code": "AC52013",
+        "level": 5
+      },
+      {
+        "code": "GA23006",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Human Engagement Strategies",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS30002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Human Gross Anatomy 1",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Human Gross Anatomy 2",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA52003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Human Resource Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Hydrodynamics & Ocean Engineering",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51034",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Image and Natural Language Processing",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS41004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Image Based Diagnostics",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Image Reconstruction and 3D Printing of Anatomical Models",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE41002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Imaging Technology and Surgical Procedures",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Independent Research for Energy Physics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE50005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Individual Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC40001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Individual Research Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40001",
+        "level": 4
+      },
+      {
+        "code": "GA40008",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Industrial Engineering",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31010",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Industrial Team Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41004",
+        "level": 4
+      },
+      {
+        "code": "CS32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Industry and Innovation",
+    "variants": [
+      {
+        "code": "EG32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Information Analysis and Reporting",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS41002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Information and Network Security",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Information Security",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC31012",
+        "level": 3
+      },
+      {
+        "code": "AC51042",
+        "level": 5
+      },
+      {
+        "code": "DI31002",
+        "level": 3
+      },
+      {
+        "code": "GA33004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Information Systems Development",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA12008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Information Systems Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA13006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Innovation and Biomedical Engineering: Understanding New Venture Creation",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32007",
+        "level": 3
+      },
+      {
+        "code": "BE52003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Innovation and Entrepreneurship",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Intelligent Medical Software Engineering and Development (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Internationalisation and Global Trade",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Introducing Biology to Physicists",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH51009",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to AAC Technology Solutions",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52061",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Artificial Intelligence (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32013",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Artificial Intelligence and Machine Learning",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Assistive Technology Interaction",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52055",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to AT solutions",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52052",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Big Data Algorithms (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31012",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Biological Anthropology",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA12001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Biomedical Engineering",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE11001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Business",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Data Mining",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC53013",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Data Science",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52049",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Data Structures and Algorithms",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC12001",
+        "level": 1
+      },
+      {
+        "code": "CS12002",
+        "level": 1
+      },
+      {
+        "code": "DI12010",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Electrical Power and the Grid",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "RE32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Introduction to English for Biomedical Engineering 1",
+    "variants": [
+      {
+        "code": "AG11071",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to English for Biomedical Engineering 2",
+    "variants": [
+      {
+        "code": "AG12059",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Human Form and Function",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Independent Research",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH50006",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Information Systems",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11009",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Intelligent Imaging (NEU)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "BE21010",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Machine Learning",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC50001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Manufacture",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA12005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Marketing",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Medical Sciences: Anatomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51014",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Programming",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI21008",
+        "level": 2
+      },
+      {
+        "code": "EG21007",
+        "level": 2
+      },
+      {
+        "code": "PH21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Software Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC11001",
+        "level": 1
+      },
+      {
+        "code": "CS11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to Structural Analysis",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE12006",
+        "level": 1
+      },
+      {
+        "code": "GA12002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Introduction to User Experience",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51039",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Introductory Anatomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA21007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Introductory Maths (Summer School)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "LD02017",
+        "level": 0
+      },
+      {
+        "code": "SS03022",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "Inverse Problems",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA51006",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "IT Management for Business Honours Project",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40013",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "IT Management for Business Work-based Learning I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA10010",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "IT Management for Business Work-based Learning II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21014",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "IT Management for Business Work-based Learning III",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA30011",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "IT Management for Business Work-based Learning IV",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40011",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "IT Software Development Honours Project",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40014",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "IT Software Development Work-based Learning I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA10011",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "IT Software Development Work-based Learning II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA20010",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "IT Software Development Work-based Learning III",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA30010",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "IT Software Development Work-based Learning IV",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA40012",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Java Online",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Java Programming",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Java Programming (with English)",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI12009",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Java Programming Language (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE11005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Law for Forensic Scientists",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV50003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Leadership and Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Leadership and Professional Development",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51021",
+        "level": 5
+      },
+      {
+        "code": "LV50005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Legislative Frameworks & Drug Monitoring",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV53001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Life Cycle Analysis & Environmental Impact Assessment",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52033",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Light and Matter",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH12004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Linear Algebra (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE12011",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Locomotive Vehicle Engineering",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Logic and Discrete Mathematics",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS31003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Machine Learning",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS31006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Machine Learning (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22008",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Machine learning and artificial intelligence methods in healthcare",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52056",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Machine Learning for Data Science",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC53014",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Manufacturing Project",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Manufacturing Project I",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI22007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Manufacturing with Materials",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31011",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Marine Renewable Energy & Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51033",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Biology I",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA32009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Biology II",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA42002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Ecology and Epidemiology",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Logic in Computing",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI21013",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Medicine: Oncology and Epidemiology",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA52001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Methods for Electronic Engineering and Physics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "EG31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Methods for Physics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH31008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Physiology",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA52003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Mathematical Statistics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA42008",
+        "level": 4
+      },
+      {
+        "code": "MA52007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Mathematics & Mechanics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH22002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mathematics (Summer School)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "LD02005",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "Mathematics 1A",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA11001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Mathematics 1B",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA12001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Mathematics 2A",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI21009",
+        "level": 2
+      },
+      {
+        "code": "MA21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mathematics 2B",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI22008",
+        "level": 2
+      },
+      {
+        "code": "MA22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mathematics and Physics Research Project 1",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA40002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Mathematics and Physics Research Project II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH50008",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Mathematics for Computer Science",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Mathematics for Engineers",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "EG21005",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mathematics for Engineers I",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI21010",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mathematics for Engineers II",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "EG31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Mathematics of Fluids and Plasmas 1: Fluid Dynamics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA41006",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Mathematics of Fluids and Plasmas 2: MHD and the Sun",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA42007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Mathematics Work Placement",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA33001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Maths for Engineers I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Maths for Engineers II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Maths for Engineers III",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA20007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Maths for Engineers IV",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA23004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Matlab (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Measure Theory",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA51007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Measurement of Biological Systems (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Mechanical Engineering Honours Project",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME40005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Mechanical Engineering Project II (with English)",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI12011",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Mechanics",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI12003",
+        "level": 1
+      },
+      {
+        "code": "EG12010",
+        "level": 1
+      },
+      {
+        "code": "EG11008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Mechanics (JEP)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE12008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Mechanics of Machinery",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI22009",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Mechanics of Machines",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME22002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Medical Complex Data Mining (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31013",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Medical Device Quality Management System",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE41004",
+        "level": 4
+      },
+      {
+        "code": "BE51002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Medical Devices and Professional Skills",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME42001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Medical Image Processing and Analysis",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME51012",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Medical Imaging and Surgical Procedures",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Medical Instrumentation",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Medical Robotics and Operation Room Technology",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE42001",
+        "level": 4
+      },
+      {
+        "code": "BE52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Medical Technology Management & Governance",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME51014",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Medical Ultrasound System",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME41003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Microelectronics",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "EE32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Modern Concepts in Statistical Physics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH42004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Modern Web Stack Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS22002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Module for timetabling purposes",
+    "variants": [
+      {
+        "code": "EG00001",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "MSc Civil Engineering Research Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE53001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc Computing Science Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC53016",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc Drug Analysis and Toxicology Research Project",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV50006",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc Forensic Anthropology Research Project",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA53004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc Forensic Archaeology & Anthropology Research Project",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA53005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc in Anatomy and Advanced Forensic Anthropology Research Project",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA53003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52010",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "MSc Project in Mathematics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA53002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Multi-Disciplinary Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Multi-Paradigm Programming",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS21003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Multi-paradigm Programming and Data Structures",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC21008",
+        "level": 2
+      },
+      {
+        "code": "DI21011",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Neonatal Intensive Care Technology",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE41005",
+        "level": 4
+      },
+      {
+        "code": "BE51001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Networks",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC31013",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Networks and Data Communications",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC31008",
+        "level": 3
+      },
+      {
+        "code": "DI31001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Neuroanatomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA42003",
+        "level": 4
+      },
+      {
+        "code": "CA52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Nuclear and Particle Physics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH42006",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Numerical Methods and Computational Fluid Dynamics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51035",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Object Oriented Analysis and Design",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC22004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Object-orientated Software Development II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA12007",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Object-oriented Analysis and Design",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI22010",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Object-oriented Software Development I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA11010",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Offshore Geotechnical Engineering I",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52034",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "ONLINE General Pre-Sessional English for International Students (14 weeks)",
+    "variants": [
+      {
+        "code": "AG11070",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "ONLINE General Pre-Sessional English for International Students (8 weeks)",
+    "variants": [
+      {
+        "code": "AG11066",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "ONLINE Pre-Sessional English for Business for International Students (8 weeks)",
+    "variants": [
+      {
+        "code": "AG11065",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "ONLINE Pre-Sessional English for Business Students (14 weeks)",
+    "variants": [
+      {
+        "code": "AG11069",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Operating System (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32014",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Operating Systems",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS21004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Operational Research",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA32003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Operations Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Optics and Photonics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH41005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Optics and Photonics II",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH52011",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Optimization in Finance and Energy",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA52004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Ordinary Differential Equations and the Approximation",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA41003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Partial Differential Equations and their Approximation",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA42003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Personal Development Planning",
+    "variants": [
+      {
+        "code": "SD10001",
+        "level": 1
+      },
+      {
+        "code": "SD20001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Personal Development Planning JEP",
+    "variants": [
+      {
+        "code": "SD20002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "PGCert Data Science Project",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC53015",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Pharmacology for Toxicologists and Drug Analysts",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV52002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Physical Computing",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC22006",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Physics (Summer School)",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "LD02012",
+        "level": 0
+      },
+      {
+        "code": "SS03012",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "Physics Investigations (BSc joint honours)",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH40007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Physics Project (BSc)",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH40006",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Physics Research Project I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH50009",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Physics Research Project II (MSci)",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH50007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Practice of Surveying",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "DI22011",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Principle and application of single-chip computer (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31014",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Principles of Programming Languages",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS42001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Probability and Statistics (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21011",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Production Practice",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE33001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Professional Development",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31006",
+        "level": 3
+      },
+      {
+        "code": "CE52035",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Professional Engineering Practice",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Professional Physics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Professional Skills in Computer Science",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS11004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Professional Skills in Drug Analysis and Toxicology",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV52003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Programmable Electronics",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21008",
+        "level": 2
+      },
+      {
+        "code": "GA32010",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Programming Language Design and Implementation",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS41005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Programming languages for Data Engineering",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC50002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Programming Languages for Data Science",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52050",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Project",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA50001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Project (Mathematics)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI11005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Project I (Civil Engineering)",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "DI11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Project I (Computing)",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "DI11004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Project I (Mechanical)",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI11006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Project Management",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50029",
+        "level": 5
+      },
+      {
+        "code": "GA21002",
+        "level": 2
+      },
+      {
+        "code": "GA42006",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Project Management I",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51027",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Project Management II",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52027",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Project Management Systems",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52036",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Project Management Teams",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51037",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Proof and Number Theory",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA12006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Proof and Number Theory - Pure Maths",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI12005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "PTS and Project Work",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA40001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Quantum Mechanics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH31005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Quantum Mechanics II - Atoms and Molecules",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH32008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Quantum Mechanics III",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH51008",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Reading and Writing in English for Academic Purposes 2",
+    "variants": [
+      {
+        "code": "AG12056",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Real-World User Contexts",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS40001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Recognition Learning",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE13001",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Regional Gross Anatomy",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41007",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Rehabilitation Engineering",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE42003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Reinforced Concrete Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA31006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Renewable Energy Project",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE40001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Renewable Energy Research Project I (MSci)",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE50002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Renewable Energy Research Project II (MSci)",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE50001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Renewable Energy Systems, Applications and Developments",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE51002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Renewable Resource Modelling and Assessment",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE52003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Research and Development Skills",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE31003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Research Frontiers",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC42001",
+        "level": 4
+      },
+      {
+        "code": "AC42002",
+        "level": 4
+      },
+      {
+        "code": "AC52008",
+        "level": 5
+      },
+      {
+        "code": "AC52044",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Research Methods",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52012",
+        "level": 5
+      },
+      {
+        "code": "CA32002",
+        "level": 3
+      },
+      {
+        "code": "CA51009",
+        "level": 5
+      },
+      {
+        "code": "CA51020",
+        "level": 5
+      },
+      {
+        "code": "GA41001",
+        "level": 4
+      },
+      {
+        "code": "LV51001",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Research Methods and Diploma Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50028",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Research Project",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50007",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Research Skills and Statistical Analysis",
+    "area": "Leverhulme Research Centre",
+    "variants": [
+      {
+        "code": "LV53002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Rigid Body Mechanics",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA51019",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Robotics and Mechatronics",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME40003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Science and Engineering Mathematics 1A",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "EG11003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Science and Engineering Mathematics 1B",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "EG12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Signal and Linear System (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22010",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Software Applications for Biomedical Engineering Design",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Software Applications for Biomedical Engineering Design (JEP)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Software Applications for Mechanical Engineering Design",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME21001",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Software Deployment & Quality",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA33005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Software Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51002",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Software Engineering",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51003",
+        "level": 5
+      },
+      {
+        "code": "CS21005",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Software Implementation & Testing",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Software Maintenance & Legacy Systems",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA23007",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Software Requirements Analysis & Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32008",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Soil Dynamics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51036",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Soil Dynamics and Earthquake Engineering",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50025",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Soil Mechanics",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Soil Mechanics Applications",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32005",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Soil Mechanics Concept",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Solar Energy",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "RE41002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Solid Mechanics",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI22012",
+        "level": 2
+      },
+      {
+        "code": "EG22010",
+        "level": 2
+      },
+      {
+        "code": "ME31002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Solid Mechanics and Materials",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME40004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Space Physics and Astronomy",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Specialist and mainstream AT solutions",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51045",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Stars and Planetary Systems",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH41008",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Statistics (with English)",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI12006",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Statistics and Probability",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA12003",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Statistics II",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "DI22013",
+        "level": 2
+      },
+      {
+        "code": "MA22004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Steel and Concrete Structures",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE32006",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Steel Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA33001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Stochastic Processes",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA51005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Structural Analysis",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE31005",
+        "level": 3
+      },
+      {
+        "code": "GA21005",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Structural Analysis & Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Structural Behaviour & Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Structural Behaviour and Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "DI12002",
+        "level": 1
+      },
+      {
+        "code": "EG12012",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Structural Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Structural Dynamics and Earthquake Engineering",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51038",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Structures",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE22003",
+        "level": 2
+      },
+      {
+        "code": "DI22014",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Student on Industrial Placement",
+    "variants": [
+      {
+        "code": "INDPLACE1",
+        "level": 0
+      }
+    ]
+  },
+  {
+    "title": "Supply Chain Management",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Surgical Technology and Clinical Environment",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE32002",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Surveying",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE22007",
+        "level": 2
+      },
+      {
+        "code": "GA12004",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Sustainable Construction",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Sustainable Geotechnical Design",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51039",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Sustainable Infrastructure",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA32004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Sustainable Use of Concrete Materials",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE50019",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Systems Analysis and Design",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21012",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Taphonomy, Trauma and Skeletal Biomechanics",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41002",
+        "level": 4
+      },
+      {
+        "code": "CA51012",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Technology Innovation Management",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41007",
+        "level": 4
+      },
+      {
+        "code": "AC51005",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Testing Technology and Signal Processing",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME31003",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "The Basis of Telemedicine Technology (NEU)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE22005",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "The educational assistive technologist",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC52051",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Theory of Computation",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC32008",
+        "level": 3
+      },
+      {
+        "code": "CS32004",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Thermal Physics I",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH32009",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Thermodynamics",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "ME12001",
+        "level": 1
+      },
+      {
+        "code": "EG12011",
+        "level": 1
+      },
+      {
+        "code": "ME21002",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Thermodynamics (JEP)",
+    "area": "Biomedical Engineering",
+    "variants": [
+      {
+        "code": "BE21004",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Thermodynamics I",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI12008",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Thermodynamics II",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI21012",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Thermofluids",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME32001",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Topics in Pure Mathematics",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA12002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Train Traction and Braking",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "ME41004",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Transportation Engineering",
+    "area": "Mechanical Engineering",
+    "variants": [
+      {
+        "code": "DI31015",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Unix Systems",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS11005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Use of Sustainable Materials in Construction",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52037",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "User Engagement Strategy Development and Evaluation",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS50003",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "User Experience",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41012",
+        "level": 4
+      },
+      {
+        "code": "AC51010",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "User Interface Design",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "CS22003",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Users and Interfaces",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC21012",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Vector Calculus",
+    "area": "Mathematics",
+    "variants": [
+      {
+        "code": "MA31007",
+        "level": 3
+      }
+    ]
+  },
+  {
+    "title": "Vertebral Column",
+    "area": "Anatomy",
+    "variants": [
+      {
+        "code": "CA41006",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Water Resources",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA42005",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Water Resources and Treatment",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE40003",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Waves and Mechanics",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "PH12005",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Web Application Development",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC51046",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Web Authoring",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC11002",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "title": "Web Development I",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA21011",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Web Development II",
+    "area": "Graduate Apprenticeship Programme",
+    "variants": [
+      {
+        "code": "GA22008",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Wind and Marine Energy",
+    "area": "Physics",
+    "variants": [
+      {
+        "code": "RE42002",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Work Based Skills and Innovative Practice",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC50004",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Work Placement",
+    "area": "Computing",
+    "variants": [
+      {
+        "code": "AC41010",
+        "level": 4
+      },
+      {
+        "code": "CS43001",
+        "level": 4
+      }
+    ]
+  },
+  {
+    "title": "Work-based learning I",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51040",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Work-based learning II",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE52038",
+        "level": 5
+      }
+    ]
+  },
+  {
+    "title": "Work-based learning III",
+    "area": "Civil Engineering",
+    "variants": [
+      {
+        "code": "CE51041",
+        "level": 5
+      }
+    ]
+  }
+]
