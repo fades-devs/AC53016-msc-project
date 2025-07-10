@@ -3,15 +3,13 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     lastName: {
         type: String,
-        required: true
-    },
-    identifier: {
-        type: String,
-        enum: ["Dr", "Prof", "Mr", "Ms", "Miss"]
+        required: true,
+        trim: true
     },
     email: {
         type: String,
