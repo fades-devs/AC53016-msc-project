@@ -112,7 +112,7 @@ export const getReviewByModuleCode = async(req, res) => {
             if (!isNaN(yearNumber)) {
                 const startDate = new Date(yearNumber, 0, 1);      // Jan 1st of the year
                 const endDate = new Date(yearNumber + 1, 0, 1);  // Jan 1st of the next year
-                match.date = { $gte: startDate, $lt: endDate };
+                match.createdAt = { $gte: startDate, $lt: endDate };
             }
         }
         // 3. Find the review using the dynamically built + populate

@@ -5,7 +5,9 @@ const ThemeSchema = new mongoose.Schema({
   theme: {
     type: String,
     required: true,
-    enum: ['Assessment', 'Learning and Teaching', 'Course Design and Development', 'Student Engagement']
+    enum: ['Assessment', 'Learning and Teaching', 'Course Design and Development', 'Student Engagement', 'Enabling Student Achievement',
+        'Admissions, Recruitment and Widening Access', 'Concerns, Complaints and Appeals', 'Partnerships', 'Monitoring and Evaluation',
+        'Work-based Learning', 'Other']
   },
   description: {
     type: String,
@@ -21,10 +23,10 @@ const reviewSchema = new mongoose.Schema({
         enum: ["Not Started", "In Progress", "Completed"],
         default: "In Progress"
     },
-    date: {
-        type: Date,
-        default: () => new Date()
-    },
+    // date: {
+    //     type: Date,
+    //     default: () => new Date()
+    // },
     module: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
@@ -40,9 +42,26 @@ const reviewSchema = new mongoose.Schema({
     moduleFeedback: {
         type: String
     },
+    statementEngagement: {
+        type: String,
+        enum: ['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree']
+    },
+    statementLearning: {
+        type: String,
+        enum: ['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree']
+    },
+    statementTimetable: {
+        type: String,
+        enum: ['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree']
+    },
     goodPractice: [ThemeSchema],
     risks: [ThemeSchema],
-    enhancePlans: [ThemeSchema]
+    enhancePlans: [ThemeSchema],
+    completedBy: {
+        type: String,
+        required: true,
+        trim: true
+    }
 
 }, {timestamps: true}
 );

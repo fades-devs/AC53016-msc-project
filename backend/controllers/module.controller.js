@@ -45,7 +45,7 @@ export const getModules = async(req, res) => {
             if (!isNaN(yearNumber)) {
                 const startDate = new Date(yearNumber, 0, 1); // January 1st of the year
                 const endDate = new Date(yearNumber + 1, 0, 1); // // January 1st of the next year
-                finalMatch.date = {$gte: startDate, $lt: endDate};
+                finalMatch.createdAt = {$gte: startDate, $lt: endDate};
             }
         }
         if (leadSearch) {
@@ -93,7 +93,7 @@ export const getModules = async(req, res) => {
             {
                 $addFields: {
                     status: { $ifNull: ['$reviewData.status', 'Not Started'] },
-                    date: { $ifNull: ['$reviewData.date', null] },
+                    date: { $ifNull: ['$reviewData.createdAt', null] },
                     moduleLead: {
                         $ifNull: [
                             // Use concat to join the fields
