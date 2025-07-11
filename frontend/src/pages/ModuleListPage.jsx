@@ -2,7 +2,7 @@ import {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
 import {Container, Typography, Table, TableBody, TableCell, TableContainer,
     TableHead, TableRow, Paper, Box, CircularProgress, Chip, Stack, Button, Grid,
-FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, Checkbox, ListItemText} from '@mui/material';
+FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, Checkbox, ListItemText, Pagination} from '@mui/material';
 
 // --- UPDATE: Import the options from your constants file ---
 import { areaOptions, levelOptions, periodOptions, locationOptions, statusOptions }
@@ -21,9 +21,15 @@ const useDebounce = (value, delay) => {
 const ModuleListPage = () => {
   
     const initialFilters = {area: [], level: [], period: [], location: [], status: [],
-        titleSearch: '', codeSearch: '', year: '', leadSearch: ''}
+        titleSearch: '', codeSearch: '', leadSearch: '', year: new Date().getFullYear(), // Default to current year
+    }
 
     const [filters, setFilters] = useState(initialFilters);
+
+    // UPDATE: STATE FOR PAGINATION
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
+    const [itemsPerPage] = useState(20); // Define how many items per page
 
     // Debounce only the user-typed inputs - 500ms delay
     const titleSearchDeb = useDebounce(filters.titleSearch, 500);
@@ -45,6 +51,11 @@ const ModuleListPage = () => {
 
         try {
                 const params = new URLSearchParams();
+
+                // UPDATE: add page and limit to API request
+                params.append('page', page);
+                params.append('limit', itemsPerPage);
+
                 // Handle array filters
                 filters.area.forEach(item => params.append('area', item));
                 filters.level.forEach(item => params.append('level', item));
@@ -53,15 +64,18 @@ const ModuleListPage = () => {
                 filters.status.forEach(item => params.append('status', item));
 
                 // Handle debounced text/number filters
-                if (yearDeb) {params.append('year', yearDeb)};
+                if (yearDeb) {params.append('year', yearDeb)}; // will always have initial value
                 if (codeSearchDeb) {params.append('codeSearch', codeSearchDeb)};
                 if (titleSearchDeb) {params.append('titleSearch', titleSearchDeb)};
                 if (leadSearchDeb) {params.append('leadSearch', leadSearchDeb)};
 
                 // GET request to the backend API
                 const response = await axios.get(`http://localhost:5000/api/modules?${params.toString()}`);
-                // Update state with the data from the API
-                setModules(response.data);
+
+                // UPDATE: set state from response object (data from API)
+                setModules(response.data.modules);
+                setTotalPages(response.data.totalPages);
+
             }
         catch (err) {
             setError('Error in fetching modules. Please ensure the server is running.');
@@ -73,7 +87,9 @@ const ModuleListPage = () => {
             setIsFiltering(false);
         }
     },
-    [ // --- UPDATE: Dependency array now stringifies filters to correctly detect changes in arrays ---
+    [ // UPDATE: Depend on the current page
+        page, itemsPerPage,
+        // --- UPDATE: Dependency array now stringifies filters to correctly detect changes in arrays ---
         JSON.stringify(filters.area), JSON.stringify(filters.level), JSON.stringify(filters.period), 
         JSON.stringify(filters.location), JSON.stringify(filters.status),
         yearDeb, codeSearchDeb, titleSearchDeb, leadSearchDeb]);
@@ -88,11 +104,20 @@ const ModuleListPage = () => {
             ...prevFilters,
             [name]: value
         }));
+        // UPDATE: reset to page 1 whenever filter changes
+        setPage(1);
     };
 
     // Function to clear all filters ---
     const handleClearFilters = () => {
         setFilters(initialFilters);
+        // UPDATE: reset to page 1 when clearing filters
+        setPage(1);
+    };
+
+    // --- UPDATE: Handler for the Pagination component ---
+    const handlePageChange = (event, value) => {
+        setPage(value);
     };
 
     // Helper function that decides which button to show
@@ -278,6 +303,12 @@ const ModuleListPage = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
+        </Box>
+
+        {/* --- UPDATE: Pagination Component --- */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+            <Pagination count={totalPages} page={page} onChange={handlePageChange} color="primary"
+            showFirstButton showLastButton />
         </Box>
 
     </Container>
