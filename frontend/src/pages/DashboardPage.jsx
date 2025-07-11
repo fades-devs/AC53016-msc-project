@@ -3,6 +3,7 @@ import GoodPracticeChart from '../components/GoodPracticeChart';
 import EnhancementChart from '../components/EnhancementChart';
 import CompletionChart from '../components/CompletionChart';
 import { Typography, Box, Divider, Grid, Card, CardContent } from '@mui/material';
+import NavBar from '../components/NavBar';
 
 const DashboardPage = () => {
     return (
