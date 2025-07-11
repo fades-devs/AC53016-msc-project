@@ -2,8 +2,11 @@ import {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
 import {Container, Typography, Table, TableBody, TableCell, TableContainer,
     TableHead, TableRow, Paper, Box, CircularProgress, Chip, Stack, Button, Grid,
-FormControl, InputLabel, Select, MenuItem, TextField} from '@mui/material';
+FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, Checkbox, ListItemText} from '@mui/material';
 
+// --- UPDATE: Import the options from your constants file ---
+import { areaOptions, levelOptions, periodOptions, locationOptions, statusOptions }
+from '../constants/filterOptions';
 
 // Custom hook for debouncing
 const useDebounce = (value, delay) => {
@@ -17,34 +20,42 @@ const useDebounce = (value, delay) => {
 
 const ModuleListPage = () => {
   
-    const [filters, setFilters] = useState({
-        area: '', level: '', period: '', status: '', year: '', moduleSearch: '', leadSearch: ''
-    });
+    const initialFilters = {area: [], level: [], period: [], location: [], status: [],
+        titleSearch: '', codeSearch: '', year: '', leadSearch: ''}
 
-    const moduleSearchDeb = useDebounce(filters.moduleSearch, 500);
+    const [filters, setFilters] = useState(initialFilters);
+
+    // Debounce only the user-typed inputs - 500ms delay
+    const titleSearchDeb = useDebounce(filters.titleSearch, 500);
+    const codeSearchDeb = useDebounce(filters.codeSearch, 500);
     const leadSearchDeb = useDebounce(filters.leadSearch, 500);
     const yearDeb = useDebounce(filters.year, 500)
 
     // State to hold the list of modules
     const [modules, setModules] = useState([]);
-    // State to manage the loading status
-    const [loading, setLoading] = useState(true);
-    // State to hold any potential errors
+    // --- UPDATE: Differentiated loading states ---
+    const [initialLoading, setInitialLoading] = useState(true); // For the first page load
+    const [isFiltering, setIsFiltering] = useState(false); // For subsequent background searches
     const [error, setError] = useState(null);
 
     const fetchModules = useCallback(async() => {
-        
-        setLoading(true);
+        // --- UPDATE: Set filtering state, not the main loading state ---
+        setIsFiltering(true);
         setError(null);
 
         try {
                 const params = new URLSearchParams();
-                if (filters.area) {params.append('area', filters.area)};
-                if (filters.level) {params.append('level', filters.level)};
-                if (filters.period) {params.append('period', filters.period)};
-                if (filters.status) {params.append('status', filters.status)};
+                // Handle array filters
+                filters.area.forEach(item => params.append('area', item));
+                filters.level.forEach(item => params.append('level', item));
+                filters.period.forEach(item => params.append('period', item));
+                filters.location.forEach(item => params.append('location', item));
+                filters.status.forEach(item => params.append('status', item));
+
+                // Handle debounced text/number filters
                 if (yearDeb) {params.append('year', yearDeb)};
-                if (moduleSearchDeb) {params.append('moduleSearch', moduleSearchDeb)};
+                if (codeSearchDeb) {params.append('codeSearch', codeSearchDeb)};
+                if (titleSearchDeb) {params.append('titleSearch', titleSearchDeb)};
                 if (leadSearchDeb) {params.append('leadSearch', leadSearchDeb)};
 
                 // GET request to the backend API
@@ -57,11 +68,15 @@ const ModuleListPage = () => {
             console.error(err);
         }
         finally {
-            setLoading(false); // Set loading to false once request is complete
+            // --- UPDATE: set to false once request is complete - both loading states ---
+            setInitialLoading(false);
+            setIsFiltering(false);
         }
     },
-    [filters.area, filters.level, filters.period, filters.status, yearDeb, moduleSearchDeb, leadSearchDeb]
-    );
+    [ // --- UPDATE: Dependency array now stringifies filters to correctly detect changes in arrays ---
+        JSON.stringify(filters.area), JSON.stringify(filters.level), JSON.stringify(filters.period), 
+        JSON.stringify(filters.location), JSON.stringify(filters.status),
+        yearDeb, codeSearchDeb, titleSearchDeb, leadSearchDeb]);
 
     useEffect(() => {
         fetchModules();
@@ -73,6 +88,11 @@ const ModuleListPage = () => {
             ...prevFilters,
             [name]: value
         }));
+    };
+
+    // Function to clear all filters ---
+    const handleClearFilters = () => {
+        setFilters(initialFilters);
     };
 
     // Helper function that decides which button to show
@@ -102,14 +122,15 @@ const ModuleListPage = () => {
         };
     };
 
-
-    if (loading) {
+    // --- UPDATE: Only show full-screen loader on initial load ---
+    if (initialLoading) {
         return (
-            <Box sx={{display: 'flex', justifyContent: 'center', mt: 4}}>
+            <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
                 <CircularProgress />
             </Box>
         )
     }
+
     if (error) {
         return (
             <Container>
@@ -119,85 +140,147 @@ const ModuleListPage = () => {
     }
 
     return (
-       <Container sx={{ mt: 4 }}>
+
+    <Container sx={{ mt: 4 }}>
         <Typography variant="h4">
             Module Enhancement Review
         </Typography>
-        <Box>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="area-label">Area</InputLabel>
-                <Select name="area" value={filters.area} onChange={handleFilterChange} label="Area">
-                    <MenuItem value=""><em>All Areas</em></MenuItem>
-                    <MenuItem value="Computing">Computing</MenuItem>
-                    <MenuItem value="Anatomy">Anatomy</MenuItem>
-                </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="level-label">Level</InputLabel>
-                <Select name="level" value={filters.level} onChange={handleFilterChange} label="Level">
-                    <MenuItem value=""><em>All Levels</em></MenuItem>
-                    <MenuItem value="1">Level 1</MenuItem>
-                    <MenuItem value="2">Level 2</MenuItem>
-                    <MenuItem value="2">Level 5</MenuItem>
-                </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel>Period</InputLabel>
-                <Select name="period" value={filters.period} onChange={handleFilterChange} label="Period">
-                    <MenuItem value=""><em>All Periods</em></MenuItem>
-                    <MenuItem value="Semester 1">Semester 1</MenuItem>
-                    <MenuItem value="Semester 2">Semester 2</MenuItem>
-                </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel>Status</InputLabel>
-                <Select name="status" value={filters.status} onChange={handleFilterChange} label="Status">
-                    <MenuItem value=""><em>All Status</em></MenuItem>
-                    <MenuItem value="Not Started">Not Started</MenuItem>
-                    <MenuItem value="In Progress">In Progress</MenuItem>
-                    <MenuItem value="Completed">Completed</MenuItem>
-                </Select>
-            </FormControl>
-            <Grid item xs={12} sm={6} md={3}>
-                <TextField label="Year" name="year" type="number" value={filters.year} onChange={handleFilterChange} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-                <TextField label="Module Search" name="moduleSearch" value={filters.moduleSearch} onChange={handleFilterChange} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-                <TextField label="Lead Search" name="leadSearch" value={filters.leadSearch} onChange={handleFilterChange} />
+        {/* --- UPDATE: Filter controls wrapped in Grid for better layout --- */}
+        <Box sx={{ mb: 3 }}>
+            <Grid container spacing={2} alignItems="flex-end">
+                {/* --- UPDATE: All Select components now support multi-select --- */}
+                <Grid item xs={12} sm={6} md={4} lg={2}>
+                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="area-label">Area</InputLabel>
+                    <Select name="area" value={filters.area} onChange={handleFilterChange} label="Area"
+                    input={<OutlinedInput label="Area" />} multiple renderValue={(selected) => selected.join(', ')}>
+                        {areaOptions.map((name) => (
+                            <MenuItem key={name} value={name}>
+                                <Checkbox checked={filters.area.indexOf(name) > -1} />
+                                <ListItemText primary={name} />
+                            </MenuItem>))}
+                    </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={2}>
+                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="level-label">Level</InputLabel>
+                    <Select name="level" value={filters.level} onChange={handleFilterChange} label="Level"
+                    input={<OutlinedInput label="Level" />} multiple renderValue={(selected) => selected.join(', ')}>
+                        {levelOptions.map((level) => (
+                            <MenuItem key={level} value={level}>
+                                <Checkbox checked={filters.level.indexOf(level) > -1} />
+                                <ListItemText primary={level} />
+                            </MenuItem>))}
+                    </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={2}>
+                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="period-label">Period</InputLabel>
+                    <Select name="period" value={filters.period} onChange={handleFilterChange} label="Period"
+                    input={<OutlinedInput label="Period" />} multiple renderValue={(selected) => selected.join(', ')}>
+                        {periodOptions.map((name) => (
+                            <MenuItem key={name} value={name}>
+                                <Checkbox checked={filters.period.indexOf(name) > -1} />
+                                <ListItemText primary={name} />
+                            </MenuItem>))}
+                    </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={2}>
+                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="location-label">Location</InputLabel>
+                    <Select name="location" value={filters.location} onChange={handleFilterChange} label="Location"
+                    input={<OutlinedInput label="Location" />} multiple renderValue={(selected) => selected.join(', ')}>
+                        {locationOptions.map((name) => (
+                            <MenuItem key={name} value={name}>
+                                <Checkbox checked={filters.location.indexOf(name) > -1} />
+                                <ListItemText primary={name} />
+                            </MenuItem>))}
+                    </Select>
+                    </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={2}>
+                    <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <InputLabel id="status-label">Status</InputLabel>
+                    <Select name="status" value={filters.status} onChange={handleFilterChange} label="Status"
+                    input={<OutlinedInput label="Status" />} multiple renderValue={(selected) => selected.join(', ')}>
+                        {statusOptions.map((name) => (
+                            <MenuItem key={name} value={name}>
+                                <Checkbox checked={filters.status.indexOf(name) > -1} />
+                                <ListItemText primary={name} />
+                            </MenuItem>))}
+                    </Select>
+                    </FormControl>
+                </Grid>
+                
+                <Grid item xs={12} sm={6} md={3}>
+                    <TextField label="Year" name="year" type="number" value={filters.year} onChange={handleFilterChange} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                    <TextField label="Module Title" name="titleSearch" value={filters.titleSearch} onChange={handleFilterChange} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                    <TextField label="Module Code" name="codeSearch" value={filters.codeSearch} onChange={handleFilterChange} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                    <TextField label="Module Lead" name="leadSearch" value={filters.leadSearch} onChange={handleFilterChange} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={2}>
+                    {/* --- UPDATE: Clear Filters Button --- */}
+                    <Button fullWidth variant="outlined" onClick={handleClearFilters} sx={{ height: '56px' }}>
+                        Clear
+                    </Button>
+                </Grid>
             </Grid>
         </Box>
 
-        <TableContainer component={Paper}>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Module Code</TableCell>
-                        <TableCell>Module Title</TableCell>
-                        <TableCell>Module Lead</TableCell>
-                        <TableCell>Status</TableCell>
-                        <TableCell>Actions</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {
-                        modules.map((module) => (
-                            <TableRow key={module._id}>
-                                <TableCell>{module.code}</TableCell>
-                                <TableCell>{module.title}</TableCell>
-                                <TableCell>{module.moduleLead}</TableCell>
-                                <TableCell title={module.date}>
-                                    <Chip label={module.status}></Chip>
-                                </TableCell>
-                                <TableCell>{renderActions(module)}</TableCell>
-                            </TableRow>
-                        ))
-                    }
-                </TableBody>
-            </Table>
-        </TableContainer>
-       </Container>
+        <Box sx={{ position: 'relative' }}>
+            {isFiltering && (
+                    <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                        backgroundColor: 'rgba(255, 255, 255, 0.7)', zIndex: 1, display: 'flex',
+                        alignItems: 'center', justifyContent: 'center' }}>
+                        <CircularProgress />
+                    </Box>)}
+            <TableContainer component={Paper}>
+                <Table stickyHeader>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Code</TableCell>
+                            <TableCell>Title</TableCell>
+                            <TableCell>Level</TableCell>
+                            <TableCell>Lead</TableCell>
+                            <TableCell>Status</TableCell>
+                            <TableCell>Actions</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {
+                            modules.map((module) => (
+                                // The key now includes the module ID, the variant code, and the unique review ID.
+                                // We use a fallback ('no-review') for modules that haven't been reviewed yet.
+                                <TableRow hover key={`${module._id}-${module.code}-${module.reviewId || 'no-review'}`}>
+                                    <TableCell>{module.code}</TableCell>
+                                    <TableCell>{module.title}</TableCell>
+                                    <TableCell title={module.period}>{module.level}</TableCell>
+                                    <TableCell>{module.moduleLead}</TableCell>
+                                    <TableCell title={module.reviewDate ? new Date(module.reviewDate).toLocaleDateString() : 'No review date'}>
+                                        <Chip label={module.status} color={
+                                            module.status === 'Completed' ? 'success' :
+                                            module.status === 'In Progress' ? 'warning' : 'default'}>
+                                        </Chip>
+                                    </TableCell>
+                                    <TableCell>{renderActions(module)}</TableCell>
+                                </TableRow>
+                            ))
+                        }
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Box>
+
+    </Container>
     )
 
 
