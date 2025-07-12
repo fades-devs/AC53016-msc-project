@@ -25,6 +25,13 @@ export const findModuleByCode = async(req, res) => {
 export const getModules = async(req, res) => {
 
     try {
+
+        // --- PAGINATION: Get page and limit from query, with defaults ---
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 20; // default 20 items per page
+        const skip = (page - 1) * limit;
+
+
         // EXACT FILTER MATCH + text search filter + date range filter (Extract filter criteria from the query string)
         const {area, level, period, location, titleSearch, codeSearch, status, year, leadSearch} = req.query;
 
@@ -143,11 +150,40 @@ export const getModules = async(req, res) => {
                     // Use the calculated fields
                     moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
                     status: 1, reviewDate: "$createdAt"}
+            },
+
+            // UPDATE PAGINATION FIX: Add a sort stage BEFORE pagination to ensure consistent order
+            // Add temporary lowercase fields using the $toLower operator.
+            {
+                $addFields: {
+                    "sort_title": { "$toLower": "$title" }
+                }
+            },
+            // Sort by the new temporary fields.
+            {
+                $sort: {
+                    "sort_title": 1, // 1 for ascending
+                }
+            },
+
+            // --- PAGINATION: Use $facet to get both data and total count ---
+            {
+                $facet: { // The temporary sort fields won't be in the final output because facet doesn't include them
+                    // Sub-pipeline 1: Get the metadata (total count)
+                    metadata: [ {$count: 'total'} ],
+                    // Sub-pipeline 2: Get the actual data for the page
+                    data: [ { $skip: skip }, { $limit: limit } ]
+                }
             }
 
         ]);
 
-        res.status(200).json(modulesDetails);
+        const modules = modulesDetails[0].data;
+        const totalCount = modulesDetails[0].metadata[0]?.total || 0;
+        const totalPages = Math.ceil(totalCount / limit);
+
+        // --- UPDATED RESPONSE BASED ON PAGINATION ---
+        res.status(200).json({modules: modules, totalPages: totalPages, currentPage: page});
     }
 
     catch (error) {
