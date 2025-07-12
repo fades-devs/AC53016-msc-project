@@ -4,6 +4,8 @@ import {Container, Typography, Table, TableBody, TableCell, TableContainer,
     TableHead, TableRow, Paper, Box, CircularProgress, Chip, Stack, Button, Grid,
 FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, Checkbox, ListItemText, Pagination} from '@mui/material';
 
+import { Link } from 'react-router-dom';
+
 // --- UPDATE: Import the options from your constants file ---
 import { areaOptions, levelOptions, periodOptions, locationOptions, statusOptions }
 from '../constants/filterOptions';
@@ -126,20 +128,31 @@ const ModuleListPage = () => {
             case 'Completed':
                 return (
                     <Stack direction="column">
-                        <Button align="center" size="small" onClick={() => alert('Update later')}>View Report</Button>
-                        <Button align="center" size="small" onClick={() => alert('Update later')}>Edit Report</Button>
+                        {/* Use module._id to create a new review for this module */}
+                        {/* rel="noopener noreferrer" is a security best practice for new tabs */}
+                        <Button component={Link} to={`/view-report/${module.reviewId}`} target='_blank'
+                    rel='noopener noreferrer' align='center' size='small'>View Report</Button>
+                    <Button component={Link} to={`/edit-report/${module.reviewId}`} target='_blank'
+                    rel='noopener noreferrer' align='center' size='small'>Edit Report</Button>
                     </Stack>
+                    
                 );
             case 'In Progress':
                 return (
                     <Stack direction="column">
-                        <Button align="center" size="small" onClick={() => alert('Update later')}>Continue Review</Button>
+                        {/* Use module._id to create a new review for this module */}
+                        {/* rel="noopener noreferrer" is a security best practice for new tabs */}
+                        <Button component={Link} to={`/edit-report/${module.reviewId}`} target='_blank'
+                    rel='noopener noreferrer' align='center' size='small'>Continue Review</Button>
                     </Stack>
                 );
             case 'Not Started':
                 return (
                     <Stack direction="column">
-                        <Button align="center" size="small" onClick={() => alert('Update later')}>Submit Review</Button>
+                        {/* Use module._id to create a new review for this module */}
+                        {/* rel="noopener noreferrer" is a security best practice for new tabs */}
+                        <Button component={Link} to={`/create-review/${module._id}`} target='_blank'
+                    rel='noopener noreferrer' align='center' size='small'>Submit Review</Button>
                     </Stack>
                 );
             default:
