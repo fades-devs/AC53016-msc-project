@@ -149,11 +149,12 @@ export const createReview = async(req, res) => {
 
     try {
         // Get module ID and review data from the request body
-        const {moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks, enhancePlans} = req.body
+        const {moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks, enhancePlans, 
+            statementEngagement, statementLearning, statementTimetable, completedBy} = req.body
         if (!moduleId) {return res.status(400).json({message: 'Module ID required'})};
         // Create review document
-        const newReview = new Review({module: moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks, 
-            enhancePlans, status: 'Completed'}); // Update status
+        const newReview = new Review({module: moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks,
+            statementEngagement, statementLearning, statementTimetable, completedBy, enhancePlans, status: 'Completed'}); // Update status
 
         await newReview.save();
         res.status(201).json(newReview);

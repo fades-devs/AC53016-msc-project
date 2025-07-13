@@ -34,3 +34,7 @@ export const statusOptions = [
     "In Progress", 
     "Completed"
 ];
+
+export const themes = ['Assessment', 'Learning and Teaching', 'Course Design and Development', 'Student Engagement', 'Enabling Student Achievement',
+        'Admissions, Recruitment and Widening Access', 'Concerns, Complaints and Appeals', 'Partnerships', 'Monitoring and Evaluation',
+        'Work-based Learning', 'Other']
