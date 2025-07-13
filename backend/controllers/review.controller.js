@@ -180,3 +180,47 @@ export const createReview = async(req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 }
+
+// @route   POST /api/reviews/draft
+export const saveDraft = async (req, res) => {
+
+    try {
+
+        // Get module ID and review data from the request body
+        const {moduleId, enhanceUpdate, studentAttainment, moduleFeedback, 
+            statementEngagement, statementLearning, statementTimetable, completedBy} = req.body
+
+        // --- PARSE STRINGIFIED ARRAYS --- UPDATE: empty array if no input
+        const goodPractice = req.body.goodPractice ? JSON.parse(req.body.goodPractice): [];
+        const risks = req.body.risks ? JSON.parse(req.body.risks): [];
+        const enhancePlans = req.body.enhancePlans ? JSON.parse(req.body.enhancePlans): [];
+
+        if (!moduleId) {return res.status(400).json({message: 'Module ID required'})};
+
+        // file uploads - Multer adds a file object to the request
+        const evidenceUploadPath = req.files?.evidenceUpload?.[0]?.path;
+        const evidenceUploadOriginalName = req.files?.evidenceUpload?.[0]?.originalname;
+        const feedbackUploadPath = req.files?.feedbackUpload?.[0]?.path;
+        const feedbackUploadOriginalName = req.files?.feedbackUpload?.[0]?.originalname;
+
+        // Create review document - UPDATE FOR DRAFT SAVE
+        const newDraftReview = new Review({module: moduleId,
+            // Save any provided data, or default to an empty string/array
+            enhanceUpdate: enhanceUpdate || '', studentAttainment: studentAttainment || '',
+            moduleFeedback: moduleFeedback || '', goodPractice, risks, enhancePlans,
+            statementEngagement: statementEngagement || null,
+            statementLearning : statementLearning || null,
+            statementTimetable: statementTimetable || null, completedBy: completedBy || '',
+            status: 'In Progress', // Update status - ALWAYS SET TO IN PROGRESS
+            evidenceUpload: evidenceUploadPath, feedbackUpload: feedbackUploadPath,
+        evidenceUpload_originalName: evidenceUploadOriginalName, feedbackUpload_originalName: feedbackUploadOriginalName});
+
+        await newDraftReview.save();
+        res.status(201).json({review: newDraftReview, message: 'Draft saved successfully.'});
+    }
+
+    catch (error) {
+        console.error('Error saving draft review:', error);
+        res.status(500).json({ message: 'Server error' });
+    }
+} 
