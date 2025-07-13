@@ -1,5 +1,5 @@
 import express from 'express';
-import {createReview} from "../controllers/review.controller.js";
+import {createReview, saveDraft} from "../controllers/review.controller.js";
 import {getReviewById} from "../controllers/review.controller.js";
 import {getReviewByModuleCode} from "../controllers/review.controller.js";
 import {getEmailsNonCompleteReviews} from "../controllers/review.controller.js";
@@ -13,6 +13,9 @@ router.get('/noncomplete/emails', getEmailsNonCompleteReviews)
 
 // @route POST /api/reviews - UPDATE: add upload middleware
 router.post('/', upload, createReview);
+
+// @route POST /api/reviews/draft - UPDATE: for partial save
+router.post('/draft', upload, saveDraft)
 
 // @route   GET /api/reviews/lookup/by-module?code=AC11001&year=2025
 router.get('/lookup/by-module', getReviewByModuleCode);
