@@ -1,8 +1,7 @@
 
 import {useState, useEffect} from 'react';
 
-import { Link, useParams } from 'react-router-dom'; // Import useParams
-
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 // MUI Components
@@ -43,7 +42,9 @@ const CreateReview = () => {
 
     // UPDATE - Get module code from URL if present
     const { moduleCode: paramModuleCode } = useParams();
-
+    
+    // FOR NAVIGATION TO SUBMIT ROUTE AFTER SUBMISSION
+    const navigate = useNavigate();
 
     // State for the module lookup
     const [moduleCode, setModuleCode] = useState(paramModuleCode || ''); // Pre-fill if it's in the URL
@@ -74,6 +75,10 @@ const CreateReview = () => {
     const [submitError, setSubmitError] = useState('');
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
+    // UPDATE: State for file uploads
+    const [evidenceUpload, setEvidenceUpload] = useState(null);
+    const [feedbackUpload, setFeedbackUpload] = useState(null);
+
     // Debounce the module code input to prevent API calls on every keystroke
     const debModuleCode = useDebounce(moduleCode, 500) // 500ms delay
 
@@ -94,7 +99,14 @@ const CreateReview = () => {
             try {
                 // UPDATE: Use the new API endpoint structure
                 const response = await axios.get(`http://localhost:5000/api/modules/${debModuleCode}`);
+
                 setFoundModule(response.data);
+
+                // UPDATE - If an existing review was found, set the error message
+                if (response.data.existingReviewId) {
+                    setLookupError(`A review for this module has already been submitted for ${new Date().getFullYear()}.`)
+                }
+
             }
             catch (err) {
                 setFoundModule(null);
@@ -131,8 +143,36 @@ const CreateReview = () => {
         list.splice(index, 1);
         setter(list);
     };
+
+    // UPDATE: FUNCTION TO RESET THE FORM AFTER SUBMISSION
+    const resetForm = () => {
+        setModuleCode('');
+        setFoundModule(null);
+        setLookupError('');
+        
+        setEnhanceUpdate('');
+        setStudentAttainment('');
+        setModuleFeedback('');
+        setGoodPractice([{ theme: '', description: '' }]);
+        setRisks([{ theme: '', description: '' }]);
+        setHasEnhancePlans(false);
+        setEnhancePlans([{ theme: '', description: '' }]);
+        setStatementEngagement('');
+        setStatementLearning('');
+        setStatementTimetable('');
+        setCompletedBy('');
+
+        setEvidenceUpload(null);
+        setFeedbackUpload(null);
+
+        setSubmitError('');
+        setSubmitSuccess(false); // hide the success message
+
+        // NAVIGATE TO SUBMIT PAGE
+        navigate('/create-review');
+    };
     
-    // --- UPDATE: Submission handler now includes all new fields ---
+    // --- UPDATE: Submission handler now includes all new fields + FILE UPLOADS ---
     const handleSubmit = async(e) => {
         e.preventDefault();
         if (!foundModule) {
@@ -143,19 +183,44 @@ const CreateReview = () => {
         setSubmitError('');
         setSubmitSuccess(false);
 
-        try {
-            const reviewData = {
-                moduleId: foundModule._id, enhanceUpdate, studentAttainment, moduleFeedback,
-                goodPractice: goodPractice.filter(p => p.theme && p.description),
-                risks: risks.filter(p => p.theme && p.description),
-                // Only include enhancement plans if user chooses Yes
-                enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): [],
-            statementEngagement, statementLearning, statementTimetable, completedBy};
-            
-            await axios.post('http://localhost:5000/api/reviews', reviewData);
-            setSubmitSuccess(true);
-            // Optionally reset the form
+        // CREATE FormData object
+        const formData = new FormData();
+        // Append all texts and array data
+        formData.append('moduleId', foundModule._id);
+        formData.append('enhanceUpdate', enhanceUpdate);
+        formData.append('studentAttainment', studentAttainment);
+        formData.append('moduleFeedback', moduleFeedback);
+        formData.append('completedBy', completedBy);
+        formData.append('statementEngagement', statementEngagement);
+        formData.append('statementLearning', statementLearning);
+        formData.append('statementTimetable', statementTimetable);
+        formData.append('goodPractice', JSON.stringify(goodPractice.filter(p => p.theme && p.description)));
+        formData.append('risks', JSON.stringify(risks.filter(p => p.theme && p.description)));
+        // Only include enhancement plans if user chooses Yes
+        formData.append('enhancePlans', JSON.stringify(hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description) : []));
 
+        // Append files if exists
+        if (evidenceUpload) {
+            formData.append('evidenceUpload', evidenceUpload);
+        }
+        if (feedbackUpload) {
+            formData.append('feedbackUpload', feedbackUpload);
+        }
+
+        try {
+            // SEND FORMDATA OBJECT
+
+            // const reviewData = {
+            //     moduleId: foundModule._id, enhanceUpdate, studentAttainment, moduleFeedback,
+            //     goodPractice: goodPractice.filter(p => p.theme && p.description),
+            //     risks: risks.filter(p => p.theme && p.description),
+            //     // Only include enhancement plans if user chooses Yes
+            //     enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): [],
+            // statementEngagement, statementLearning, statementTimetable, completedBy};
+            
+            // Axios will automatically set the correct 'Content-Type' header
+            await axios.post('http://localhost:5000/api/reviews', formData);
+            setSubmitSuccess(true);
         }
         catch (err) {
             setSubmitError('Failed to submit the review. Please try again.');
@@ -173,7 +238,7 @@ const CreateReview = () => {
                     <Alert severity="success" sx={{ width: '100%' }}>
                         Your review has been submitted successfully.
                     </Alert>
-                    <Button variant="contained" onClick={() => setSubmitSuccess(false)}>
+                    <Button variant="contained" onClick={resetForm}>
                         Submit New Review
                     </Button>
                 </Stack>
@@ -253,6 +318,7 @@ const CreateReview = () => {
                 onChange={(e) => setModuleCode(e.target.value.toUpperCase())}
                 disabled={!!paramModuleCode} error={!!lookupError} helperText={lookupError}/>
 
+
                 <Collapse in={!!foundModule && !!specificVariant}>
                     {/* --- Add the correct JSX to display module details here --- */}
                     {specificVariant && (
@@ -271,7 +337,7 @@ const CreateReview = () => {
                 </Collapse>
             </Paper>
 
-            <Collapse in={!!foundModule && !!specificVariant}>
+            <Collapse in={!!foundModule && !!specificVariant && !foundModule.existingReviewId}>
                 {/* --- Section 2: Reflective Analysis --- */}
                 <Paper elevation={2} sx={{ p: 3, my: 2 }}>
                     <Typography variant="h6">2. Reflective Analysis</Typography>
@@ -313,10 +379,34 @@ const CreateReview = () => {
                                     {renderThemedPointSection("Enhancement Plans", enhancePlans, setEnhancePlans)}
                             </Collapse>
                 </Paper>
+
+                {/* --- NEW Section: Upload Evidence --- */}
+                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                    <Typography variant="h6">4. Upload Evidence</Typography>
+                    <Typography variant="body2" color="textSecondary" sx={{mb: 2}}>
+                        Upload the evidence report and student feedback.
+                    </Typography>
+
+                    <Stack direction="row" spacing={2} sx={{ my: 2 }} alignItems="center">
+                        <Button variant="outlined" component="label">
+                            Upload Evidence Report
+                            <input type="file" hidden onChange={(e) => setEvidenceUpload(e.target.files[0])} />
+                        </Button>
+                        {evidenceUpload && <Typography variant="body1">{evidenceUpload.name}</Typography>}
+                    </Stack>
+                    <Stack direction="row" spacing={2} sx={{ my: 2 }} alignItems="center">
+                        <Button variant="outlined" component="label">
+                            Upload Student Feedback
+                            <input type="file" hidden onChange={(e) => setFeedbackUpload(e.target.files[0])} />
+                        </Button>
+                        {feedbackUpload && <Typography variant="body1">{feedbackUpload.name}</Typography>}
+                    </Stack>
+
+                </Paper>
                 
                 {/* --- Section 4: Submission --- */}
                 <Paper elevation={2} sx={{ p: 3, my: 2 }}>
-                    <Typography variant="h6">4. Submission</Typography>
+                    <Typography variant="h6">5. Submission</Typography>
                     <TextField fullWidth required label="Completed By (Full Name)" value={completedBy} onChange={(e) => setCompletedBy(e.target.value)} />
                     <Button sx={{mt: 2}} type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
                         {submitLoading ? 'Submitting...' : 'Submit Review'}
@@ -324,10 +414,6 @@ const CreateReview = () => {
                     {submitError && <Alert severity="error" sx={{ mt: 2 }}>{submitError}</Alert>}
                 </Paper>
             </Collapse>
-
-
-
-            
 
 
        </Box>
