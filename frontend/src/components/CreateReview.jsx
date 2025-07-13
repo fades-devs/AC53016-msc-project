@@ -1,7 +1,8 @@
 
 import {useState, useEffect} from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom'; // Import useParams
+
 
 import axios from 'axios';
 // MUI Components
@@ -24,7 +25,9 @@ import {
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-const themes = ['Assessment', 'Learning and Teaching', 'Course Design and Development', 'Student Engagement'];
+// --- UPDATE: Import the themes from your constants file ---
+import { themes } from '../constants/filterOptions';
+
 
 const CreateReview = () => {
 
@@ -38,14 +41,19 @@ const CreateReview = () => {
         return debValue;
     };
 
+    // UPDATE - Get module code from URL if present
+    const { moduleCode: paramModuleCode } = useParams();
+
+
     // State for the module lookup
-    const [moduleCode, setModuleCode] = useState('');
+    const [moduleCode, setModuleCode] = useState(paramModuleCode || ''); // Pre-fill if it's in the URL
     const [foundModule, setFoundModule] = useState(null);
     const [lookupLoading, setLookupLoading] = useState(false);
     const [lookupError, setLookupError] = useState('');
 
     // state for date filter
-    const [dateFilter, setDateFilter] = useState('');
+    // const [dateFilter, setDateFilter] = useState('');
+
     // State for the review form fields
     const [enhanceUpdate, setEnhanceUpdate] = useState('')
     const [studentAttainment, setStudentAttainment] = useState('')
@@ -54,6 +62,13 @@ const CreateReview = () => {
     const [risks, setRisks] = useState([{theme: '', description: ''}])
     const [hasEnhancePlans, setHasEnhancePlans] = useState(false);
     const [enhancePlans, setEnhancePlans] = useState([{theme: '', description: ''}])
+
+    // --- UPDATE: State for added DB fields ---
+    const [statementEngagement, setStatementEngagement] = useState('');
+    const [statementLearning, setStatementLearning] = useState('');
+    const [statementTimetable, setStatementTimetable] = useState('');
+    const [completedBy, setCompletedBy] = useState('');
+
     // State for form submission
     const [submitLoading, setSubmitLoading] = useState(false);
     const [submitError, setSubmitError] = useState('');
@@ -62,7 +77,7 @@ const CreateReview = () => {
     // Debounce the module code input to prevent API calls on every keystroke
     const debModuleCode = useDebounce(moduleCode, 500) // 500ms delay
 
-    const yearDeb = useDebounce(dateFilter, 500)
+    // const yearDeb = useDebounce(dateFilter, 500)
 
     // Effect to trigger the module lookup when the debounced code changes
     useEffect(() => {
@@ -77,7 +92,8 @@ const CreateReview = () => {
             setFoundModule(null);
 
             try {
-                const response = await axios.get(`http://localhost:5000/api/modules/lookup?code=${debModuleCode}`);
+                // UPDATE: Use the new API endpoint structure
+                const response = await axios.get(`http://localhost:5000/api/modules/${debModuleCode}`);
                 setFoundModule(response.data);
             }
             catch (err) {
@@ -115,7 +131,8 @@ const CreateReview = () => {
         list.splice(index, 1);
         setter(list);
     };
-    // Handler for form submission
+    
+    // --- UPDATE: Submission handler now includes all new fields ---
     const handleSubmit = async(e) => {
         e.preventDefault();
         if (!foundModule) {
@@ -132,7 +149,8 @@ const CreateReview = () => {
                 goodPractice: goodPractice.filter(p => p.theme && p.description),
                 risks: risks.filter(p => p.theme && p.description),
                 // Only include enhancement plans if user chooses Yes
-                enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): []};
+                enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): [],
+            statementEngagement, statementLearning, statementTimetable, completedBy};
             
             await axios.post('http://localhost:5000/api/reviews', reviewData);
             setSubmitSuccess(true);
@@ -203,41 +221,80 @@ const CreateReview = () => {
        </Stack>
    );
 
-   const handledateFilterChange = (e) => {
-        setDateFilter(e.target.value);
-    };
+   // Helper for rendering statement radio groups to avoid repetition
+    const renderStatementRadioGroup = (label, value, setter) => (
+        <FormControl component="fieldset" margin="normal">
+            <FormLabel component="legend">{label}</FormLabel>
+            <RadioGroup row value={value} onChange={(e) => setter(e.target.value)}>
+                {['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree'].map(option => (
+                    <FormControlLabel key={option} value={option} control={<Radio />} label={option} />
+                ))}
+            </RadioGroup>
+        </FormControl>
+    );
+
+//    const handledateFilterChange = (e) => {
+//         setDateFilter(e.target.value);
+//     };
+
+    // --- UPDATE: Find the specific variant to display its details ---
+    const specificVariant = foundModule?.variants.find(
+        (variant) => variant.code === debModuleCode
+    );
 
     return (
-        <Box component="form" onSubmit={handleSubmit}>
-            <Typography>1. Module Details</Typography>
-            <TextField label="Module Code" value={moduleCode} onChange={(e) => setModuleCode(e.target.value.toUpperCase())}/>
-            <Collapse in={!!foundModule}>
-                <Typography variant="h6" gutterBottom>Module Details</Typography>
-                <Typography>Title: {foundModule?.title}</Typography>
-                <Typography>Area: {foundModule?.area}</Typography>
-                <Typography>Level: {foundModule?.level}</Typography>
-                <Typography>Module Lead: {foundModule?.lead.firstName} {foundModule?.lead.lastName}</Typography>
+        <Box component="form" onSubmit={handleSubmit} sx={{ '& .MuiTextField-root': { my: 1 } }}>
+            <Typography variant="h5" gutterBottom>Submit a Module Review</Typography>
 
-                <Grid item xs={12} sm={6} md={3}>
-                    <TextField label="Year" name="year" type="number" value={dateFilter} onChange={handledateFilterChange} />
-                </Grid>
-                <Link to={`/get-review/${moduleCode}?year=${dateFilter}`} target="_blank" rel="noopener noreferrer"><Typography>View {dateFilter} Report</Typography></Link>
-            </Collapse>
+            {/* --- Section 1: Module Details --- */}
+            <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                <Typography variant="h6">1. Module Details</Typography>
+                <TextField fullWidth label="Module Code" value={moduleCode}
+                onChange={(e) => setModuleCode(e.target.value.toUpperCase())}
+                disabled={!!paramModuleCode} error={!!lookupError} helperText={lookupError}/>
 
-            {/* Review Details Section */}
-            <Collapse in={!!foundModule}>
-                <Stack>
-                    <Box sx={{ mt: 4 }}>
-                        <Typography variant="h6">2. Reflective Analysis</Typography>
-                        <TextField fullWidth label="Enhancement Plan Updates" multiline rows={2} value={enhanceUpdate} onChange={(e) => setEnhanceUpdate(e.target.value)}/>
-                        <TextField fullWidth label="Student Attainment" multiline rows={2} value={studentAttainment} onChange={(e) => setStudentAttainment(e.target.value)}/>
-                        <TextField fullWidth label="Module Feedback" multiline rows={2} value={moduleFeedback} onChange={(e) => setModuleFeedback(e.target.value)}/>
+                <Collapse in={!!foundModule && !!specificVariant}>
+                    {/* --- Add the correct JSX to display module details here --- */}
+                    {specificVariant && (
+                         <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
+                            <Typography><b>Title:</b> {foundModule.title}</Typography>
+                            <Typography><b>Area:</b> {foundModule.area}</Typography>
+                            <Typography><b>Level:</b> {specificVariant.level}</Typography>
+                            <Typography><b>Period:</b> {specificVariant.period}</Typography>
+                            <Typography><b>Location:</b> {foundModule.location}</Typography>
+                            <Typography><b>Partnership:</b> {foundModule.partnership}</Typography>
+                            <Typography>
+                                <b>Module Lead:</b> {specificVariant.lead?.firstName} {specificVariant.lead?.lastName}
+                            </Typography>
+                         </Box>
+                    )}
+                </Collapse>
+            </Paper>
 
-                        {renderThemedPointSection("Good Practice", goodPractice, setGoodPractice)}
-                        {renderThemedPointSection("Risks", risks, setRisks)}
-                    </Box>
-                    <Box sx={{ mt: 4 }}>
-                        <Typography variant="h6">3. Enhancement Plans</Typography>
+            <Collapse in={!!foundModule && !!specificVariant}>
+                {/* --- Section 2: Reflective Analysis --- */}
+                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                    <Typography variant="h6">2. Reflective Analysis</Typography>
+                    <TextField fullWidth required label="Enhancement Plan Updates" multiline rows={2} value={enhanceUpdate} onChange={(e) => setEnhanceUpdate(e.target.value)}/>
+                    <TextField fullWidth label="Student Attainment" multiline rows={2} value={studentAttainment} onChange={(e) => setStudentAttainment(e.target.value)}/>
+                    <TextField fullWidth label="Module Feedback" multiline rows={2} value={moduleFeedback} onChange={(e) => setModuleFeedback(e.target.value)}/>
+                    
+                    {renderThemedPointSection("Good Practice", goodPractice, setGoodPractice)}
+                    {renderThemedPointSection("Risks", risks, setRisks)}
+
+                    {/* --- Student Statement Inputs --- */}
+                    <Stack direction="column" sx={{ mt: 3, borderTop: 1, borderColor: 'divider', pt: 2 }}>
+                         <Typography variant="subtitle1" gutterBottom>Student Statements</Typography>
+                         {renderStatementRadioGroup("Students were actively engaged in the module's activities and learning process.", statementEngagement, setStatementEngagement)}
+                         {renderStatementRadioGroup("The teaching room and equipment were suitable for the effective delivery of this module.", statementLearning, setStatementLearning)}
+                         {renderStatementRadioGroup("The timetable and scheduling of this module were convenient to both staff and students.", statementTimetable, setStatementTimetable)}
+                    </Stack>
+                </Paper>
+                
+                {/* --- Section 3: Enhancement Plans --- */}
+                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                    {/* ... enhancement plans section ... */}
+                    <Typography variant="h6">3. Enhancement Plans</Typography>
                         <FormControl component="fieldset">
                             <FormLabel>Any enhancement plans?</FormLabel>
                                 <RadioGroup row value={hasEnhancePlans} onChange={(e) => {
@@ -255,14 +312,24 @@ const CreateReview = () => {
                             <Collapse in={hasEnhancePlans}>
                                     {renderThemedPointSection("Enhancement Plans", enhancePlans, setEnhancePlans)}
                             </Collapse>
-                    </Box>
-
-                    <Button type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
+                </Paper>
+                
+                {/* --- Section 4: Submission --- */}
+                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                    <Typography variant="h6">4. Submission</Typography>
+                    <TextField fullWidth required label="Completed By (Full Name)" value={completedBy} onChange={(e) => setCompletedBy(e.target.value)} />
+                    <Button sx={{mt: 2}} type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
                         {submitLoading ? 'Submitting...' : 'Submit Review'}
                     </Button>
-
-                </Stack>
+                    {submitError && <Alert severity="error" sx={{ mt: 2 }}>{submitError}</Alert>}
+                </Paper>
             </Collapse>
+
+
+
+            
+
+
        </Box>
     );
 }
