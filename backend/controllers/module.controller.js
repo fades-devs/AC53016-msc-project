@@ -1,21 +1,29 @@
 // Import mongoose model for modules
 import Module from "../models/module.model.js";
 
-// @route   GET /api/modules/lookup?code=AC0001
-export const findModuleByCode = async(req, res) => {
+// @route   GET /api/modules/:moduleCode
+export const getModuleByCode = async (req, res) => {
+
     try {
-        const moduleCode = req.query.code;
-        if (!moduleCode) {return res.status(400).json({message: 'Module code required'});}
-    
-        // Retrieve the document from Module collection in MongoDB DB (populate the module lead field)
-        const module = await Module.findOne({code: {$regex: new RegExp(`^${moduleCode}$`, 'i')}}).populate('lead', 'firstName lastName');
-        if (!module) {return res.status(404).json({ message: 'Module not found' });}
-        // Send success status code (200 OK) and module object in JSON format as response
+        const moduleCode = req.params.moduleCode;
+
+        // Find the module document using the variant code
+        const module = await Module.findOne({ 
+            'variants.code': { $regex: new RegExp(`^${moduleCode}$`, 'i') } 
+        })
+        // Populate the 'lead' field within the 'variants' array
+        .populate({path: 'variants.lead', select: 'firstName lastName email'}) // Select which user fields to return
+
+        if (!module) {
+            return res.status(404).json({ message: 'Module not found' });
+        }
+
+        // Send the complete module object with populated lead data
         res.status(200).json(module);
+
     }
     catch (error) {
         console.error('Error finding module:', error);
-        // Send sever error status code and error message
         res.status(500).json({ message: 'Server error' });
     }
 }
