@@ -75,6 +75,9 @@ const CreateReview = () => {
     const [submitError, setSubmitError] = useState('');
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
+    // UPDATE - STATE FOR SAVE DRAFT SUCCESS MESSAGE
+    const [saveSuccess, setSaveSuccess] = useState('');
+
     // UPDATE: State for file uploads
     const [evidenceUpload, setEvidenceUpload] = useState(null);
     const [feedbackUpload, setFeedbackUpload] = useState(null);
@@ -224,6 +227,59 @@ const CreateReview = () => {
         }
         catch (err) {
             setSubmitError('Failed to submit the review. Please try again.');
+            console.error(err);
+        }
+        finally {
+            setSubmitLoading(false);
+        }
+    };
+
+    // UPDATE: PARTIAL SAVE DRAFT HANDLER
+    const handleSaveDraft = async(e) => {
+        // No e.preventDefault() as this button is not type="submit"
+        if (!foundModule) {
+            setSubmitError('You must find and select a valid module before saving a review draft.');
+            return;
+        }
+        setSubmitLoading(true);
+        setSubmitError('');
+        setSaveSuccess(false); // Clear previous messages
+
+        // CREATE FormData object
+        const formData = new FormData();
+
+        // Append all texts and array data
+        formData.append('moduleId', foundModule._id);
+        formData.append('enhanceUpdate', enhanceUpdate);
+        formData.append('studentAttainment', studentAttainment);
+        formData.append('moduleFeedback', moduleFeedback);
+        formData.append('completedBy', completedBy);
+        formData.append('statementEngagement', statementEngagement);
+        formData.append('statementLearning', statementLearning);
+        formData.append('statementTimetable', statementTimetable);
+        formData.append('goodPractice', JSON.stringify(goodPractice.filter(p => p.theme && p.description)));
+        formData.append('risks', JSON.stringify(risks.filter(p => p.theme && p.description)));
+        // Only include enhancement plans if user chooses Yes
+        formData.append('enhancePlans', JSON.stringify(hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description) : []));
+
+        // Append files if exists
+        if (evidenceUpload) {
+            formData.append('evidenceUpload', evidenceUpload);
+        }
+        if (feedbackUpload) {
+            formData.append('feedbackUpload', feedbackUpload);
+        }
+
+        try {
+            
+            await axios.post('http://localhost:5000/api/reviews/draft', formData);
+            setSaveSuccess('Draft saved successfully! You will be redirected.');
+            setTimeout(() => {
+                navigate('/module-list'); // Redirect to the module list page after 2 seconds
+            }, 2000);
+        }
+        catch (err) {
+            setSubmitError('Failed to save the draft review. Please try again.');
             console.error(err);
         }
         finally {
@@ -403,15 +459,26 @@ const CreateReview = () => {
                     </Stack>
 
                 </Paper>
+
                 
                 {/* --- Section 4: Submission --- */}
                 <Paper elevation={2} sx={{ p: 3, my: 2 }}>
                     <Typography variant="h6">5. Submission</Typography>
                     <TextField fullWidth required label="Completed By (Full Name)" value={completedBy} onChange={(e) => setCompletedBy(e.target.value)} />
-                    <Button sx={{mt: 2}} type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
+                    {/* --- Container for button --- */}
+                    <Stack direction='row' spacing={2} sx={{mt: 2}}>
+                        <Button sx={{mt: 2}} type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
                         {submitLoading ? 'Submitting...' : 'Submit Review'}
-                    </Button>
+                        </Button>
+                        {/* --- Partial Save --- */}
+                        <Button variant='outlined' size='large' onClick={handleSaveDraft} disabled={submitLoading || !foundModule}>
+                            Save Draft
+                        </Button>
+                    </Stack>
+
                     {submitError && <Alert severity="error" sx={{ mt: 2 }}>{submitError}</Alert>}
+                    {saveSuccess && <Alert severity="info" sx={{ mt: 2 }}>{saveSuccess}</Alert>}
+
                 </Paper>
             </Collapse>
 
