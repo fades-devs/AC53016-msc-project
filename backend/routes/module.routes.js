@@ -1,5 +1,5 @@
 import express from 'express';
-import {findModuleByCode, getModules} from "../controllers/module.controller.js";
+import {getModuleByCode, getModules} from "../controllers/module.controller.js";
 
 // Create a router instance (to handle routes)
 const router = express.Router();
@@ -10,7 +10,7 @@ const router = express.Router();
 // /api/modules?level=1
 router.get('/', getModules);
 
-// @route GET /api/modules/lookup?code=AC0001
-router.get('/lookup', findModuleByCode);
+// @route   GET /api/modules/:moduleCode
+router.get('/:moduleCode', getModuleByCode);
 
 export default router;
