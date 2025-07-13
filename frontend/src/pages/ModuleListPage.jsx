@@ -151,7 +151,7 @@ const ModuleListPage = () => {
                     <Stack direction="column">
                         {/* Use module._id to create a new review for this module */}
                         {/* rel="noopener noreferrer" is a security best practice for new tabs */}
-                        <Button component={Link} to={`/create-review/${module._id}`} target='_blank'
+                        <Button component={Link} to={`/create-review/${module.code}`} target='_blank'
                     rel='noopener noreferrer' align='center' size='small'>Submit Review</Button>
                     </Stack>
                 );

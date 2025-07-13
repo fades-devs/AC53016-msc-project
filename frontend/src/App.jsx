@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/module-list" element={<ModuleListPage />} />
           <Route path="/create-review" element={<CreateReview />} />
-          <Route path="/create-review/:module._id" element={<CreateReview />} />
+          <Route path="/create-review/:moduleCode?" element={<CreateReview />} />
           <Route path="/get-review/:module.reviewId" element={<GetReview />} />
           <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
