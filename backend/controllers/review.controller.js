@@ -149,16 +149,32 @@ export const createReview = async(req, res) => {
 
     try {
         // Get module ID and review data from the request body
-        const {moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks, enhancePlans, 
+        const {moduleId, enhanceUpdate, studentAttainment, moduleFeedback, 
             statementEngagement, statementLearning, statementTimetable, completedBy} = req.body
+
+        // --- PARSE STRINGIFIED ARRAYS ---
+        const goodPractice = JSON.parse(req.body.goodPractice);
+        const risks = JSON.parse(req.body.risks);
+        const enhancePlans = JSON.parse(req.body.enhancePlans);
+
         if (!moduleId) {return res.status(400).json({message: 'Module ID required'})};
-        // Create review document
+
+        // UPDATE: file uploads - Multer adds a file object to the request
+        const evidenceUploadPath = req.files?.evidenceUpload?.[0]?.path;
+        const evidenceUploadOriginalName = req.files?.evidenceUpload?.[0]?.originalname;
+        const feedbackUploadPath = req.files?.feedbackUpload?.[0]?.path;
+        const feedbackUploadOriginalName = req.files?.feedbackUpload?.[0]?.originalname;
+
+        // Create review document - UPDATE WITH FILE FIELDS
         const newReview = new Review({module: moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks,
-            statementEngagement, statementLearning, statementTimetable, completedBy, enhancePlans, status: 'Completed'}); // Update status
+            statementEngagement, statementLearning, statementTimetable, completedBy, enhancePlans, status: 'Completed', // Update status
+            evidenceUpload: evidenceUploadPath, feedbackUpload: feedbackUploadPath,
+        evidenceUpload_originalName: evidenceUploadOriginalName, feedbackUpload_originalName: feedbackUploadOriginalName});
 
         await newReview.save();
         res.status(201).json(newReview);
     }
+
     catch (error) {
         console.error('Error creating review:', error);
         res.status(500).json({ message: 'Server error' });
