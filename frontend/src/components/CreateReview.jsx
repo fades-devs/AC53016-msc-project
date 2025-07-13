@@ -75,6 +75,10 @@ const CreateReview = () => {
     const [submitError, setSubmitError] = useState('');
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
+    // UPDATE: State for file uploads
+    const [evidenceUpload, setEvidenceUpload] = useState(null);
+    const [feedbackUpload, setFeedbackUpload] = useState(null);
+
     // Debounce the module code input to prevent API calls on every keystroke
     const debModuleCode = useDebounce(moduleCode, 500) // 500ms delay
 
@@ -158,6 +162,9 @@ const CreateReview = () => {
         setStatementTimetable('');
         setCompletedBy('');
 
+        setEvidenceUpload(null);
+        setFeedbackUpload(null);
+
         setSubmitError('');
         setSubmitSuccess(false); // hide the success message
 
@@ -165,7 +172,7 @@ const CreateReview = () => {
         navigate('/create-review');
     };
     
-    // --- UPDATE: Submission handler now includes all new fields ---
+    // --- UPDATE: Submission handler now includes all new fields + FILE UPLOADS ---
     const handleSubmit = async(e) => {
         e.preventDefault();
         if (!foundModule) {
@@ -176,19 +183,44 @@ const CreateReview = () => {
         setSubmitError('');
         setSubmitSuccess(false);
 
-        try {
-            const reviewData = {
-                moduleId: foundModule._id, enhanceUpdate, studentAttainment, moduleFeedback,
-                goodPractice: goodPractice.filter(p => p.theme && p.description),
-                risks: risks.filter(p => p.theme && p.description),
-                // Only include enhancement plans if user chooses Yes
-                enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): [],
-            statementEngagement, statementLearning, statementTimetable, completedBy};
-            
-            await axios.post('http://localhost:5000/api/reviews', reviewData);
-            setSubmitSuccess(true);
-            // The form fields will NOT be reset here, the success screen will show first
+        // CREATE FormData object
+        const formData = new FormData();
+        // Append all texts and array data
+        formData.append('moduleId', foundModule._id);
+        formData.append('enhanceUpdate', enhanceUpdate);
+        formData.append('studentAttainment', studentAttainment);
+        formData.append('moduleFeedback', moduleFeedback);
+        formData.append('completedBy', completedBy);
+        formData.append('statementEngagement', statementEngagement);
+        formData.append('statementLearning', statementLearning);
+        formData.append('statementTimetable', statementTimetable);
+        formData.append('goodPractice', JSON.stringify(goodPractice.filter(p => p.theme && p.description)));
+        formData.append('risks', JSON.stringify(risks.filter(p => p.theme && p.description)));
+        // Only include enhancement plans if user chooses Yes
+        formData.append('enhancePlans', JSON.stringify(hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description) : []));
 
+        // Append files if exists
+        if (evidenceUpload) {
+            formData.append('evidenceUpload', evidenceUpload);
+        }
+        if (feedbackUpload) {
+            formData.append('feedbackUpload', feedbackUpload);
+        }
+
+        try {
+            // SEND FORMDATA OBJECT
+
+            // const reviewData = {
+            //     moduleId: foundModule._id, enhanceUpdate, studentAttainment, moduleFeedback,
+            //     goodPractice: goodPractice.filter(p => p.theme && p.description),
+            //     risks: risks.filter(p => p.theme && p.description),
+            //     // Only include enhancement plans if user chooses Yes
+            //     enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): [],
+            // statementEngagement, statementLearning, statementTimetable, completedBy};
+            
+            // Axios will automatically set the correct 'Content-Type' header
+            await axios.post('http://localhost:5000/api/reviews', formData);
+            setSubmitSuccess(true);
         }
         catch (err) {
             setSubmitError('Failed to submit the review. Please try again.');
@@ -347,10 +379,34 @@ const CreateReview = () => {
                                     {renderThemedPointSection("Enhancement Plans", enhancePlans, setEnhancePlans)}
                             </Collapse>
                 </Paper>
+
+                {/* --- NEW Section: Upload Evidence --- */}
+                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                    <Typography variant="h6">4. Upload Evidence</Typography>
+                    <Typography variant="body2" color="textSecondary" sx={{mb: 2}}>
+                        Upload the evidence report and student feedback.
+                    </Typography>
+
+                    <Stack direction="row" spacing={2} sx={{ my: 2 }} alignItems="center">
+                        <Button variant="outlined" component="label">
+                            Upload Evidence Report
+                            <input type="file" hidden onChange={(e) => setEvidenceUpload(e.target.files[0])} />
+                        </Button>
+                        {evidenceUpload && <Typography variant="body1">{evidenceUpload.name}</Typography>}
+                    </Stack>
+                    <Stack direction="row" spacing={2} sx={{ my: 2 }} alignItems="center">
+                        <Button variant="outlined" component="label">
+                            Upload Student Feedback
+                            <input type="file" hidden onChange={(e) => setFeedbackUpload(e.target.files[0])} />
+                        </Button>
+                        {feedbackUpload && <Typography variant="body1">{feedbackUpload.name}</Typography>}
+                    </Stack>
+
+                </Paper>
                 
                 {/* --- Section 4: Submission --- */}
                 <Paper elevation={2} sx={{ p: 3, my: 2 }}>
-                    <Typography variant="h6">4. Submission</Typography>
+                    <Typography variant="h6">5. Submission</Typography>
                     <TextField fullWidth required label="Completed By (Full Name)" value={completedBy} onChange={(e) => setCompletedBy(e.target.value)} />
                     <Button sx={{mt: 2}} type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
                         {submitLoading ? 'Submitting...' : 'Submit Review'}
@@ -358,10 +414,6 @@ const CreateReview = () => {
                     {submitError && <Alert severity="error" sx={{ mt: 2 }}>{submitError}</Alert>}
                 </Paper>
             </Collapse>
-
-
-
-            
 
 
        </Box>
