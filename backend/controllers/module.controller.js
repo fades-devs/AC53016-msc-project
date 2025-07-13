@@ -1,5 +1,7 @@
 // Import mongoose model for modules
 import Module from "../models/module.model.js";
+import Review from '../models/review.model.js';
+
 
 // @route   GET /api/modules/:moduleCode
 export const getModuleByCode = async (req, res) => {
@@ -18,8 +20,23 @@ export const getModuleByCode = async (req, res) => {
             return res.status(404).json({ message: 'Module not found' });
         }
 
-        // Send the complete module object with populated lead data
-        res.status(200).json(module);
+        // --- UPDATE: LOGIC TO CHECK IF REVIEW EXISTS ---
+
+        // Define the start and end of the current year
+        const currentYear = new Date().getFullYear(); // This will be 2025
+        const startDate = new Date(currentYear, 0, 1);
+        const endDate = new Date(currentYear + 1, 0, 1);
+
+        // Check for an existing review for this module within the current year
+        const existingReview = await Review.findOne({module: module._id, createdAt: {$gte: startDate, $lt: endDate}});
+        // Add the review ID to the response if one exists
+        const moduleData = module.toObject(); // Convert to a plain object to add properties
+        if (existingReview) {
+            moduleData.existingReviewId = existingReview._id;
+        }
+
+        // Send the complete module object with populated lead data - modified object
+        res.status(200).json(moduleData);
 
     }
     catch (error) {

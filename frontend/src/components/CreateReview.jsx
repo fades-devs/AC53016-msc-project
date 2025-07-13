@@ -1,8 +1,7 @@
 
 import {useState, useEffect} from 'react';
 
-import { Link, useParams } from 'react-router-dom'; // Import useParams
-
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 // MUI Components
@@ -43,7 +42,9 @@ const CreateReview = () => {
 
     // UPDATE - Get module code from URL if present
     const { moduleCode: paramModuleCode } = useParams();
-
+    
+    // FOR NAVIGATION TO SUBMIT ROUTE AFTER SUBMISSION
+    const navigate = useNavigate();
 
     // State for the module lookup
     const [moduleCode, setModuleCode] = useState(paramModuleCode || ''); // Pre-fill if it's in the URL
@@ -94,7 +95,14 @@ const CreateReview = () => {
             try {
                 // UPDATE: Use the new API endpoint structure
                 const response = await axios.get(`http://localhost:5000/api/modules/${debModuleCode}`);
+
                 setFoundModule(response.data);
+
+                // UPDATE - If an existing review was found, set the error message
+                if (response.data.existingReviewId) {
+                    setLookupError(`A review for this module has already been submitted for ${new Date().getFullYear()}.`)
+                }
+
             }
             catch (err) {
                 setFoundModule(null);
@@ -131,6 +139,31 @@ const CreateReview = () => {
         list.splice(index, 1);
         setter(list);
     };
+
+    // UPDATE: FUNCTION TO RESET THE FORM AFTER SUBMISSION
+    const resetForm = () => {
+        setModuleCode('');
+        setFoundModule(null);
+        setLookupError('');
+        
+        setEnhanceUpdate('');
+        setStudentAttainment('');
+        setModuleFeedback('');
+        setGoodPractice([{ theme: '', description: '' }]);
+        setRisks([{ theme: '', description: '' }]);
+        setHasEnhancePlans(false);
+        setEnhancePlans([{ theme: '', description: '' }]);
+        setStatementEngagement('');
+        setStatementLearning('');
+        setStatementTimetable('');
+        setCompletedBy('');
+
+        setSubmitError('');
+        setSubmitSuccess(false); // hide the success message
+
+        // NAVIGATE TO SUBMIT PAGE
+        navigate('/create-review');
+    };
     
     // --- UPDATE: Submission handler now includes all new fields ---
     const handleSubmit = async(e) => {
@@ -154,7 +187,7 @@ const CreateReview = () => {
             
             await axios.post('http://localhost:5000/api/reviews', reviewData);
             setSubmitSuccess(true);
-            // Optionally reset the form
+            // The form fields will NOT be reset here, the success screen will show first
 
         }
         catch (err) {
@@ -173,7 +206,7 @@ const CreateReview = () => {
                     <Alert severity="success" sx={{ width: '100%' }}>
                         Your review has been submitted successfully.
                     </Alert>
-                    <Button variant="contained" onClick={() => setSubmitSuccess(false)}>
+                    <Button variant="contained" onClick={resetForm}>
                         Submit New Review
                     </Button>
                 </Stack>
@@ -253,6 +286,7 @@ const CreateReview = () => {
                 onChange={(e) => setModuleCode(e.target.value.toUpperCase())}
                 disabled={!!paramModuleCode} error={!!lookupError} helperText={lookupError}/>
 
+
                 <Collapse in={!!foundModule && !!specificVariant}>
                     {/* --- Add the correct JSX to display module details here --- */}
                     {specificVariant && (
@@ -271,7 +305,7 @@ const CreateReview = () => {
                 </Collapse>
             </Paper>
 
-            <Collapse in={!!foundModule && !!specificVariant}>
+            <Collapse in={!!foundModule && !!specificVariant && !foundModule.existingReviewId}>
                 {/* --- Section 2: Reflective Analysis --- */}
                 <Paper elevation={2} sx={{ p: 3, my: 2 }}>
                     <Typography variant="h6">2. Reflective Analysis</Typography>
