@@ -174,7 +174,7 @@ export const getModules = async(req, res) => {
                     code: "$variants.code", level: "$variants.level", period: "$variants.period",
                     // Use the calculated fields
                     moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
-                    status: 1, reviewDate: "$createdAt"}
+                    status: 1, reviewDate: "$createdAt", year: { $ifNull: [{ $year: "$createdAt" }, null] }}
             },
 
             // UPDATE PAGINATION FIX: Add a sort stage BEFORE pagination to ensure consistent order

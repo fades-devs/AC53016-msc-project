@@ -91,32 +91,38 @@ export const getReviewByStatus = async(req, res) => {
 
 
 // @route   GET /api/reviews/lookup/by-module?code=AC11001&year=2025
-export const getReviewByModuleCode = async(req, res) => {
+export const getReviewByCodeAndYear = async(req, res) => {
     try {
+
         const {code, year} = req.query;
         if (!code) {return res.status(400).json({message: 'Module code required'});}
         
-        // 1. Find the module by its code to get the _id
-        const module = await Module.findOne({code: {$regex: new RegExp(`^${code}$`, 'i')}});
+        // UPDATE: Find the module by its code to get the _id - within variants array
+        const module = await Module.findOne({'variants.code': {$regex: new RegExp(`^${code}$`, 'i')}});
         if (!module) {
-            console.log(match)
             return res.status(404).json({ message: 'Module not found' });}
 
-        // 2. Build the filter for the Review query
+        // UPDATE: Build the filter for the Review query (year optional)
         // Start with the base filter, which is the module's ID.
         const match = {module: module._id};
-        // If a year is provided, add the date filter to the reviewFilter object.
-        if (year) {
-            const yearNumber = parseInt(year, 10); // Use a radix for safety
-            // Add the date filter to the match object only if the year is a valid number
-            if (!isNaN(yearNumber)) {
-                const startDate = new Date(yearNumber, 0, 1);      // Jan 1st of the year
-                const endDate = new Date(yearNumber + 1, 0, 1);  // Jan 1st of the next year
-                match.createdAt = { $gte: startDate, $lt: endDate };
-            }
+
+        // If a year is provided, add the date filter to the reviewFilter object
+        // We'll set a default to the current year if no year is passed
+        const yearQuery = year ? parseInt(year, 10) : new Date().getFullYear();
+        if (!isNaN(yearQuery)) {
+            const startDate = new Date(yearQuery, 0, 1);      // Jan 1st of the year
+            const endDate = new Date(yearQuery + 1, 0, 1);  // Jan 1st of the next year
+            match.createdAt = { $gte: startDate, $lt: endDate };
         }
-        // 3. Find the review using the dynamically built + populate
-        const review = await Review.findOne(match).populate({path: 'module', populate: {path: 'lead', select: 'firstName lastName'}})
+
+        // UPDATE: Find the review using the dynamically built + populate
+        // The 'lead' field is inside the 'variants' array of the 'module' document.
+        const review = await Review.findOne(match).populate({path: 'module', // Populate the 'module' field in the Review document
+            populate:{
+                path: 'variants.lead', // Within the now-populated module, populate the 'lead' field inside the 'variants' array
+                select: 'firstName lastName email'} // Select which fields from the User model to include
+            })
+
         if (!review) {return res.status(404).json({ message: "No review has been submitted for this module yet." });}
         res.status(200).json(review);
     }
@@ -143,6 +149,7 @@ export const getReviewById = async(req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
 
 // @route   POST /api/reviews
 export const createReview = async(req, res) => {

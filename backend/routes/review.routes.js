@@ -1,7 +1,6 @@
 import express from 'express';
-import {createReview, saveDraft} from "../controllers/review.controller.js";
+import {createReview, getReviewByCodeAndYear, saveDraft} from "../controllers/review.controller.js";
 import {getReviewById} from "../controllers/review.controller.js";
-import {getReviewByModuleCode} from "../controllers/review.controller.js";
 import {getEmailsNonCompleteReviews} from "../controllers/review.controller.js";
 
 import {upload} from '../middleware/upload.js'; // import upload middleware
@@ -18,7 +17,7 @@ router.post('/', upload, createReview);
 router.post('/draft', upload, saveDraft)
 
 // @route   GET /api/reviews/lookup/by-module?code=AC11001&year=2025
-router.get('/lookup/by-module', getReviewByModuleCode);
+router.get('/lookup/by-module', getReviewByCodeAndYear);
 
 // @route   GET /api/reviews/:id
 router.get('/:id', getReviewById);
