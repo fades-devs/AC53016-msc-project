@@ -76,7 +76,7 @@ const NavBar = () => {
                         MenuListProps={{ 'aria-labelledby': 'modules-button' }}>
                         <MenuItem onClick={() => handleNavigate('/module-list')}>Module List</MenuItem>
                         <MenuItem onClick={() => handleNavigate('/create-review')}>Submit Review</MenuItem>
-                        <MenuItem onClick={() => handleNavigate('/view-report')}>View Reports</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/get-review')}>View Reports</MenuItem>
                         <MenuItem onClick={() => handleNavigate('/send-reminder')}>Send Reminders</MenuItem>
                     </Menu>
                 </Box>
