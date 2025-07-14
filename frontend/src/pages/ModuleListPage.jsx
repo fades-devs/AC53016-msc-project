@@ -132,7 +132,7 @@ const ModuleListPage = () => {
                         {/* rel="noopener noreferrer" is a security best practice for new tabs */}
                         <Button component={Link} to={`/get-review?code=${module.code}&year=${module.year}`} target='_blank'
                     rel='noopener noreferrer' align='center' size='small'>View Report</Button>
-                    <Button component={Link} to={`/edit-report/${module.reviewId}`} target='_blank'
+                    <Button component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'
                     rel='noopener noreferrer' align='center' size='small'>Edit Report</Button>
                     </Stack>
                     
@@ -142,7 +142,7 @@ const ModuleListPage = () => {
                     <Stack direction="column">
                         {/* Use module._id to create a new review for this module */}
                         {/* rel="noopener noreferrer" is a security best practice for new tabs */}
-                        <Button component={Link} to={`/edit-report/${module.reviewId}`} target='_blank'
+                        <Button component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'
                     rel='noopener noreferrer' align='center' size='small'>Continue Review</Button>
                     </Stack>
                 );

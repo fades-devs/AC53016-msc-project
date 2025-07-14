@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import { useParams, useSearchParams, useNavigate } from "react-router-dom";
+import { useParams, useSearchParams, useNavigate, Link } from "react-router-dom";
 
 import {
     Box, Button,
@@ -16,6 +16,7 @@ import {
     Link as MuiLink
 } from '@mui/material';
 import DescriptionIcon from '@mui/icons-material/Description';
+import EditIcon from '@mui/icons-material/Edit';
 
 // Helper component to display a key-value pair for module details
 const DetailItem = ({ label, value }) => (
@@ -150,7 +151,24 @@ const GetReview = () => {
     return (
 
         <Box>
-            <Typography variant="h5" gutterBottom>View Module Review</Typography>
+            
+            {/* --- UPDATE: Title and Edit Button --- */}
+            <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
+                <Typography variant="h5" gutterBottom sx={{ mb: 0 }}>
+                    View Module Review
+                </Typography>
+                {/* This button will only appear when review data is loaded */}
+                {reviewData && (
+                    <Button
+                        variant="contained"
+                        startIcon={<EditIcon />}
+                        component={Link}
+                        to={`/edit-review/${reviewData._id}`} // Link to the edit page with the review ID
+                    >
+                        Edit Report
+                    </Button>
+                )}
+            </Stack>
 
             {/* --- Section 1: Search Form --- */}
             <Paper elevation={2} sx={{ p: 3, my: 2 }}>
