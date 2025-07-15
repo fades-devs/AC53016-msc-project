@@ -71,7 +71,7 @@ const DashboardStats = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // State for the year filter, defaulting to the current year (2025 as requested)
+    // State for the year filter, defaulting to the current year
     const [year, setYear] = useState('2025');
     const debouncedYear = useDebounce(year, 500);
 

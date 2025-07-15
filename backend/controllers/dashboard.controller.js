@@ -92,7 +92,7 @@ export const getCountReviewByStatus = async (req, res) => {
             }
         });
 
-        // We must start the aggregation from the Module collection now.
+        // We must start the aggregation from the Module collection.
         const reviewCountByStatus = await Module.aggregate(pipeline);
 
         res.status(200).json(reviewCountByStatus);
@@ -535,7 +535,7 @@ export const getDashboardStats = async (req, res) => {
         const totalVariants = totalVariantsResult.length > 0 ? totalVariantsResult[0].totalVariants : 0;
         const completedVariantsInYear = completedVariantsData.length > 0 ? completedVariantsData[0].completedCount : 0;
 
-        // 9. THE KEY FIX: Calculate completion rate against ALL variants in the system.
+        // 9. Calculate completion rate against ALL variants in the system.
         const completionRate = totalVariants > 0
             ? (completedVariantsInYear / totalVariants) * 100
             : 0;

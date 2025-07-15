@@ -25,9 +25,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 // Define consistent colors for each status
 const STATUS_COLORS = {
-    'Completed': '#2e7d32', // A nice green
-    'In Progress': '#ed6c02', // A warm orange
-    'Not Started': '#bdbdbd', // A neutral grey
+    'Completed': '#2e7d32', // nice green
+    'In Progress': '#ed6c02', // warm orange
+    'Not Started': '#bdbdbd', // neutral grey
 };
 
 // Custom hook for debouncing user input
@@ -104,7 +104,7 @@ const CompletionChart = () => {
                     Module Status Overview
                 </Typography>
                 
-                {/* Filter Controls - Area filter has been removed */}
+                {/* Filter Controls - Area filter removed */}
                 <Grid container spacing={2} sx={{ mb: 3 }}>
                     <Grid item xs={12} sm={6} md={4}>
                         <TextField
