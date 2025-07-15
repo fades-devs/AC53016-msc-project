@@ -2,7 +2,7 @@ import express from 'express';
 import {getDashboardStats} from "../controllers/dashboard.controller.js";
 import {getCountGoodPracticeByTheme} from "../controllers/dashboard.controller.js";
 import {getCountEnhanceByTheme} from "../controllers/dashboard.controller.js";
-import {getReviewByStatus} from "../controllers/dashboard.controller.js";
+import {getCountReviewByStatus} from "../controllers/dashboard.controller.js";
 
 const router = express.Router();
 
@@ -16,6 +16,6 @@ router.get('/goodpractice-by-theme', getCountGoodPracticeByTheme)
 router.get('/enhancement-by-theme', getCountEnhanceByTheme)
 // @route GET /api/dashboard/stats/review-by-status
 // /api/dashboard/stats/review-by-status?area=Computing
-router.get('/review-by-status', getReviewByStatus)
+router.get('/review-by-status', getCountReviewByStatus)
 
 export default router;
