@@ -32,6 +32,10 @@ const reviewSchema = new mongoose.Schema({
         required: true,
         ref: "Module"
     },
+    variantId: { // The specific variant ID being reviewed
+        type: mongoose.Schema.Types.ObjectId,
+        // required: true,
+    },
     enhanceUpdate: {
         type: String,
         required: true
