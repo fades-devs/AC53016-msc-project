@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 
-// Import your dashboard components
+// Import dashboard components
 import Stats from '../components/Stats';
 import GoodPracticeChart from '../components/GoodPracticeChart';
 import EnhancementChart from '../components/EnhancementChart';
@@ -9,8 +9,8 @@ import CompletionChart from '../components/CompletionChart';
 
 const DashboardPage = () => {
     return (
-        // The main Box now acts as the page container.
-        // It will respect the padding from your App.js's <main> tag.
+        // The main Box acts as the page container.
+        // respect the padding from App.js's <main> tag.
         <Box sx={{ flexGrow: 1 }}>
             {/* Page Header */}
             <Typography 
