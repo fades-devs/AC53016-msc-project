@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { 
     Grid, 
@@ -6,90 +6,193 @@ import {
     CardContent, 
     Typography, 
     Box, 
-    LinearProgress,
     CircularProgress,
-    Alert
+    Alert,
+    TextField,
+    LinearProgress,
+    IconButton,
+    InputAdornment
 } from '@mui/material';
+import SchoolIcon from '@mui/icons-material/School';
+import RateReviewIcon from '@mui/icons-material/RateReview';
+import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import ClearIcon from '@mui/icons-material/Clear';
 
-const Stats = () => {
+// Custom hook for debouncing user input to prevent excessive API calls
+const useDebounce = (value, delay) => {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            setDebouncedValue(value);
+        }, delay);
+        return () => {
+            clearTimeout(handler);
+        };
+    }, [value, delay]);
+    return debouncedValue;
+};
 
+// A single stat card component for reusability and cleaner code
+const StatCard = ({ title, value, subtitle, icon, children }) => (
+    <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '16px', boxShadow: 3 }}>
+        <CardContent sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <Box>
+                    <Typography variant="h6" color="text.secondary" gutterBottom>
+                        {title}
+                    </Typography>
+                    <Typography variant="h4" component="p" sx={{ fontWeight: 'bold' }}>
+                        {value}
+                    </Typography>
+                    {subtitle && <Typography variant="caption" color="text.secondary">{subtitle}</Typography>}
+                </Box>
+                <Box sx={{
+                    backgroundColor: 'primary.main',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: 36,
+                    height: 36,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    {icon}
+                </Box>
+            </Box>
+            {children && <Box sx={{ mt: 2 }}>{children}</Box>}
+        </CardContent>
+    </Card>
+);
+
+
+const DashboardStats = () => {
     const [stats, setStats] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchStats = async () => {
+    // State for the year filter, defaulting to the current year (2025 as requested)
+    const [year, setYear] = useState('2025');
+    const debouncedYear = useDebounce(year, 500);
 
-            try {
-                const response = await axios.get('http://localhost:5000/api/dashboard/stats');
-                setStats(response.data);
-            }
-            catch (err) {
-                console.error("Error fetching dashboard stats:", err);
-                setError("Failed to load statistics. Please try again later.");
-            }
-            finally {
-                setIsLoading(false);
-            }
-        };
-        fetchStats();
-
+    // Fetch stats from the API
+    const fetchStats = useCallback(async (yearToFetch) => {
+        setIsLoading(true);
+        setError(null);
+        try {
+            const response = await axios.get(`http://localhost:5000/api/dashboard/stats?year=${yearToFetch}`);
+            setStats(response.data);
+        } catch (err) {
+            console.error("Error fetching dashboard stats:", err);
+            setError("Failed to load statistics. Please try again later.");
+        } finally {
+            setIsLoading(false);
+        }
     }, []);
 
-    if (isLoading) {
-        return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-            <CircularProgress />
-        </Box>
-        );
-    }
+    // Effect to fetch data when the debounced year changes
+    useEffect(() => {
+        // Ensure we always fetch with a valid year, defaulting to the current year if input is cleared
+        const yearToFetch = debouncedYear || new Date().getFullYear().toString();
+        fetchStats(yearToFetch);
+    }, [debouncedYear, fetchStats]);
+
+    const handleYearChange = (e) => {
+        setYear(e.target.value);
+    };
+
+    // Clears the input and refetches for the current year
+    const handleClearYear = () => {
+        setYear(new Date().getFullYear().toString());
+    };
+
     if (error) {
         return <Alert severity="error" sx={{ my: 2 }}>{error}</Alert>;
     }
 
     return (
         <Box sx={{ flexGrow: 1, my: 2 }}>
-            <Grid container spacing={3}>
-                {/* Card 1: Total Modules */}
-                <Grid>
-                    <Card>
-                        <CardContent>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                                <Typography variant="h6" component="div">Total Modules</Typography>
-                            </Box>
-                            <Typography variant="h4" component="p">{stats.totalModules}</Typography>
-                        </CardContent>
-                    </Card>
+            {/* Filter Controls */}
+            <Box sx={{ mb: 4, maxWidth: '300px' }}>
+                <TextField
+                    label="Filter by Year"
+                    name="year"
+                    type="number"
+                    value={year}
+                    onChange={handleYearChange}
+                    variant="outlined"
+                    fullWidth
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                {year && (
+                                    <IconButton onClick={handleClearYear} edge="end">
+                                        <ClearIcon />
+                                    </IconButton>
+                                )}
+                            </InputAdornment>
+                        )
+                    }}
+                />
+            </Box>
+
+            {/* Stats Cards */}
+            {isLoading ? (
+                 <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
+                    <CircularProgress />
+                 </Box>
+            ) : stats && (
+                <Grid container spacing={3}>
+                    {/* Card 1: Total Module Variants */}
+                    <Grid item xs={12} sm={6} md={3}>
+                        <StatCard 
+                            title="Total Modules (Variants)" 
+                            value={stats.totalVariants} 
+                            subtitle="All Time"
+                            icon={<SchoolIcon fontSize="small" />}
+                        />
+                    </Grid>
+                    
+                    {/* Card 2: Total Completed Reviews */}
+                    <Grid item xs={12} sm={6} md={3}>
+                        <StatCard 
+                            title="Total Reviews" 
+                            value={stats.totalReviewsAllTime} 
+                            subtitle="All Time, Completed"
+                            icon={<RateReviewIcon fontSize="small" />}
+                        />
+                    </Grid>
+
+                    {/* Card 3: Reviews For Year */}
+                    <Grid item xs={12} sm={6} md={3}>
+                        <StatCard 
+                            title="Reviews This Year" 
+                            value={stats.reviewsForYear} 
+                            subtitle={`Completed in ${stats.year}`}
+                            icon={<EventAvailableIcon fontSize="small" />}
+                        />
+                    </Grid>
+
+                    {/* Card 4: Completion Rate */}
+                    <Grid item xs={12} sm={6} md={3}>
+                        <StatCard 
+                            title="Completion Rate" 
+                            value={`${stats.completionRate.toFixed(1)}%`}
+                            subtitle={`For ${stats.year}`}
+                            icon={<CheckCircleOutlineIcon fontSize="small" />}
+                        >
+                            <LinearProgress 
+                                variant="determinate" 
+                                value={stats.completionRate} 
+                                color="success"
+                                sx={{ height: 8, borderRadius: 4 }}
+                            />
+                        </StatCard>
+                    </Grid>
                 </Grid>
-                {/* Card 2: Total Reviews */}
-                <Grid>
-                    <Card>
-                        <CardContent>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                                <Typography variant="h6" component="div">Total Reviews</Typography>
-                            </Box>
-                            <Typography variant="h4" component="p">{stats.totalReviews}</Typography>
-                        </CardContent>
-                    </Card>
-                </Grid>
-                {/* Card 3: Completion Rate */}
-                <Grid>
-                    <Card>
-                        <CardContent>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                                <Typography variant="h6" component="div">Completion Rate</Typography>
-                            </Box>
-                            <Typography variant="h4" component="p">{stats.completionRate.toFixed(1)}%</Typography>
-                            <Box sx={{ width: '100%', mt: 2 }}>
-                                <LinearProgress variant="determinate" value={stats.completionRate} color="success"/>
-                            </Box>
-                        </CardContent>
-                    </Card>
-                </Grid>
-            </Grid>
+            )}
         </Box>
-    )
+    );
+};
 
-}
-
-export default Stats;
+export default DashboardStats;
