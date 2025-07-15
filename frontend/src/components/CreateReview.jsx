@@ -19,7 +19,7 @@ import {
     FormControl,
     FormLabel,
     Alert,
-    Collapse, InputLabel, Select, MenuItem, IconButton
+    Collapse, InputLabel, Select, MenuItem, IconButton, Divider
 } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
@@ -51,6 +51,9 @@ const CreateReview = () => {
     const [foundModule, setFoundModule] = useState(null);
     const [lookupLoading, setLookupLoading] = useState(false);
     const [lookupError, setLookupError] = useState('');
+
+    // --- UPDATE: State for the previous report year filter ---
+    const [previousYear, setPreviousYear] = useState(new Date().getFullYear() - 1);
 
     // state for date filter
     // const [dateFilter, setDateFilter] = useState('');
@@ -145,6 +148,18 @@ const CreateReview = () => {
         const list = [...field];
         list.splice(index, 1);
         setter(list);
+    };
+
+    // --- UPDATE: Handler to view the previous year's report ---
+    const handleViewPreviousReport = () => {
+        // Guard clause to ensure module code is entered
+        if (!moduleCode.trim()) {
+            setLookupError("Please enter a module code to view its previous report.");
+            return;
+        }
+        // Construct the URL and open it in a new tab
+        const url = `/get-review?code=${moduleCode}&year=${previousYear}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
     };
 
     // UPDATE: FUNCTION TO RESET THE FORM AFTER SUBMISSION
@@ -373,6 +388,30 @@ const CreateReview = () => {
                 <TextField fullWidth label="Module Code" value={moduleCode}
                 onChange={(e) => setModuleCode(e.target.value.toUpperCase())}
                 disabled={!!paramModuleCode} error={!!lookupError} helperText={lookupError}/>
+
+                {/* --- UPDATE: View Previous Report Section --- */}
+                <Box sx={{ my: 2, p: 2, border: '1px dashed', borderColor: 'grey.400', borderRadius: 1 }}>
+                    <Typography variant="subtitle1" gutterBottom>
+                        View a Previous Report
+                    </Typography>
+                    <Stack direction="row" spacing={2} alignItems="center">
+                        <TextField
+                            label="Year"
+                            type="number"
+                            size="small"
+                            value={previousYear}
+                            onChange={(e) => setPreviousYear(e.target.value)}
+                            sx={{ maxWidth: 120 }}
+                        />
+                        <Button
+                            variant="outlined"
+                            onClick={handleViewPreviousReport}
+                            disabled={!moduleCode.trim()}
+                        >
+                            View Previous Report
+                        </Button>
+                    </Stack>
+                </Box>
 
 
                 <Collapse in={!!foundModule && !!specificVariant}>
