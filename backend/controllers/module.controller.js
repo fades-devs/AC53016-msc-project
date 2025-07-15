@@ -76,39 +76,49 @@ export const getModules = async(req, res) => {
         // The $options: 'i' makes the search case-insensitive.
         if (titleSearch) { initMatch.title = { $regex: titleSearch, $options: "i" }};
 
-        // Create a sub-document match for the 'variants' array
-        const variantMatch = {};
-        if (level) {
-            // Ensure levels are numbers
-            const levelValues = Array.isArray(level) ? level.map(l => parseInt(l)) : [parseInt(level)];
-            variantMatch.level = { $in: levelValues };
-        }
-        if (period) { variantMatch.period = buildInQuery(period) };
-        if (codeSearch) { variantMatch.code = { $regex: codeSearch, $options: "i" }}
+        // // Create a sub-document match for the 'variants' array
+        // // This object is for the new $match stage after unwinding variants
+        // const variantMatch = {};
+        // if (level) {
+        //     // Ensure levels are numbers
+        //     const levelValues = Array.isArray(level) ? level.map(l => parseInt(l)) : [parseInt(level)];
+        //     variantMatch.level = { $in: levelValues };
+        // }
+        // if (period) { postUnwindVariantMatch.period = buildInQuery(period) };
+        // if (codeSearch) { postUnwindVariantMatch.code = { $regex: codeSearch, $options: "i" }}
 
-        // If there are variant filters, add them to the initMatch
-        if (Object.keys(variantMatch).length > 0) {
-            initMatch.variants = { $elemMatch: variantMatch };}
+        // // This object is for the new $match stage after unwinding
+        // const postUnwindVariantMatch = {};
+        // if (level) postUnwindVariantMatch['variants.level'] = variantMatch.level;
+        // if (period) postUnwindVariantMatch['variants.period'] = variantMatch.period;
+        // if (codeSearch) postUnwindVariantMatch['variants.code'] = variantMatch.code;
+
+        // This object is for the new $match stage after unwinding variants
+        const postUnwindVariantMatch = {};
+        if (level) {
+            const levelValues = Array.isArray(level) ? level.map(l => parseInt(l)) : [parseInt(level)];
+            postUnwindVariantMatch['variants.level'] = { $in: levelValues };
+        }
+        if (period) postUnwindVariantMatch['variants.period'] = buildInQuery(period);
+        if (codeSearch) postUnwindVariantMatch['variants.code'] = { $regex: codeSearch, $options: "i" };
+
+        // // If there are variant filters, add them to the initMatch
+        // if (Object.keys(variantMatch).length > 0) {
+        //     initMatch.variants = { $elemMatch: variantMatch };}
 
         // Build the final match query for fields calculated after lookups
         const finalMatch = {};
-        if (status) {finalMatch.status = buildInQuery(status)};
+        if (status) {finalMatch.consolidatedStatus = buildInQuery(status)};
         // Date range filter based on the Review's creation date
-        if (year) {
-            const yearNumber = parseInt(year);
-            if (!isNaN(yearNumber)) {
-                const startDate = new Date(yearNumber, 0, 1); // January 1st of the year
-                const endDate = new Date(yearNumber + 1, 0, 1); // // January 1st of the next year
-                // This will be used to filter on the Review's creation date
-                finalMatch.createdAt = {$gte: startDate, $lt: endDate};
-            }
-        };
-
-        // This object is for the new $match stage after unwinding
-        const postUnwindVariantMatch = {};
-        if (level) postUnwindVariantMatch['variants.level'] = variantMatch.level;
-        if (period) postUnwindVariantMatch['variants.period'] = variantMatch.period;
-        if (codeSearch) postUnwindVariantMatch['variants.code'] = variantMatch.code;
+        // if (year) {
+        //     const yearNumber = parseInt(year);
+        //     if (!isNaN(yearNumber)) {
+        //         const startDate = new Date(yearNumber, 0, 1); // January 1st of the year
+        //         const endDate = new Date(yearNumber + 1, 0, 1); // // January 1st of the next year
+        //         // This will be used to filter on the Review's creation date
+        //         finalMatch.lastReviewDate = {$gte: startDate, $lt: endDate};
+        //     }
+        // };
 
         // Aggregation Pipeline to combine data from 3 collections
         const modulesDetails = await Module.aggregate([
@@ -144,62 +154,179 @@ export const getModules = async(req, res) => {
             // Add this stage ONLY if 'leadSearch' exists
             ...(leadSearch ? [{ $match: { moduleLeadName: { $regex: leadSearch, $options: "i" } } }] : []),
 
-            // Join with Reviews
+
+            // Stage 6: Join with Reviews using a pipeline that pre-filters by year.
             {
                 $lookup: {
                     from: "reviews",
-                    localField: "_id", // The module's _id
-                    foreignField: "module", // The review's reference to the module
+                    let: { moduleId: "$_id" },
+                    pipeline: [
+                        { $match: { $expr: { $eq: ["$module", "$$moduleId"] } } },
+                        ...(year ? [{
+                            $match: {
+                                createdAt: {
+                                    $gte: new Date(parseInt(year), 0, 1),
+                                    $lt: new Date(parseInt(year) + 1, 0, 1)
+                                }
+                            }
+                        }] : [])
+                    ],
                     as: "reviewData"
                 }
             },
-            { $unwind: { path: "$reviewData", preserveNullAndEmptyArrays: true } },
 
-            // Add final calculated fields before the final match
+            // Stage 7: THE NEW FIX - If filtering by year, remove modules that have no reviews for that year.
+            ...(year ? [{ $match: { "reviewData": { $ne: [] } } }] : []),
+            
+            // Stage 8: Create a single status and date from the (now correctly filtered) array of reviews
             {
-                 $addFields: {
-                    status: { $ifNull: ["$reviewData.status", "Not Started"] },
-                    createdAt: { $ifNull: ["$reviewData.createdAt", null] }
+                $addFields: {
+                    consolidatedStatus: {
+                        $ifNull: [
+                            {
+                                $cond: {
+                                    if: { $in: ["Completed", "$reviewData.status"] },
+                                    then: "Completed",
+                                    else: {
+                                        $cond: {
+                                            if: { $in: ["In Progress", "$reviewData.status"] },
+                                            then: "In Progress",
+                                            else: "Not Started"
+                                        }
+                                    }
+                                }
+                            },
+                            "Not Started"
+                        ]
+                    },
+                    lastReviewDate: { $max: "$reviewData.createdAt" }
                 }
             },
+
+            // // KEY FIX - Join with Reviews using a pipeline that pre-filters by year
+            // {
+            //     $lookup: {
+            //         from: "reviews",
+            //         let: { moduleId: "$_id" },
+            //         pipeline: [
+            //             // Match reviews for the module
+            //             { $match: { $expr: { $eq: ["$module", "$$moduleId"] } } },
+            //             // Conditionally add a match stage for the year IF the 'year' query param exists
+            //             ...(year ? [{
+            //                 $match: {
+            //                     createdAt: {
+            //                         $gte: new Date(parseInt(year), 0, 1),
+            //                         $lt: new Date(parseInt(year) + 1, 0, 1)
+            //                     }
+            //                 }
+            //             }] : [])
+            //         ],
+            //         as: "reviewData" // This array now ONLY contains reviews for the specified year (or all reviews if no year is specified)
+            //     }
+            // },
+
+            // // Join with Reviews - UPDATE: Join with Reviews, but DO NOT unwind
+            
+            // // {
+            // //     $lookup: {
+            // //         from: "reviews",
+            // //         localField: "_id", // The module's _id
+            // //         foreignField: "module", // The review's reference to the module
+            // //         as: "reviewData"
+            // //     }
+            // // },
+            // // { $unwind: { path: "$reviewData", preserveNullAndEmptyArrays: true } },
+
+            // // Add final calculated fields before the final match
+            // {
+            //     $addFields: {
+            //         consolidatedStatus: {
+            //             $ifNull: [
+            //                 {
+            //                     $cond: {
+            //                         if: { $in: ["Completed", "$reviewData.status"] },
+            //                         then: "Completed",
+            //                         else: {
+            //                             $cond: {
+            //                                 if: { $in: ["In Progress", "$reviewData.status"] },
+            //                                 then: "In Progress",
+            //                                 else: "Not Started"
+            //                             }
+            //                         }
+            //                     }
+            //                 },
+            //                 "Not Started"
+            //             ]
+            //         },
+            //         lastReviewDate: { $max: "$reviewData.createdAt" }
+            //     }
+            // },
 
             // Final filtering on calculated fields (status, year from review)
             { $match: finalMatch },
 
-            // Shape the final output document
-            {
-                $project: { reviewId: "$reviewData._id", // Pass the review's unique ID
-                    _id: 1, title: 1, area: 1, location: 1, partnership: 1, 
-                    // Pull specific fields from the variant
-                    code: "$variants.code", level: "$variants.level", period: "$variants.period",
-                    // Use the calculated fields
-                    moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
-                    status: 1, reviewDate: "$createdAt", year: { $ifNull: [{ $year: "$createdAt" }, null] }}
-            },
 
-            // UPDATE PAGINATION FIX: Add a sort stage BEFORE pagination to ensure consistent order
-            // Add temporary lowercase fields using the $toLower operator.
             {
-                $addFields: {
-                    "sort_title": { "$toLower": "$title" }
-                }
-            },
-            // Sort by the new temporary fields.
-            {
-                $sort: {
-                    "sort_title": 1, // 1 for ascending
-                }
-            },
-
-            // --- PAGINATION: Use $facet to get both data and total count ---
-            {
-                $facet: { // The temporary sort fields won't be in the final output because facet doesn't include them
-                    // Sub-pipeline 1: Get the metadata (total count)
-                    metadata: [ {$count: 'total'} ],
-                    // Sub-pipeline 2: Get the actual data for the page
-                    data: [ { $skip: skip }, { $limit: limit } ]
+                $facet: {
+                    metadata: [{ $count: 'total' }],
+                    data: [
+                        { $sort: { title: 1} },
+                        { $skip: skip },
+                        { $limit: limit },
+                        {
+                            $project: {
+                                _id: 1,
+                                title: 1,
+                                area: 1,
+                                location: 1,
+                                code: "$variants.code",
+                                level: "$variants.level",
+                                period: "$variants.period",
+                                status: "$consolidatedStatus",
+                                reviewDate: "$lastReviewDate",
+                                moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
+                                year: { $ifNull: [{ $year: "$lastReviewDate" }, null] }
+                            }
+                        }
+                    ]
                 }
             }
+
+            // Shape the final output document
+            // {
+            //     $project: { reviewId: "$reviewData._id", // Pass the review's unique ID
+            //         _id: 1, title: 1, area: 1, location: 1, partnership: 1, 
+            //         // Pull specific fields from the variant
+            //         code: "$variants.code", level: "$variants.level", period: "$variants.period",
+            //         // Use the calculated fields
+            //         moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
+            //         status: '$consolidatedStatus', reviewDate: "$lastReviewDate",
+            //         year: { $ifNull: [{ $year: "$lastReviewDate" }, null] }}
+            // },
+
+            // // UPDATE PAGINATION FIX: Add a sort stage BEFORE pagination to ensure consistent order
+            // // Add temporary lowercase fields using the $toLower operator.
+            // {
+            //     $addFields: {
+            //         "sort_title": { "$toLower": "$title" }
+            //     }
+            // },
+            // // Sort by the new temporary fields.
+            // {
+            //     $sort: {
+            //         "sort_title": 1, // 1 for ascending
+            //     }
+            // },
+
+            // // --- PAGINATION: Use $facet to get both data and total count ---
+            // {
+            //     $facet: { // The temporary sort fields won't be in the final output because facet doesn't include them
+            //         // Sub-pipeline 1: Get the metadata (total count)
+            //         metadata: [ {$count: 'total'} ],
+            //         // Sub-pipeline 2: Get the actual data for the page
+            //         data: [ { $skip: skip }, { $limit: limit } ]
+            //     }
+            // }
 
         ]);
 
@@ -208,7 +335,7 @@ export const getModules = async(req, res) => {
         const totalPages = Math.ceil(totalCount / limit);
 
         // --- UPDATED RESPONSE BASED ON PAGINATION ---
-        res.status(200).json({modules: modules, totalPages: totalPages, currentPage: page});
+        res.status(200).json({modules, totalPages, currentPage: page});
     }
 
     catch (error) {
