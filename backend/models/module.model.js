@@ -21,7 +21,7 @@ const variantSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, // Create reference to an ID
         ref: "User" // Tells Mongoose the reference is to the User model
     } 
-}, {_id: false}) // _id is not needed for sub-documents unless there is reason for it
+}) // _id needed for sub-documents (needed for dashboard stat api)
 
 // Create new schema + fields
 const moduleSchema = new mongoose.Schema({
