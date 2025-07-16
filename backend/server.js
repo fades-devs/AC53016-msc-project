@@ -1,20 +1,22 @@
 // IMPORTS - packages, port and routes
+
+import './loadEnv.js'; // This MUST be the first line
+
 import express from "express";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import cors from "cors";
 import {connectDB} from "./config/db.js";
 import moduleRoutes from "./routes/module.routes.js";
 import reviewRoutes from "./routes/review.routes.js";
 import dashboardRoutes from "./routes/dashboard.routes.js";
+import emailRoutes from "./routes/email.routes.js";
 
 import {sendEmail} from "./utils/sendEmail.js";
 
-
-
 (async () => {
     try {
-        // INITIALISE ENVIRONMENT
-        dotenv.config();
+        // INITIALISE ENVIRONMENT - WE DONT CALL TWICE 
+        // dotenv.config();
         // ESTABLISH DB CONNECTION
         await connectDB();
 
@@ -35,26 +37,8 @@ import {sendEmail} from "./utils/sendEmail.js";
         // })
 
         // Route for sending the email
-        app.post("/api/sendemail", async(req, res) => {
-            // const {email} = req.body;
+        app.use('/api/email', emailRoutes);
 
-            try {
-                const sendTo = "fadoua.assoufi@outlook.com";
-                const sendFrom = "moduleproject@outlook.com";
-                const subject = "Test Subject";
-                const message = `
-                <h1>Hello</h1>
-                <p>This is the email body for testing.</p>
-                <p>Regards,</p>
-                `
-                await sendEmail(subject, message, sendTo, sendFrom)
-
-                res.status(200).json({success: true, message: "Email Sent."})
-            }
-            catch (error) {
-                res.status(500).json(error.message)
-            }
-        })
 
         const PORT = process.env.PORT || 5000;
 

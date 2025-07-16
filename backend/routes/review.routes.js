@@ -1,14 +1,13 @@
 import express from 'express';
 import {createReview, getReviewByCodeAndYear, saveDraft, UpdateReview} from "../controllers/review.controller.js";
 import {getReviewById} from "../controllers/review.controller.js";
-import {getEmailsNonCompleteReviews} from "../controllers/review.controller.js";
 
 import {upload} from '../middleware/upload.js'; // import upload middleware
 
 const router = express.Router();
 
-// @route GET /api/reviews/noncomplete/emails
-router.get('/noncomplete/emails', getEmailsNonCompleteReviews)
+// // @route GET /api/reviews/noncomplete/emails
+// router.get('/noncomplete/emails', getEmailsNonCompleteReviews)
 
 // @route POST /api/reviews - UPDATE: add upload middleware
 router.post('/', upload, createReview);
