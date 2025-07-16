@@ -8,6 +8,7 @@ const router = express.Router();
 // This will handle POST requests to /api/email/send
 router.post("/send", sendReminderEmail);
 
-router.get("/get/non-complete", getEmailsIncompleteReviews);
+// @route GET /api/email/get/incomplete
+router.get("/incomplete", getEmailsIncompleteReviews);
 
 export default router;
