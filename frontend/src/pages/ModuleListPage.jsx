@@ -4,6 +4,9 @@ import {Container, Typography, Table, TableBody, TableCell, TableContainer,
     TableHead, TableRow, Paper, Box, CircularProgress, Chip, Stack, Button, Grid,
 FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, Checkbox, ListItemText, Pagination} from '@mui/material';
 
+import EmailIcon from '@mui/icons-material/Email';
+
+
 import { Link } from 'react-router-dom';
 
 // --- UPDATE: Import the options from your constants file ---
@@ -180,9 +183,24 @@ const ModuleListPage = () => {
     return (
 
     <Container sx={{ mt: 4 }}>
-        <Typography variant="h4">
-            Module Enhancement Review
-        </Typography>
+
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+
+            <Typography variant="h4">
+                Module Enhancement Review
+            </Typography>
+
+            <Button
+                variant="contained"
+                color="primary"
+                component={Link}
+                to="/send-reminder" // The path to your new reminder page
+                startIcon={<EmailIcon />}>
+                Send Email Reminders
+            </Button>
+
+        </Box>
+        
         {/* --- UPDATE: Filter controls wrapped in Grid for better layout --- */}
         <Box sx={{ mb: 3 }}>
             <Grid container spacing={2} alignItems="flex-end">
