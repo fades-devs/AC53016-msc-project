@@ -284,6 +284,7 @@ export const getModules = async(req, res) => {
                                 period: "$variants.period",
                                 status: "$consolidatedStatus",
                                 reviewDate: "$lastReviewDate",
+                                reviewId: '$reviewData._id',
                                 moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
                                 year: { $ifNull: [{ $year: "$lastReviewDate" }, null] }
                             }

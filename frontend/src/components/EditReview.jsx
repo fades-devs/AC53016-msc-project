@@ -137,7 +137,7 @@ const EditReview = () => {
 
             }
             catch (err) {
-                setPageError('Failed to load review data. Please check the ID or try again later.');
+                setPageError('Failed to load review data. Please check the ID.');
                 console.error(err);
             }
             finally {
