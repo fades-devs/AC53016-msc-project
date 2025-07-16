@@ -7,6 +7,8 @@ import EditReview from './components/EditReview'
 import DashboardPage from './pages/DashboardPage'
 import NavBar from './components/NavBar'
 
+import EmailReminder from './components/EmailReminder'
+
 import "@fontsource/roboto";
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path='/edit-review/:reviewId' element={<EditReview />} />
 
           <Route path="/dashboard" element={<DashboardPage />} />
+
+          <Route path="/send-reminder" element={<EmailReminder />} />
         </Routes>
       </main>
     </BrowserRouter>
