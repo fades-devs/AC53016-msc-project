@@ -100,6 +100,12 @@ const EditReview = () => {
                 const response = await axios.get(`http://localhost:5000/api/reviews/${reviewId}`);
                 const data = response.data;
 
+                // UPDATE: Compare review year to current to allow edit for only current year reviews
+                const reviewYear = new Date(data.createdAt).getFullYear();
+                if (reviewYear < new Date().getFullYear()) {
+                    setPageError(`Reviews from previous years cannot be updated. Please select the ${new Date().getFullYear()} review`);
+                }
+                
                 // --- Populate all form fields with the fetched data ---
                 setModuleDetails(data.module);
 
@@ -258,12 +264,6 @@ const EditReview = () => {
         </FormControl>
     );
 
-
-    
-
-
-
-    
 
     return (
         

@@ -192,30 +192,49 @@ export const UpdateReview = async (req, res) => {
         // Get review ID from URL request parameter
         const {id: reviewId} = req.params;
 
-        // --- FIX: Destructure body with a fallback to prevent crash if req.body is undefined ---
-        // This ensures `body` is always an object, even if the middleware fails to create req.body.
-        const { body = {} } = req;
+        // // --- FIX: Destructure body with a fallback to prevent crash if req.body is undefined ---
+        // // This ensures `body` is always an object, even if the middleware fails to create req.body.
+        // const { body = {} } = req;
 
-        // --- FIX: Build the update object defensively to prevent crashes ---
+        // --- Build the update object defensively to prevent crashes ---
         const updateData = {};
-        
 
-        // Add fields to the update object ONLY if they exist in the request body.
-        if (body.enhanceUpdate) updateData.enhanceUpdate = body.enhanceUpdate;
-        if (body.studentAttainment) updateData.studentAttainment = body.studentAttainment;
-        if (body.moduleFeedback) updateData.moduleFeedback = body.moduleFeedback;
-        if (body.status) updateData.status = body.status;
-        if (body.statementEngagement) updateData.statementEngagement = body.statementEngagement;
-        if (body.statementLearning) updateData.statementLearning = body.statementLearning;
-        if (body.statementTimetable) updateData.statementTimetable = body.statementTimetable;
-        if (body.completedBy) updateData.completedBy = body.completedBy;
+        // if review date is older than current year - do not allow to edit
+        const review = await Review.findById(reviewId);
+        const reviewYear = review.createdAt.getFullYear();
+        if (reviewYear < new Date().getFullYear()) {
+            return res.status(400).json({message: 'Reviews from previous years cannot be updated.'})
+        }
+
+        // Add fields to the update object ONLY if they exist in the request body
+        if (req.body.enhanceUpdate) updateData.enhanceUpdate = req.body.enhanceUpdate;
+        if (req.body.studentAttainment) updateData.studentAttainment = req.body.studentAttainment;
+        if (req.body.moduleFeedback) updateData.moduleFeedback = req.body.moduleFeedback;
+        if (req.body.status) updateData.status = req.body.status;
+        if (req.body.statementEngagement) updateData.statementEngagement = req.body.statementEngagement;
+        if (req.body.statementLearning) updateData.statementLearning = req.body.statementLearning;
+        if (req.body.statementTimetable) updateData.statementTimetable = req.body.statementTimetable;
+        if (req.body.completedBy) updateData.completedBy = req.body.completedBy;
+
+
+        // // Add fields to the update object ONLY if they exist in the request body.
+        // if (body.enhanceUpdate) updateData.enhanceUpdate = body.enhanceUpdate;
+        // if (body.studentAttainment) updateData.studentAttainment = body.studentAttainment;
+        // if (body.moduleFeedback) updateData.moduleFeedback = body.moduleFeedback;
+        // if (body.status) updateData.status = body.status;
+        // if (body.statementEngagement) updateData.statementEngagement = body.statementEngagement;
+        // if (body.statementLearning) updateData.statementLearning = body.statementLearning;
+        // if (body.statementTimetable) updateData.statementTimetable = body.statementTimetable;
+        // if (body.completedBy) updateData.completedBy = body.completedBy;
 
         // Safely parse JSON fields only if they exist
-        if (body.goodPractice) updateData.goodPractice = JSON.parse(body.goodPractice);
-        if (body.risks) updateData.risks = JSON.parse(body.risks);
-        if (body.enhancePlans) updateData.enhancePlans = JSON.parse(body.enhancePlans);
+        if (req.body.goodPractice) updateData.goodPractice = JSON.parse(req.body.goodPractice);
+        if (req.body.risks) updateData.risks = JSON.parse(req.body.risks);
+        if (req.body.enhancePlans) updateData.enhancePlans = JSON.parse(req.body.enhancePlans);
         
         // Handle file uploads from req.files, which is handled separately by multer
+        // Add file paths to the update object ONLY if new files were uploaded
+        // This prevents overwriting existing files with 'undefined' if no new file is sent
         if (req.files?.evidenceUpload?.[0]) {
             updateData.evidenceUpload = req.files.evidenceUpload[0].path;
             updateData.evidenceUpload_originalName = req.files.evidenceUpload[0].originalname;
@@ -225,16 +244,15 @@ export const UpdateReview = async (req, res) => {
             updateData.feedbackUpload_originalName = req.files.feedbackUpload[0].originalname;
         }
 
-        const updatedReview = await Review.findByIdAndUpdate(reviewId, { $set: updateData }, { new: true });
-
+        // Find the review by its ID and update it with the new data
+        // new: true tells Mongoose to return the document *after* the update has been applied
+        const updatedReview = await Review.findByIdAndUpdate(reviewId, updateData, { new: true });
+        
         if (!updatedReview) {
             return res.status(404).json({ message: 'Review not found, could not update.' });
         }
 
         res.status(200).json({ review: updatedReview, message: 'Review updated successfully' });
-
-
-
 
         // // Get review data from request body
         // const {enhanceUpdate, studentAttainment, moduleFeedback, status, // completed or in progress sent from frontend
