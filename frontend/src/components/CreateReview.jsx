@@ -286,13 +286,16 @@ const CreateReview = () => {
         }
 
         try {
-            
             await axios.post('http://localhost:5000/api/reviews/draft', formData);
-            setSaveSuccess('Draft saved successfully! You will be redirected.');
+            setSaveSuccess('Draft saved successfully! You will be redirected to the review page.');
+
+            // After the draft is created, go to the view report page based on module code
             setTimeout(() => {
-                navigate('/module-list'); // Redirect to the module list page after 2 seconds
+                // navigate to the edit review page of that review after 2 seconds
+                navigate(`/get-review?code=${debModuleCode}`);
             }, 2000);
         }
+
         catch (err) {
             setSubmitError('Failed to save the draft review. Please try again.');
             console.error(err);
