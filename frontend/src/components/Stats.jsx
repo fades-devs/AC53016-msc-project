@@ -146,8 +146,8 @@ const DashboardStats = () => {
                     {/* Card 1: Total Module Variants */}
                     <Grid item xs={12} sm={6} md={3}>
                         <StatCard 
-                            title="Total Modules (Variants)" 
-                            value={stats.totalVariants} 
+                            title="Total Modules" 
+                            value={stats.totalModules} 
                             subtitle="All Time"
                             icon={<SchoolIcon fontSize="small" />}
                         />

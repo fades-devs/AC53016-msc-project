@@ -1,0 +1,5564 @@
+[
+  {
+    "code": "BE22006",
+    "title": "Academic Physics Experiment 2 (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21006",
+    "title": "Academic Physics Experiment I (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52059",
+    "title": "Access and Control of Assistive Technology",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS32003",
+    "title": "Accessible User Experience",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41011",
+    "title": "Advanced Big Data Analysis",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51047",
+    "title": "Advanced Big Data Analysis",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS42003",
+    "title": "Advanced Big Data Analysis",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME52004",
+    "title": "Advanced Biomedical Imaging Technologies",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA41008",
+    "title": "Advanced Design and Manufacture",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG40002",
+    "title": "Advanced Device Technology and Nanoelectronics",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52005",
+    "title": "Advanced Fluid Dynamics",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME52005",
+    "title": "Advanced Manufacturing",
+    "level": 5,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE11003",
+    "title": "Advanced Mathematics I (NEU)",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE12009",
+    "title": "Advanced Mathematics II (NEU)",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SS03010",
+    "title": "Advanced Maths (Summer School)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME52001",
+    "title": "Advanced Medical and Surgical Technologies",
+    "level": 5,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52028",
+    "title": "Advanced Offshore Geotechnical Engineering",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE51004",
+    "title": "Advanced Photovoltaics",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA41009",
+    "title": "Advanced Product Design",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22009",
+    "title": "Advanced Programming Concepts",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52002",
+    "title": "Advanced Programming Techniques",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME51013",
+    "title": "Advanced Robotics",
+    "level": 5,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50005",
+    "title": "Advanced Structural Analysis",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA41004",
+    "title": "Advanced Structural Analysis",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51004",
+    "title": "Agile Engineering",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31013",
+    "title": "Agile Methodology",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC31007",
+    "title": "Agile Software Engineering",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC21007",
+    "title": "Algorithms and Artificial Intelligence",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22001",
+    "title": "Algorithms and Artificial Intelligence",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "EE31001",
+    "title": "Analogue Electronic Systems",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "BE21002",
+    "title": "Analogue Electronics Technology Basis",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "MA32001",
+    "title": "Analysis",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "AC52040",
+    "title": "Analytical database models and design",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "LV51002",
+    "title": "Analytical Laboratory Methods",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA51001",
+    "title": "Anatomical Techniques",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA41004",
+    "title": "Anatomy Dissertation",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA42004",
+    "title": "Anatomy of the Individual",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA51010",
+    "title": "Anatomy: Body Systems",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA51007",
+    "title": "Anatomy: Head and Neck",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "DI21001",
+    "title": "Applications for Microcontrollers",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "ME21004",
+    "title": "Applications for Microcontrollers",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA52016",
+    "title": "Applications of Forensic Art",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "CA42005",
+    "title": "Applied Anatomy Topics",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "LV51003",
+    "title": "Applied Toxicology and Drug Analysis",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "AC12003",
+    "title": "Argumentation and Computers: Tools for Arguing and Critical Thinking",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "GA41010",
+    "title": "Artificial Intelligence and Data Analytics",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Ninewells Campus (including blended)"
+  },
+  {
+    "code": "EG13001",
+    "title": "Aspire in Art, Science and Technology",
+    "level": 1,
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC51044",
+    "title": "Assessment for AT",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC52058",
+    "title": "Assistive Technology for complex communication, physical and learning needs",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC52054",
+    "title": "Assistive Technology Interaction",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC52053",
+    "title": "AT in educational programmes",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC51043",
+    "title": "AT partner relationships",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC52057",
+    "title": "Augmentative and Alternative Communication (AAC)",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC13001",
+    "title": "Beginner Python Online",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA42009",
+    "title": "Bidding & Business Development",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC51011",
+    "title": "Big Data Analysis",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC52043",
+    "title": "Big Data Analysis (MSc Business Intelligence)",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC51048",
+    "title": "Big Data Analysis and Distributed Programming",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE31015",
+    "title": "Biochemistry and Proteomics (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "CA52018",
+    "title": "Biological Anthropology",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "ME51008",
+    "title": "Biomaterials",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "ME51006",
+    "title": "Biomechanical Systems",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE22002",
+    "title": "Biomechanics and Biomaterials",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE22004",
+    "title": "Biomechanics and Biomaterials (JEP)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE32006",
+    "title": "Biomedical Acoustics and Photonics",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE32003",
+    "title": "Biomedical Electronics and Instrumentation",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE32001",
+    "title": "Biomedical Engineering Design",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "ME41002",
+    "title": "Biomedical Engineering Project",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "ME52002",
+    "title": "Biomedical Engineering Project",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "ME52003",
+    "title": "Biomedical Engineering Project (Diploma)",
+    "level": 5,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "ME51011",
+    "title": "Biomedical Instrumentation",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE31004",
+    "title": "Biomedical Sensors and Measurement",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE31001",
+    "title": "Biomedical Signal and Image Processing",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE41001",
+    "title": "Biophotonics",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA31001",
+    "title": "Brand Management",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA31002",
+    "title": "Business and the Environment",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA13001",
+    "title": "Business Communication",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA22002",
+    "title": "Business Ethics",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA23001",
+    "title": "Business Finance",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "AC52048",
+    "title": "Business Intelligence Systems",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA40015",
+    "title": "Business Management Honours Project",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA11004",
+    "title": "Business Management Work Based Learning I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA23002",
+    "title": "Business Management Work Based Learning II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA30007",
+    "title": "Business Management Work Based Learning III",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "GA40007",
+    "title": "Business Management Work-based Learning IV",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE12002",
+    "title": "C Language Programming",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE11004",
+    "title": "C Programming Language (NEU)",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "BE12010",
+    "title": "C&C++ Advanced Programming Language (NEU)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "CA53006",
+    "title": "CAHID MSc Research Project Dissertation",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 2",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "MA12005",
+    "title": "Calculus",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "DI11007",
+    "title": "Calculus for Science and Engineering",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "Multi-Campus (including blended)"
+  },
+  {
+    "code": "DI12001",
+    "title": "Calculus II",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "DI12007",
+    "title": "Calculus II",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA32001",
+    "title": "Change Management",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "BE21003",
+    "title": "Circuit Principles",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "DI21002",
+    "title": "Civil Engineering Design Software",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA13003",
+    "title": "Civil Engineering Group Project I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA23003",
+    "title": "Civil Engineering Group Project II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA32003",
+    "title": "Civil Engineering Hydraulics",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CE31001",
+    "title": "Civil Engineering Materials and the Environment",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "DI31004",
+    "title": "Civil Engineering Materials and the Environment",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA31005",
+    "title": "Civil Engineering Materials in the Environment",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CE12004",
+    "title": "Civil Engineering Project",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CE21004",
+    "title": "Civil Engineering Project I",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CE22008",
+    "title": "Civil Engineering Project II",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "DI12004",
+    "title": "Civil Engineering Project II (with English)",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "DI22002",
+    "title": "Civil Engineering Project III",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA20008",
+    "title": "Civil Engineering Work Based Learning II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA10008",
+    "title": "Civil Engineering Work-based Learning I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA30008",
+    "title": "Civil Engineering Work-based Learning III",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA40009",
+    "title": "Civil Engineering Work-based Learning IV",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "PH22001",
+    "title": "Classical and Quantum Matter and Radiation",
+    "level": 2,
+    "area": "Physics",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "PH42008",
+    "title": "Classical Mechanics and Relativity",
+    "level": 4,
+    "area": "Physics",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CA52001",
+    "title": "Clinical and Surgical Anatomy Topics",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CS50002",
+    "title": "Cloud Application Development",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "AC11005",
+    "title": "Cloud Foundations",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CS50001",
+    "title": "Cloud Machine Learning for Natural Language Processing",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CS30001",
+    "title": "Cloud Machine Learning Foundations",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "EE40001",
+    "title": "CMOS VLSI Chip Design",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CE51044",
+    "title": "Coastal Processes and Engineering Applications",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "AG11081",
+    "title": "Communicating for Psychology",
+    "level": 1,
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "ME40006",
+    "title": "Communication and Advances in Biomedical Research",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CA51022",
+    "title": "Communication and Engagement",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "LV50004",
+    "title": "Communication and Engagement",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CE11003",
+    "title": "Communication in Professional Practice",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "LV50001",
+    "title": "Communication of Forensic Science",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "GA21007",
+    "title": "Communication Skills",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "CA22001",
+    "title": "Comparative Anatomy",
+    "level": 2,
+    "area": "Anatomy",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "MA32006",
+    "title": "Complex Analysis",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "Online"
+  },
+  {
+    "code": "BE21007",
+    "title": "Complex Function (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH32010",
+    "title": "Computational Astrophysics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51042",
+    "title": "Computational Geotechnics",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40007",
+    "title": "Computational Mechanics",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA51004",
+    "title": "Computational Modelling and Programming",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH32005",
+    "title": "Computational Physics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH51001",
+    "title": "Computational Physics II",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21003",
+    "title": "Computer Aided Design",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22007",
+    "title": "Computer Aided Design",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME21003",
+    "title": "Computer Aided Design",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME40001",
+    "title": "Computer Aided Engineering",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22003",
+    "title": "Computer Algebra and Dynamical Systems",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA21002",
+    "title": "Computer Algebra and Dynamical Systems",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31008",
+    "title": "Computer Analysis for Engineering Design & Simulations",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21008",
+    "title": "Computer Graphics and Visualisation (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22010",
+    "title": "Computer Networking & Data Communications",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC21009",
+    "title": "Computer Systems 2A: Architecture Fundamentals and Unix",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21004",
+    "title": "Computer systems 2A: Architecture fundamentals and Unix",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22004",
+    "title": "Computer Systems 2B",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC22005",
+    "title": "Computer Systems 2B: Architecture and Operating Systems",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41002",
+    "title": "Computer Vision",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51007",
+    "title": "Computer Vision",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS12003",
+    "title": "Computing and Society",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS33001",
+    "title": "Computing Industrial Placement",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LD02004",
+    "title": "Computing Science (Summer School)",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SS03009",
+    "title": "Computing Science (Summer School)",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA33002",
+    "title": "Concept Design",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52029",
+    "title": "Conceptual Design",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40017",
+    "title": "Conceptual Design Project",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50018",
+    "title": "Concrete : Construction Systems I and II",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51043",
+    "title": "Concrete Assessment & Repair",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42004",
+    "title": "Concrete Durability and Repair",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40008",
+    "title": "Concrete Durability and Repair Technology",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH41007",
+    "title": "Condensed Matter Physics I",
+    "level": 4,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH52012",
+    "title": "Condensed Matter Physics II",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40004",
+    "title": "Construction Management I",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA13002",
+    "title": "Consultancy Project",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA41002",
+    "title": "Consumer Behaviour",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS42002",
+    "title": "Contemporary UX and Interactions",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG32001",
+    "title": "Control and Dynamical Systems",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG40004",
+    "title": "Control and Dynamical Systems  II",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC21011",
+    "title": "Creative Interactions",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG31004",
+    "title": "Creativity, Innovation and New Venture Creation",
+    "level": 3,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG51001",
+    "title": "Creativity, Innovation and New Venture Creation",
+    "level": 5,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA33003",
+    "title": "Data Analysis & Visualisation",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS32001",
+    "title": "Data Engineering",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC53011",
+    "title": "Data Science Research Project",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22007",
+    "title": "Data Structure (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA13008",
+    "title": "Data Structures and Algorithms",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC22007",
+    "title": "Data Structures and Algorithms equals Programming",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS41003",
+    "title": "Data Visualisation",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS31001",
+    "title": "Data Visualisation Analytics",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31009",
+    "title": "Database Principles (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC32006",
+    "title": "Database Systems",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52001",
+    "title": "Database Systems",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS22001",
+    "title": "Database Systems",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI31003",
+    "title": "Database Systems",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51049",
+    "title": "Database Systems Development",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31014",
+    "title": "Databases",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE41003",
+    "title": "Deep Learning for Medical Imaging",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA13005",
+    "title": "Design & Manufacturing Project I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12006",
+    "title": "Design Analysis I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22006",
+    "title": "Design Analysis II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE23001",
+    "title": "Design Centred Learning",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51030",
+    "title": "Design for Durability",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50017",
+    "title": "Design for Durability, Assessment and Repair",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA23005",
+    "title": "Design for Thermofluidic Applications",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50035",
+    "title": "Design Internship in Industry",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS31005",
+    "title": "Design Methods",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51004",
+    "title": "Developmental Juvenile Osteology",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42010",
+    "title": "DevOps and Cloud Services",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51041",
+    "title": "Devops and MicroServices",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA31002",
+    "title": "Differential Equations",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA32007",
+    "title": "Differential Geometry",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12001",
+    "title": "Digital Business and New Technologies",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EE32002",
+    "title": "Digital Electronic Systems",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV32001",
+    "title": "Digital Evidence",
+    "level": 3,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV52001",
+    "title": "Digital Evidence",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31005",
+    "title": "Digital Image Processing",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31006",
+    "title": "Digital Signal Processing",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE32005",
+    "title": "Digital Structural Analysis and Design",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE32008",
+    "title": "Digital Structural Analysis and Design",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA50002",
+    "title": "Disaster Victim Identification (Online)",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21005",
+    "title": "Discrete Mathematics",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA21003",
+    "title": "Discrete Mathematics",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA51003",
+    "title": "Dynamical Systems",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA13004",
+    "title": "Economies, Markets and Enterprise",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32010",
+    "title": "EDA Technology for Programmable Logic Devices (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC50003",
+    "title": "Educational Assistive Technology MSc Dissertation",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME42002",
+    "title": "Electric Traction Drive and Control",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21015",
+    "title": "Electrical & Electronics Design Principles",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32006",
+    "title": "Electrical and Electronics Design Principle",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH31007",
+    "title": "Electrodynamics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH51007",
+    "title": "Electrodynamics II",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG11006",
+    "title": "Electromagnetism and Circuits",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG21008",
+    "title": "Electromagnetism and Light",
+    "level": 2,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH21001",
+    "title": "Electromagnetism and Light",
+    "level": 2,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22005",
+    "title": "Electronics and Instrumentation",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG22009",
+    "title": "Electronics and Instrumentation",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG40005",
+    "title": "Electronics Project",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS12001",
+    "title": "Embedded Systems Development and Networking",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31007",
+    "title": "Embedded Systems Technology (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA31001",
+    "title": "Embryology",
+    "level": 3,
+    "area": "Anatomy",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51002",
+    "title": "Embryology and Developmental Anatomy",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS21001",
+    "title": "Employability for Computing Professionals",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31009",
+    "title": "Engineering Design",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42007",
+    "title": "Engineering Design and Manufacture Honours Project",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA10009",
+    "title": "Engineering Design and Manufacture Work-based Learning I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA20009",
+    "title": "Engineering Design and Manufacture Work-based Learning II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA30009",
+    "title": "Engineering Design and Manufacture Work-based Learning III",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA40010",
+    "title": "Engineering Design and Manufacture Work-based Learning IV",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI31013",
+    "title": "Engineering Design I",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME31004",
+    "title": "Engineering Design I",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME32003",
+    "title": "Engineering Design II",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11011",
+    "title": "Engineering Design Practice",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE21002",
+    "title": "Engineering Design Software",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE12005",
+    "title": "Engineering Materials",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21006",
+    "title": "Engineering Materials",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11005",
+    "title": "Engineering Materials",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI31014",
+    "title": "Engineering Materials",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME31001",
+    "title": "Engineering Materials",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA10007",
+    "title": "Engineering Practice",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG11005",
+    "title": "Engineering Project 1",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME53001",
+    "title": "Engineering Project and Report (Industrial Placement)",
+    "level": 5,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG12007",
+    "title": "Engineering Project II",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI11001",
+    "title": "English for Academic Skills I",
+    "level": 1,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI11002",
+    "title": "English for Academic Skills II",
+    "level": 1,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG21034",
+    "title": "English for Biomedical Engineering 1",
+    "level": 2,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG22040",
+    "title": "English for Biomedical Engineering 2",
+    "level": 2,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG00002",
+    "title": "English for Law",
+    "level": 1,
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG12008",
+    "title": "English with Engineering Context",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH31016",
+    "title": "Experimental and Professional Astrophysics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH32016",
+    "title": "Experimental and Professional Astrophysics II",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH31006",
+    "title": "Experimental and Professional Physics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH32006",
+    "title": "Experimental and Professional Physics II",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42002",
+    "title": "Exploring Scotland's Economy",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52031",
+    "title": "Finite Element Modelling",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE31003",
+    "title": "Fluid Mechanics",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG21006",
+    "title": "Fluid Mechanics",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME40002",
+    "title": "Fluid Mechanics",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21004",
+    "title": "Fluid Mechanics for Civil Engineers",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21007",
+    "title": "Fluid Mechanics I",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1-2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51013",
+    "title": "Forensic Anthropology as Expert Evidence",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA41003",
+    "title": "Forensic Anthropology Dissertation",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52014",
+    "title": "Forensic Archaeology: Application and Practice",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51016",
+    "title": "Forensic Archaeology: Principles and Theory",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52013",
+    "title": "Forensic Art Techniques",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51023",
+    "title": "Forensic Environments (MFDont)",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51024",
+    "title": "Forensic Environments (MLitt)",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52011",
+    "title": "Forensic Facial Imaging, Analysis and Comparison",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA42001",
+    "title": "Forensic Human Identification",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52009",
+    "title": "Forensic Human Identification",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52019",
+    "title": "Forensic Human Identification: Application and Practice",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51017",
+    "title": "Forensic Human Osteology",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA41001",
+    "title": "Forensic Osteology",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51011",
+    "title": "Forensic Osteology",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA42002",
+    "title": "Forensic Science and the Law",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52010",
+    "title": "Forensic Science and the Law",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52015",
+    "title": "Forensic Science and the Law",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "FM52004",
+    "title": "Forensic Science and the Law (part-time)",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV30001",
+    "title": "Forensic Science for Legal Professionals",
+    "level": 3,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV50002",
+    "title": "Forensic Science for Legal Professionals",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51018",
+    "title": "Forensic Taphonomy",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS20001",
+    "title": "Foundations of User Engagement",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS11001",
+    "title": "Front End Website Development",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52006",
+    "title": "Functional Analysis",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA41005",
+    "title": "Functional and Clinical Anatomy of the Limbs",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA11002",
+    "title": "Fundamental Algebra and Calculus",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32011",
+    "title": "Fundamentals of Brain Science (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE31009",
+    "title": "Fundamentals of Civil Engineering Materials",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31010",
+    "title": "Fundamentals of Digital Electronic Technique (NEU)",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE31008",
+    "title": "Fundamentals of Fluid Mechanics",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE41002",
+    "title": "Fundamentals of Geotechnical Engineering",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA32005",
+    "title": "Fundamentals of Scientific Computing",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE32007",
+    "title": "Fundamentals of Soil Mechanics",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE31007",
+    "title": "Fundamentals of Structural Analysis",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH41009",
+    "title": "Galaxies and The Universe",
+    "level": 4,
+    "area": "Physics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC31009",
+    "title": "Games Programming",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52060",
+    "title": "Games Programming",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS31004",
+    "title": "Games Programming",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE42002",
+    "title": "General Anaesthesia Technology",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE52001",
+    "title": "General Anaesthesia Technology",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG22005",
+    "title": "Geomechanics",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22006",
+    "title": "Geomechanics",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40002",
+    "title": "Geotechnical Design",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA41005",
+    "title": "Geotechnical Design",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG23001",
+    "title": "Global Challenges in Engineering and Technology",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11001",
+    "title": "Globalisation and Political Context",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA41007",
+    "title": "Graph Theory",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41001",
+    "title": "Graphics",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51008",
+    "title": "Graphics",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA31003",
+    "title": "Gross Anatomy 1",
+    "level": 3,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA32003",
+    "title": "Gross Anatomy 2",
+    "level": 3,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52002",
+    "title": "Health and Safety and Environmental Management",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32012",
+    "title": "Health System Management Engineering (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31011",
+    "title": "Healthcare Data Analysis (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA31002",
+    "title": "Histology 1",
+    "level": 3,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA32001",
+    "title": "Histology 2",
+    "level": 3,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS41001",
+    "title": "Honours Project",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21009",
+    "title": "Human Anatomy (NEU)",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA53001",
+    "title": "Human Anatomy MSc Dissertation",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC32005",
+    "title": "Human Computer Interaction",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52013",
+    "title": "Human Computer Interaction",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA23006",
+    "title": "Human Computer Interaction",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS30002",
+    "title": "Human Engagement Strategies",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51003",
+    "title": "Human Gross Anatomy 1",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52003",
+    "title": "Human Gross Anatomy 2",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31003",
+    "title": "Human Resource Management",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51034",
+    "title": "Hydrodynamics & Ocean Engineering",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS41004",
+    "title": "Image and Natural Language Processing",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32004",
+    "title": "Image Based Diagnostics",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE41002",
+    "title": "Image Reconstruction and 3D Printing of Anatomical Models",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32005",
+    "title": "Imaging Technology and Surgical Procedures",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE50005",
+    "title": "Independent Research for Energy Physics",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC40001",
+    "title": "Individual Project",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40001",
+    "title": "Individual Research Project",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA40008",
+    "title": "Individual Research Project",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31010",
+    "title": "Industrial Engineering",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41004",
+    "title": "Industrial Team Project",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS32002",
+    "title": "Industrial Team Project",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG32002",
+    "title": "Industry and Innovation",
+    "level": 3,
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS41002",
+    "title": "Information Analysis and Reporting",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS31002",
+    "title": "Information and Network Security",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC31012",
+    "title": "Information Security",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51042",
+    "title": "Information Security",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI31002",
+    "title": "Information Security",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA33004",
+    "title": "Information Security",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12008",
+    "title": "Information Systems Development",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA13006",
+    "title": "Information Systems Management",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32007",
+    "title": "Innovation and Biomedical Engineering: Understanding New Venture Creation",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE52003",
+    "title": "Innovation and Biomedical Engineering: Understanding New Venture Creation",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42001",
+    "title": "Innovation and Entrepreneurship",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32008",
+    "title": "Intelligent Medical Software Engineering and Development (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22001",
+    "title": "Internationalisation and Global Trade",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH51009",
+    "title": "Introducing Biology to Physicists",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52061",
+    "title": "Introduction to AAC Technology Solutions",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32013",
+    "title": "Introduction to Artificial Intelligence (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS21002",
+    "title": "Introduction to Artificial Intelligence and Machine Learning",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52055",
+    "title": "Introduction to Assistive Technology Interaction",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52052",
+    "title": "Introduction to AT solutions",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31012",
+    "title": "Introduction to Big Data Algorithms (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA12001",
+    "title": "Introduction to Biological Anthropology",
+    "level": 1,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE11001",
+    "title": "Introduction to Biomedical Engineering",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11002",
+    "title": "Introduction to Business",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC53013",
+    "title": "Introduction to Data Mining",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52049",
+    "title": "Introduction to Data Science",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC12001",
+    "title": "Introduction to Data Structures and Algorithms",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS12002",
+    "title": "Introduction to Data Structures and Algorithms",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12010",
+    "title": "Introduction to Data Structures and Algorithms",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE32002",
+    "title": "Introduction to Electrical Power and the Grid",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG11071",
+    "title": "Introduction to English for Biomedical Engineering 1",
+    "level": 1,
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG12059",
+    "title": "Introduction to English for Biomedical Engineering 2",
+    "level": 1,
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA21001",
+    "title": "Introduction to Human Form and Function",
+    "level": 2,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH50006",
+    "title": "Introduction to Independent Research",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11009",
+    "title": "Introduction to Information Systems",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21010",
+    "title": "Introduction to Intelligent Imaging (NEU)",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC50001",
+    "title": "Introduction to Machine Learning",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12005",
+    "title": "Introduction to Manufacture",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11003",
+    "title": "Introduction to Marketing",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51014",
+    "title": "Introduction to Medical Sciences: Anatomy",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21008",
+    "title": "Introduction to Programming",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG21007",
+    "title": "Introduction to Programming",
+    "level": 2,
+    "area": "Physics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH21002",
+    "title": "Introduction to Programming",
+    "level": 2,
+    "area": "Physics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC11001",
+    "title": "Introduction to Software Development",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS11002",
+    "title": "Introduction to Software Development",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE12006",
+    "title": "Introduction to Structural Analysis",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12002",
+    "title": "Introduction to Structural Analysis",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51039",
+    "title": "Introduction to User Experience",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA21007",
+    "title": "Introductory Anatomy",
+    "level": 2,
+    "area": "Anatomy",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LD02017",
+    "title": "Introductory Maths (Summer School)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SS03022",
+    "title": "Introductory Maths (Summer School)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA51006",
+    "title": "Inverse Problems",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SEM 1/2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA40013",
+    "title": "IT Management for Business Honours Project",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA10010",
+    "title": "IT Management for Business Work-based Learning I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21014",
+    "title": "IT Management for Business Work-based Learning II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA30011",
+    "title": "IT Management for Business Work-based Learning III",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA40011",
+    "title": "IT Management for Business Work-based Learning IV",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA40014",
+    "title": "IT Software Development Honours Project",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA10011",
+    "title": "IT Software Development Work-based Learning I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA20010",
+    "title": "IT Software Development Work-based Learning II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA30010",
+    "title": "IT Software Development Work-based Learning III",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA40012",
+    "title": "IT Software Development Work-based Learning IV",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC11003",
+    "title": "Java Online",
+    "level": 1,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE11002",
+    "title": "Java Programming",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12009",
+    "title": "Java Programming (with English)",
+    "level": 1,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE11005",
+    "title": "Java Programming Language (NEU)",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV50003",
+    "title": "Law for Forensic Scientists",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21001",
+    "title": "Leadership and Management",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51021",
+    "title": "Leadership and Professional Development",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV50005",
+    "title": "Leadership and Professional Development",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV53001",
+    "title": "Legislative Frameworks & Drug Monitoring",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52033",
+    "title": "Life Cycle Analysis & Environmental Impact Assessment",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH12004",
+    "title": "Light and Matter",
+    "level": 1,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE12011",
+    "title": "Linear Algebra (NEU)",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME32002",
+    "title": "Locomotive Vehicle Engineering",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS31003",
+    "title": "Logic and Discrete Mathematics",
+    "level": 3,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS31006",
+    "title": "Machine Learning",
+    "level": 3,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22008",
+    "title": "Machine Learning (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52056",
+    "title": "Machine learning and artificial intelligence methods in healthcare",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC53014",
+    "title": "Machine Learning for Data Science",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME22001",
+    "title": "Manufacturing Project",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22007",
+    "title": "Manufacturing Project I",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31011",
+    "title": "Manufacturing with Materials",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51033",
+    "title": "Marine Renewable Energy & Design",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA32009",
+    "title": "Mathematical Biology I",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA42002",
+    "title": "Mathematical Biology II",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52002",
+    "title": "Mathematical Ecology and Epidemiology",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21013",
+    "title": "Mathematical Logic in Computing",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52001",
+    "title": "Mathematical Medicine: Oncology and Epidemiology",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG31002",
+    "title": "Mathematical Methods for Electronic Engineering and Physics",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH31008",
+    "title": "Mathematical Methods for Physics",
+    "level": 3,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52003",
+    "title": "Mathematical Physiology",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA42008",
+    "title": "Mathematical Statistics",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52007",
+    "title": "Mathematical Statistics",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH22002",
+    "title": "Mathematics & Mechanics",
+    "level": 2,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LD02005",
+    "title": "Mathematics (Summer School)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA11001",
+    "title": "Mathematics 1A",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA12001",
+    "title": "Mathematics 1B",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21009",
+    "title": "Mathematics 2A",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA21001",
+    "title": "Mathematics 2A",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22008",
+    "title": "Mathematics 2B",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA22001",
+    "title": "Mathematics 2B",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA40002",
+    "title": "Mathematics and Physics Research Project 1",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH50008",
+    "title": "Mathematics and Physics Research Project II",
+    "level": 5,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS11003",
+    "title": "Mathematics for Computer Science",
+    "level": 1,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG21005",
+    "title": "Mathematics for Engineers",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21010",
+    "title": "Mathematics for Engineers I",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG31001",
+    "title": "Mathematics for Engineers II",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA41006",
+    "title": "Mathematics of Fluids and Plasmas 1: Fluid Dynamics",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA42007",
+    "title": "Mathematics of Fluids and Plasmas 2: MHD and the Sun",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA33001",
+    "title": "Mathematics Work Placement",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11006",
+    "title": "Maths for Engineers I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12003",
+    "title": "Maths for Engineers II",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA20007",
+    "title": "Maths for Engineers III",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA23004",
+    "title": "Maths for Engineers IV",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22009",
+    "title": "Matlab (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA51007",
+    "title": "Measure Theory",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32009",
+    "title": "Measurement of Biological Systems (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME40005",
+    "title": "Mechanical Engineering Honours Project",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12011",
+    "title": "Mechanical Engineering Project II (with English)",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12003",
+    "title": "Mechanics",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG12010",
+    "title": "Mechanics",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG11008",
+    "title": "Mechanics",
+    "level": 1,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE12008",
+    "title": "Mechanics (JEP)",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22009",
+    "title": "Mechanics of Machinery",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME22002",
+    "title": "Mechanics of Machines",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31013",
+    "title": "Medical Complex Data Mining (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE41004",
+    "title": "Medical Device Quality Management System",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE51002",
+    "title": "Medical Device Quality Management System",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME42001",
+    "title": "Medical Devices and Professional Skills",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME51012",
+    "title": "Medical Image Processing and Analysis",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31002",
+    "title": "Medical Imaging and Surgical Procedures",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22001",
+    "title": "Medical Instrumentation",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE42001",
+    "title": "Medical Robotics and Operation Room Technology",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE52002",
+    "title": "Medical Robotics and Operation Room Technology",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME51014",
+    "title": "Medical Technology Management & Governance",
+    "level": 5,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME41003",
+    "title": "Medical Ultrasound System",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EE32003",
+    "title": "Microelectronics",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH42004",
+    "title": "Modern Concepts in Statistical Physics",
+    "level": 4,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS22002",
+    "title": "Modern Web Stack Development",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG00001",
+    "title": "Module for timetabling purposes",
+    "level": 1,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE53001",
+    "title": "MSc Civil Engineering Research Project",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC53016",
+    "title": "MSc Computing Science Project",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV50006",
+    "title": "MSc Drug Analysis and Toxicology Research Project",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA53004",
+    "title": "MSc Forensic Anthropology Research Project",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA53005",
+    "title": "MSc Forensic Archaeology & Anthropology Research Project",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA53003",
+    "title": "MSc in Anatomy and Advanced Forensic Anthropology Research Project",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52010",
+    "title": "MSc Project",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA53002",
+    "title": "MSc Project in Mathematics",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50001",
+    "title": "Multi-Disciplinary Project",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS21003",
+    "title": "Multi-Paradigm Programming",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC21008",
+    "title": "Multi-paradigm Programming and Data Structures",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21011",
+    "title": "Multi-paradigm Programming and Data Structures",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE41005",
+    "title": "Neonatal Intensive Care Technology",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE51001",
+    "title": "Neonatal Intensive Care Technology",
+    "level": 5,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC31013",
+    "title": "Networks",
+    "level": 3,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC31008",
+    "title": "Networks and Data Communications",
+    "level": 3,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI31001",
+    "title": "Networks and Data Communications",
+    "level": 3,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA42003",
+    "title": "Neuroanatomy",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA52002",
+    "title": "Neuroanatomy",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH42006",
+    "title": "Nuclear and Particle Physics",
+    "level": 4,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51035",
+    "title": "Numerical Methods and Computational Fluid Dynamics",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC22004",
+    "title": "Object Oriented Analysis and Design",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12007",
+    "title": "Object-orientated Software Development II",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22010",
+    "title": "Object-oriented Analysis and Design",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA11010",
+    "title": "Object-oriented Software Development I",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52034",
+    "title": "Offshore Geotechnical Engineering I",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG11070",
+    "title": "ONLINE General Pre-Sessional English for International Students (14 weeks)",
+    "level": 1,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG11066",
+    "title": "ONLINE General Pre-Sessional English for International Students (8 weeks)",
+    "level": 1,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG11065",
+    "title": "ONLINE Pre-Sessional English for Business for International Students (8 weeks)",
+    "level": 1,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG11069",
+    "title": "ONLINE Pre-Sessional English for Business Students (14 weeks)",
+    "level": 1,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32014",
+    "title": "Operating System (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS21004",
+    "title": "Operating Systems",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA32003",
+    "title": "Operational Research",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32002",
+    "title": "Operations Management",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH41005",
+    "title": "Optics and Photonics I",
+    "level": 4,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH52011",
+    "title": "Optics and Photonics II",
+    "level": 5,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA52004",
+    "title": "Optimization in Finance and Energy",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA41003",
+    "title": "Ordinary Differential Equations and the Approximation",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA42003",
+    "title": "Partial Differential Equations and their Approximation",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SD10001",
+    "title": "Personal Development Planning",
+    "level": 1,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SD20001",
+    "title": "Personal Development Planning",
+    "level": 2,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SD20002",
+    "title": "Personal Development Planning JEP",
+    "level": 2,
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC53015",
+    "title": "PGCert Data Science Project",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV52002",
+    "title": "Pharmacology for Toxicologists and Drug Analysts",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC22006",
+    "title": "Physical Computing",
+    "level": 2,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LD02012",
+    "title": "Physics (Summer School)",
+    "level": 1,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "SS03012",
+    "title": "Physics (Summer School)",
+    "level": 1,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH40007",
+    "title": "Physics Investigations (BSc joint honours)",
+    "level": 4,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH40006",
+    "title": "Physics Project (BSc)",
+    "level": 4,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH50009",
+    "title": "Physics Research Project I",
+    "level": 5,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH50007",
+    "title": "Physics Research Project II (MSci)",
+    "level": 5,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22011",
+    "title": "Practice of Surveying",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31014",
+    "title": "Principle and application of single-chip computer (NEU)",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS42001",
+    "title": "Principles of Programming Languages",
+    "level": 4,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21011",
+    "title": "Probability and Statistics (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE33001",
+    "title": "Production Practice",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE31006",
+    "title": "Professional Development",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52035",
+    "title": "Professional Development",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE12003",
+    "title": "Professional Engineering Practice",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH11002",
+    "title": "Professional Physics",
+    "level": 1,
+    "area": "Physics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS11004",
+    "title": "Professional Skills in Computer Science",
+    "level": 1,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV52003",
+    "title": "Professional Skills in Drug Analysis and Toxicology",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21008",
+    "title": "Programmable Electronics",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32010",
+    "title": "Programmable Electronics",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS41005",
+    "title": "Programming Language Design and Implementation",
+    "level": 4,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC50002",
+    "title": "Programming languages for Data Engineering",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52050",
+    "title": "Programming Languages for Data Science",
+    "level": 5,
+    "area": "Computing",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA50001",
+    "title": "Project",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SUM",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI11005",
+    "title": "Project (Mathematics)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI11003",
+    "title": "Project I (Civil Engineering)",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI11004",
+    "title": "Project I (Computing)",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI11006",
+    "title": "Project I (Mechanical)",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50029",
+    "title": "Project Management",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21002",
+    "title": "Project Management",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42006",
+    "title": "Project Management",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51027",
+    "title": "Project Management I",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52027",
+    "title": "Project Management II",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52036",
+    "title": "Project Management Systems",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51037",
+    "title": "Project Management Teams",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA12006",
+    "title": "Proof and Number Theory",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12005",
+    "title": "Proof and Number Theory - Pure Maths",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA40001",
+    "title": "PTS and Project Work",
+    "level": 4,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH31005",
+    "title": "Quantum Mechanics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH32008",
+    "title": "Quantum Mechanics II - Atoms and Molecules",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH51008",
+    "title": "Quantum Mechanics III",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AG12056",
+    "title": "Reading and Writing in English for Academic Purposes 2",
+    "level": 1,
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS40001",
+    "title": "Real-World User Contexts",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE13001",
+    "title": "Recognition Learning",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA41007",
+    "title": "Regional Gross Anatomy",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE42003",
+    "title": "Rehabilitation Engineering",
+    "level": 4,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA31006",
+    "title": "Reinforced Concrete Design",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE40001",
+    "title": "Renewable Energy Project",
+    "level": 4,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE50002",
+    "title": "Renewable Energy Research Project I (MSci)",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE50001",
+    "title": "Renewable Energy Research Project II (MSci)",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE51002",
+    "title": "Renewable Energy Systems, Applications and Developments",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE52003",
+    "title": "Renewable Resource Modelling and Assessment",
+    "level": 5,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE31003",
+    "title": "Research and Development Skills",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC42001",
+    "title": "Research Frontiers",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC42002",
+    "title": "Research Frontiers",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52008",
+    "title": "Research Frontiers",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52044",
+    "title": "Research Frontiers",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52012",
+    "title": "Research Methods",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA32002",
+    "title": "Research Methods",
+    "level": 3,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51009",
+    "title": "Research Methods",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51020",
+    "title": "Research Methods",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA41001",
+    "title": "Research Methods",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV51001",
+    "title": "Research Methods",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50028",
+    "title": "Research Methods and Diploma Project",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50007",
+    "title": "Research Project",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "LV53002",
+    "title": "Research Skills and Statistical Analysis",
+    "level": 5,
+    "area": "Leverhulme Research Centre",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51019",
+    "title": "Rigid Body Mechanics",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME40003",
+    "title": "Robotics and Mechatronics",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG11003",
+    "title": "Science and Engineering Mathematics 1A",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG12003",
+    "title": "Science and Engineering Mathematics 1B",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22010",
+    "title": "Signal and Linear System (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21001",
+    "title": "Software Applications for Biomedical Engineering Design",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22003",
+    "title": "Software Applications for Biomedical Engineering Design (JEP)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME21001",
+    "title": "Software Applications for Mechanical Engineering Design",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA33005",
+    "title": "Software Deployment & Quality",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51002",
+    "title": "Software Development",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51003",
+    "title": "Software Engineering",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS21005",
+    "title": "Software Engineering",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32009",
+    "title": "Software Implementation & Testing",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA23007",
+    "title": "Software Maintenance & Legacy Systems",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32008",
+    "title": "Software Requirements Analysis & Design",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51036",
+    "title": "Soil Dynamics",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50025",
+    "title": "Soil Dynamics and Earthquake Engineering",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE32002",
+    "title": "Soil Mechanics",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32005",
+    "title": "Soil Mechanics Applications",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22003",
+    "title": "Soil Mechanics Concept",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE41002",
+    "title": "Solar Energy",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22012",
+    "title": "Solid Mechanics",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG22010",
+    "title": "Solid Mechanics",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME31002",
+    "title": "Solid Mechanics",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME40004",
+    "title": "Solid Mechanics and Materials",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH12003",
+    "title": "Space Physics and Astronomy",
+    "level": 1,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51045",
+    "title": "Specialist and mainstream AT solutions",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH41008",
+    "title": "Stars and Planetary Systems",
+    "level": 4,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12006",
+    "title": "Statistics (with English)",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA12003",
+    "title": "Statistics and Probability",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22013",
+    "title": "Statistics II",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA22004",
+    "title": "Statistics II",
+    "level": 2,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE32006",
+    "title": "Steel and Concrete Structures",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA33001",
+    "title": "Steel Design",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA51005",
+    "title": "Stochastic Processes",
+    "level": 5,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE31005",
+    "title": "Structural Analysis",
+    "level": 3,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21005",
+    "title": "Structural Analysis",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22004",
+    "title": "Structural Analysis & Design",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE11002",
+    "title": "Structural Behaviour & Design",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12002",
+    "title": "Structural Behaviour and Design",
+    "level": 1,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG12012",
+    "title": "Structural Behaviour and Design",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40005",
+    "title": "Structural Design",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51038",
+    "title": "Structural Dynamics and Earthquake Engineering",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE22003",
+    "title": "Structures",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI22014",
+    "title": "Structures",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "INDPLACE1",
+    "title": "Student on Industrial Placement",
+    "level": 1,
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21003",
+    "title": "Supply Chain Management",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE32002",
+    "title": "Surgical Technology and Clinical Environment",
+    "level": 3,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE22007",
+    "title": "Surveying",
+    "level": 2,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA12004",
+    "title": "Surveying",
+    "level": 1,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50004",
+    "title": "Sustainable Construction",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51039",
+    "title": "Sustainable Geotechnical Design",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA32004",
+    "title": "Sustainable Infrastructure",
+    "level": 3,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE50019",
+    "title": "Sustainable Use of Concrete Materials",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21012",
+    "title": "Systems Analysis and Design",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA41002",
+    "title": "Taphonomy, Trauma and Skeletal Biomechanics",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA51012",
+    "title": "Taphonomy, Trauma and Skeletal Biomechanics",
+    "level": 5,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41007",
+    "title": "Technology Innovation Management",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51005",
+    "title": "Technology Innovation Management",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME31003",
+    "title": "Testing Technology and Signal Processing",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE22005",
+    "title": "The Basis of Telemedicine Technology (NEU)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC52051",
+    "title": "The educational assistive technologist",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC32008",
+    "title": "Theory of Computation",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS32004",
+    "title": "Theory of Computation",
+    "level": 3,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH32009",
+    "title": "Thermal Physics I",
+    "level": 3,
+    "area": "Physics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME12001",
+    "title": "Thermodynamics",
+    "level": 1,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "EG12011",
+    "title": "Thermodynamics",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME21002",
+    "title": "Thermodynamics",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "BE21004",
+    "title": "Thermodynamics (JEP)",
+    "level": 2,
+    "area": "Biomedical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI12008",
+    "title": "Thermodynamics I",
+    "level": 1,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI21012",
+    "title": "Thermodynamics II",
+    "level": 2,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME32001",
+    "title": "Thermofluids",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA12002",
+    "title": "Topics in Pure Mathematics",
+    "level": 1,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "ME41004",
+    "title": "Train Traction and Braking",
+    "level": 4,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "DI31015",
+    "title": "Transportation Engineering",
+    "level": 3,
+    "area": "Mechanical Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS11005",
+    "title": "Unix Systems",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52037",
+    "title": "Use of Sustainable Materials in Construction",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS50003",
+    "title": "User Engagement Strategy Development and Evaluation",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41012",
+    "title": "User Experience",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51010",
+    "title": "User Experience",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS22003",
+    "title": "User Interface Design",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC21012",
+    "title": "Users and Interfaces",
+    "level": 2,
+    "area": "Computing",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "MA31007",
+    "title": "Vector Calculus",
+    "level": 3,
+    "area": "Mathematics",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CA41006",
+    "title": "Vertebral Column",
+    "level": 4,
+    "area": "Anatomy",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA42005",
+    "title": "Water Resources",
+    "level": 4,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 1",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE40003",
+    "title": "Water Resources and Treatment",
+    "level": 4,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "PH12005",
+    "title": "Waves and Mechanics",
+    "level": 1,
+    "area": "Physics",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC51046",
+    "title": "Web Application Development",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC11002",
+    "title": "Web Authoring",
+    "level": 1,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA21011",
+    "title": "Web Development I",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "GA22008",
+    "title": "Web Development II",
+    "level": 2,
+    "area": "Graduate Apprenticeship Programme",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "RE42002",
+    "title": "Wind and Marine Energy",
+    "level": 4,
+    "area": "Physics",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC50004",
+    "title": "Work Based Skills and Innovative Practice",
+    "level": 5,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "AC41010",
+    "title": "Work Placement",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CS43001",
+    "title": "Work Placement",
+    "level": 4,
+    "area": "Computing",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51040",
+    "title": "Work-based learning I",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE52038",
+    "title": "Work-based learning II",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  },
+  {
+    "code": "CE51041",
+    "title": "Work-based learning III",
+    "level": 5,
+    "area": "Civil Engineering",
+    "period": "SEM 2",
+    "location": "City Campus (including blended)"
+  }
+]

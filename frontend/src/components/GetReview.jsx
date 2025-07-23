@@ -142,10 +142,10 @@ const GetReview = () => {
     //     }
     // };
 
-    // Find the specific module variant that matches the searched code
-    const specificVariant = reviewData?.module.variants.find(
-        (variant) => variant.code.toLowerCase() === searchParams.get('code')?.toLowerCase()
-    );
+    // // Find the specific module variant that matches the searched code
+    // const specificVariant = reviewData?.module.variants.find(
+    //     (variant) => variant.code.toLowerCase() === searchParams.get('code')?.toLowerCase()
+    // );
 
 
     return (
@@ -197,8 +197,8 @@ const GetReview = () => {
             <Collapse in={!!error}><Alert severity="error" sx={{ my: 2 }}>{error}</Alert></Collapse>
 
             {/* --- Display review data only if it exists --- */}
-            <Collapse in={!!reviewData && !!specificVariant}>
-                {reviewData && specificVariant && (
+            <Collapse in={!!reviewData}>
+                {reviewData && (
                     <>
                         {/* --- Section 2: Module & Review Details --- */}
                         <Paper elevation={2} sx={{ p: 3, my: 2 }}>
@@ -207,11 +207,10 @@ const GetReview = () => {
                                 <Divider />
                                 <DetailItem label="Title" value={reviewData.module.title} />
                                 <DetailItem label="Area" value={reviewData.module.area} />
-                                <DetailItem label="Level" value={specificVariant.level} />
-                                <DetailItem label="Period" value={specificVariant.period} />
+                                <DetailItem label="Level" value={reviewData.module.level} />
+                                <DetailItem label="Period" value={reviewData.module.period} />
                                 <DetailItem label="Location" value={reviewData.module.location} />
-                                <DetailItem label="Partnership" value={reviewData.module.partnership} />
-                                <DetailItem label="Module Lead" value={`${specificVariant.lead?.firstName} ${specificVariant.lead?.lastName}`} />
+                                <DetailItem label="Module Lead" value={`${reviewData.module.lead?.firstName} ${reviewData.module.lead?.lastName}`} />
                                 <DetailItem label="Review Status" value={reviewData.status} />
                                 <DetailItem label="Review Year" value={new Date(reviewData.createdAt).getFullYear()} />
                             </Stack>
