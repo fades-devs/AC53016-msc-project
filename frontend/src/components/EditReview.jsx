@@ -42,7 +42,6 @@ const EditReview = () => {
 
     // State for module details (will be populated from the fetched review)
     const [moduleDetails, setModuleDetails] = useState(null);
-    const [specificVariant, setSpecificVariant] = useState(null);
     
     // // State for the module lookup
     // const [moduleCode, setModuleCode] = useState(paramModuleCode || ''); // Pre-fill if it's in the URL
@@ -108,11 +107,6 @@ const EditReview = () => {
                 
                 // --- Populate all form fields with the fetched data ---
                 setModuleDetails(data.module);
-
-                // Find the specific variant from the populated module data
-                const variant = data.module.variants.find(v => v.code === data.module.variants[0].code); // Simplified assumption
-                // const variant = data.module.variants[0]; - this logic assumes 1st variant is primary one
-                setSpecificVariant(variant);
 
                 setStatus(data.status || 'In Progress');
                 setEnhanceUpdate(data.enhanceUpdate || '');
@@ -273,16 +267,15 @@ const EditReview = () => {
             {/* Section 1: Module Details (Read-only) */}
             <Paper elevation={2} sx={{ p: 3, my: 2 }}>
                 <Typography variant="h6">1. Module Details</Typography>
-                {specificVariant && moduleDetails && (
+                {moduleDetails && (
                     <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'action.hover' }}>
-                        <Typography><b>Code:</b> {specificVariant.code}</Typography>
+                        <Typography><b>Code:</b> {moduleDetails.code}</Typography>
                         <Typography><b>Title:</b> {moduleDetails.title}</Typography>
                         <Typography><b>Area:</b> {moduleDetails.area}</Typography>
-                        <Typography><b>Level:</b> {specificVariant.level}</Typography>
-                        <Typography><b>Period:</b> {specificVariant.period}</Typography>
+                        <Typography><b>Level:</b> {moduleDetails.level}</Typography>
+                        <Typography><b>Period:</b> {moduleDetails.period}</Typography>
                         <Typography><b>Location:</b> {moduleDetails.location}</Typography>
-                        <Typography><b>Partnership:</b> {moduleDetails.partnership}</Typography>
-                        <Typography><b>Module Lead:</b> {specificVariant.lead?.firstName} {specificVariant.lead?.lastName}</Typography>
+                        <Typography><b>Module Lead:</b> {moduleDetails.lead?.firstName} {moduleDetails.lead?.lastName}</Typography>
                     </Box>
                 )}
             </Paper>

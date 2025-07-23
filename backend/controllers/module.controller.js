@@ -9,12 +9,12 @@ export const getModuleByCode = async (req, res) => {
     try {
         const moduleCode = req.params.moduleCode;
 
-        // Find the module document using the variant code
+        // Find the module document using the code
         const module = await Module.findOne({ 
-            'variants.code': { $regex: new RegExp(`^${moduleCode}$`, 'i') } 
+            'code': { $regex: new RegExp(`^${moduleCode}$`, 'i') } 
         })
-        // Populate the 'lead' field within the 'variants' array
-        .populate({path: 'variants.lead', select: 'firstName lastName email'}) // Select which user fields to return
+        // Populate the 'lead' field
+        .populate({path: 'lead', select: 'firstName lastName email'}) // Select which user fields to return
 
         if (!module) {
             return res.status(404).json({ message: 'Module not found' });
@@ -46,8 +46,156 @@ export const getModuleByCode = async (req, res) => {
 }
 
 // @route   GET /api/modules - /api/modules?level=1
+export const getModules = async(req,res) => {
+
+    try {
+        // --- PAGINATION ---
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 20;
+        const skip = (page - 1) * limit;
+
+        // --- FILTERING ---
+        const { area, level, period, location, titleSearch, codeSearch, status, year, leadSearch } = req.query;
+
+        // Helper function to build $in queries for multi-select
+        const buildInQuery = (value) => {
+            const values = Array.isArray(value) ? value : [value];
+            return { $in: values };
+        };
+
+        // 1. Build the initial match query for all module fields
+        // All filters now apply directly to the Module collection
+        const initialMatch = {};
+        if (area) initialMatch.area = buildInQuery(area);
+        if (location) initialMatch.location = buildInQuery(location);
+        if (period) initialMatch.period = buildInQuery(period);
+        if (titleSearch) initialMatch.title = { $regex: titleSearch, $options: "i" };
+        if (codeSearch) initialMatch.code = { $regex: codeSearch, $options: "i" };
+        if (level) {
+            const levelValues = Array.isArray(level) ? level.map(l => parseInt(l)) : [parseInt(level)];
+            initialMatch.level = { $in: levelValues };
+        }
+
+        // 2. Build the final match query (for fields created after lookups)
+        const finalMatch = {};
+        if (status) finalMatch.status = buildInQuery(status);
+
+        // --- AGGREGATION PIPELINE ---
+        const basePipeline = [
+            // Stage 1: Initial match on core module fields.
+            { $match: initialMatch },
+
+            // Stage 2: Join with Users to get module lead details
+            {
+                $lookup: {
+                    from: "users",
+                    localField: "lead",
+                    foreignField: "_id",
+                    as: "leadData"
+                }
+            },
+            { $unwind: { path: "$leadData", preserveNullAndEmptyArrays: true } },
+
+            // Stage 3: Add lead's full name to filter on
+            {
+                $addFields: {
+                    moduleLeadName: { $ifNull: [{ $concat: ["$leadData.firstName", " ", "$leadData.lastName"] }, null] }
+                }
+            },
+            // Stage 4: Conditionally filter by lead's name
+            ...(leadSearch ? [{ $match: { moduleLeadName: { $regex: leadSearch, $options: "i" } } }] : []),
+
+            // Stage 5: Join with Reviews using a pipeline that pre-filters by year.
+            {
+                $lookup: {
+                    from: "reviews",
+                    let: { moduleId: "$_id" },
+                    pipeline: [
+                        { $match: { $expr: { $eq: ["$module", "$$moduleId"] } } },
+                        // Conditionally add a match stage for the year IF the 'year' query param exists
+                        ...(year ? [{
+                            $match: {
+                                createdAt: {
+                                    $gte: new Date(parseInt(year), 0, 1),
+                                    $lt: new Date(parseInt(year) + 1, 0, 1)
+                                }
+                            }
+                        }] : [])
+                    ],
+                    as: "reviewData" // This array now ONLY contains reviews for the specified year
+                }
+            },
+
+            // Stage 6: If filtering by year, remove modules that have no reviews for that year.
+            ...(year ? [{ $match: { "reviewData": { $ne: [] } } }] : []),
+            
+            // Stage 7: Determine the status and date from the (now correctly filtered) array of reviews
+            {
+                $addFields: {
+                    lastReview: { $arrayElemAt: [{ $sortArray: { input: "$reviewData", sortBy: { createdAt: -1 } } }, 0] }
+                }
+            },
+            {
+                $addFields: {
+                    status: { $ifNull: ["$lastReview.status", "Not Started"] },
+                    lastReviewDate: { $ifNull: ["$lastReview.createdAt", null] },
+                    reviewId: { $ifNull: ["$lastReview._id", null] }
+                }
+            },
+
+            // Stage 8: Final filtering on the calculated status
+            { $match: finalMatch },
+        ];
+
+        // --- PAGINATION & SORTING ---
+        const results = await Module.aggregate([
+            ...basePipeline,
+            {
+                $addFields: {
+                    "sort_title": { "$toLower": "$title" },
+                    "sort_code": { "$toLower": "$code" }
+                }
+            },
+            { $sort: { "sort_title": 1, "sort_code": 1 } },
+            {
+                $facet: {
+                    metadata: [{ $count: 'total' }],
+                    data: [
+                        { $skip: skip }, 
+                        { $limit: limit },
+                        {
+                            $project: {
+                                title: 1, code: 1, area: 1, location: 1, level: 1, period: 1,
+                                status: 1, reviewDate: "$lastReviewDate", reviewId: 1,
+                                moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
+                                year: { $ifNull: [{ $year: "$lastReviewDate" }, null] }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]);
+
+        const modules = results[0].data;
+        const totalCount = results[0].metadata[0]?.total || 0;
+        const totalPages = Math.ceil(totalCount / limit);
+
+        res.status(200).json({
+            modules: modules,
+            totalPages: totalPages,
+            currentPage: page
+        });
+
+    }
+    catch (error) {
+        console.error("Error in getModules controller: ", error.message);
+        res.status(500).send("Server Error");
+    }
+}
+
+// @route   GET /api/modules - /api/modules?level=1
 // asynchronous function that handles the request (req) and response (res)
-export const getModules = async(req, res) => {
+export const getModulesOld = async(req, res) => {
 
     try {
 

@@ -23,19 +23,15 @@ const reviewSchema = new mongoose.Schema({
         enum: ["Not Started", "In Progress", "Completed"],
         default: "In Progress"
     },
-    // date: {
-    //     type: Date,
-    //     default: () => new Date()
-    // },
     module: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: "Module"
     },
-    variantId: { // The specific variant ID being reviewed
-        type: mongoose.Schema.Types.ObjectId,
-        // required: true,
-    },
+    // variantId: { // The specific variant ID being reviewed
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     // required: true,
+    // },
     enhanceUpdate: {
         type: String,
         required: true

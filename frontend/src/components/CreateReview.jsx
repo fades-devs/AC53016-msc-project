@@ -376,10 +376,10 @@ const CreateReview = () => {
 //         setDateFilter(e.target.value);
 //     };
 
-    // --- UPDATE: Find the specific variant to display its details ---
-    const specificVariant = foundModule?.variants.find(
-        (variant) => variant.code === debModuleCode
-    );
+    // // --- UPDATE: Find the specific variant to display its details ---
+    // const specificVariant = foundModule?.variants.find(
+    //     (variant) => variant.code === debModuleCode
+    // );
 
     return (
         <Box component="form" onSubmit={handleSubmit} sx={{ '& .MuiTextField-root': { my: 1 } }}>
@@ -417,25 +417,24 @@ const CreateReview = () => {
                 </Box>
 
 
-                <Collapse in={!!foundModule && !!specificVariant}>
+                <Collapse in={!!foundModule}>
                     {/* --- Add the correct JSX to display module details here --- */}
-                    {specificVariant && (
+                    {foundModule && (
                          <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
                             <Typography><b>Title:</b> {foundModule.title}</Typography>
                             <Typography><b>Area:</b> {foundModule.area}</Typography>
-                            <Typography><b>Level:</b> {specificVariant.level}</Typography>
-                            <Typography><b>Period:</b> {specificVariant.period}</Typography>
+                            <Typography><b>Level:</b> {foundModule.level}</Typography>
+                            <Typography><b>Period:</b> {foundModule.period}</Typography>
                             <Typography><b>Location:</b> {foundModule.location}</Typography>
-                            <Typography><b>Partnership:</b> {foundModule.partnership}</Typography>
                             <Typography>
-                                <b>Module Lead:</b> {specificVariant.lead?.firstName} {specificVariant.lead?.lastName}
+                                <b>Module Lead:</b> {foundModule.lead?.firstName} {foundModule.lead?.lastName}
                             </Typography>
                          </Box>
                     )}
                 </Collapse>
             </Paper>
 
-            <Collapse in={!!foundModule && !!specificVariant && !foundModule.existingReviewId}>
+            <Collapse in={!!foundModule && !foundModule.existingReviewId}>
                 {/* --- Section 2: Reflective Analysis --- */}
                 <Paper elevation={2} sx={{ p: 3, my: 2 }}>
                     <Typography variant="h6">2. Reflective Analysis</Typography>

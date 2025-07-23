@@ -115,18 +115,7 @@ const CompletionChart = () => {
                             onChange={handleYearChange}
                             variant="outlined"
                             fullWidth
-                            helperText="Clear to see all years"
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        {year && (
-                                            <IconButton onClick={handleClearYear} edge="end" aria-label="clear year filter">
-                                                <ClearIcon />
-                                            </IconButton>
-                                        )}
-                                    </InputAdornment>
-                                )
-                            }}
+                            helperText="Enter the desired year"
                         />
                     </Grid>
                 </Grid>

@@ -22,60 +22,58 @@ export const getCountReviewByStatus = async (req, res) => {
             pipeline.push({ $match: { area: area } });
         }
 
-        // Stage 2: Deconstruct the variants array to create a document for each variant.
-        pipeline.push({ $unwind: "$variants" });
+        // STAGE 2: LOOKUP REVIEWS
+        // Look up reviews for each module that fall within the target year.
+        const lookupPipeline = [
+            { $match: { $expr: { $eq: ["$module", "$$moduleId"] } } }
+        ];
 
-        // Stage 3: Look up reviews for each variant's parent module that fall within the target year.
+
+        // The year filter is now always active.
         if (!isNaN(targetYear)) {
             const startDate = new Date(targetYear, 0, 1);
             const endDate = new Date(targetYear + 1, 0, 1);
-            pipeline.push({
-                $lookup: {
-                    from: "reviews",
-                    let: { moduleId: "$_id" },
-                    pipeline: [
-                        {
-                            $match: {
-                                $expr: {
-                                    $and: [
-                                        { $eq: ["$module", "$$moduleId"] },
-                                        { $gte: ["$createdAt", startDate] },
-                                        { $lt: ["$createdAt", endDate] }
-                                    ]
-                                }
-                            }
-                        }
-                    ],
-                    as: "reviewsInYear"
+            lookupPipeline.push({
+                $match: {
+                    createdAt: { $gte: startDate, $lt: endDate }
                 }
             });
         }
 
-        // Stage 4: Determine the consolidated status for each variant based on its reviews for the year.
+        pipeline.push({
+            $lookup: {
+                from: "reviews",
+                let: { moduleId: "$_id" },
+                pipeline: lookupPipeline,
+                as: "relevantReviews"
+            }
+        });
+
+        // Stage 3: Determine the consolidated status for each module.
         pipeline.push({
             $addFields: {
                 status: {
                     $ifNull: [
                         {
                             $cond: {
-                                if: { $in: ["Completed", "$reviewsInYear.status"] },
+                                if: { $in: ["Completed", "$relevantReviews.status"] },
                                 then: "Completed",
                                 else: {
                                     $cond: {
-                                        if: { $in: ["In Progress", "$reviewsInYear.status"] },
+                                        if: { $in: ["In Progress", "$relevantReviews.status"] },
                                         then: "In Progress",
                                         else: "Not Started"
                                     }
                                 }
                             }
                         },
-                        "Not Started" // This catches variants with no reviews in the year
+                        "Not Started" // Catches modules with no reviews
                     ]
                 }
             }
         });
 
-        // Stage 5: Group all the variants by their calculated status and count them.
+        // Stage 4: Group all the modules by their calculated status and count them.
         pipeline.push({
             $group: {
                 _id: "$status",
@@ -83,7 +81,7 @@ export const getCountReviewByStatus = async (req, res) => {
             }
         });
 
-        // Stage 6: Format the output for a pie chart library.
+        // Stage 5: Format the output for a pie chart library.
         pipeline.push({
             $project: {
                 _id: 0,
@@ -92,10 +90,84 @@ export const getCountReviewByStatus = async (req, res) => {
             }
         });
 
-        // We must start the aggregation from the Module collection.
         const reviewCountByStatus = await Module.aggregate(pipeline);
-
         res.status(200).json(reviewCountByStatus);
+
+
+        // // Stage 2: Deconstruct the variants array to create a document for each variant.
+        // pipeline.push({ $unwind: "$variants" });
+
+        // // Stage 3: Look up reviews for each variant's parent module that fall within the target year.
+        // if (!isNaN(targetYear)) {
+        //     const startDate = new Date(targetYear, 0, 1);
+        //     const endDate = new Date(targetYear + 1, 0, 1);
+        //     pipeline.push({
+        //         $lookup: {
+        //             from: "reviews",
+        //             let: { moduleId: "$_id" },
+        //             pipeline: [
+        //                 {
+        //                     $match: {
+        //                         $expr: {
+        //                             $and: [
+        //                                 { $eq: ["$module", "$$moduleId"] },
+        //                                 { $gte: ["$createdAt", startDate] },
+        //                                 { $lt: ["$createdAt", endDate] }
+        //                             ]
+        //                         }
+        //                     }
+        //                 }
+        //             ],
+        //             as: "reviewsInYear"
+        //         }
+        //     });
+        // }
+
+        // // Stage 4: Determine the consolidated status for each variant based on its reviews for the year.
+        // pipeline.push({
+        //     $addFields: {
+        //         status: {
+        //             $ifNull: [
+        //                 {
+        //                     $cond: {
+        //                         if: { $in: ["Completed", "$reviewsInYear.status"] },
+        //                         then: "Completed",
+        //                         else: {
+        //                             $cond: {
+        //                                 if: { $in: ["In Progress", "$reviewsInYear.status"] },
+        //                                 then: "In Progress",
+        //                                 else: "Not Started"
+        //                             }
+        //                         }
+        //                     }
+        //                 },
+        //                 "Not Started" // This catches variants with no reviews in the year
+        //             ]
+        //         }
+        //     }
+        // });
+
+        // // Stage 5: Group all the variants by their calculated status and count them.
+        // pipeline.push({
+        //     $group: {
+        //         _id: "$status",
+        //         count: { $sum: 1 }
+        //     }
+        // });
+
+        // // Stage 6: Format the output for a pie chart library.
+        // pipeline.push({
+        //     $project: {
+        //         _id: 0,
+        //         name: "$_id",
+        //         value: "$count"
+        //     }
+        // });
+
+        // // We must start the aggregation from the Module collection.
+        // const reviewCountByStatus = await Module.aggregate(pipeline);
+
+        // res.status(200).json(reviewCountByStatus);
 
     } catch (error) {
         console.error('Error getting reviews by status:', error);
@@ -464,11 +536,14 @@ export const getDashboardStats = async (req, res) => {
 
         // --- Overall Statistics ---
 
-        // 3. Get total variants by unwinding the variants array in the Modules collection.
-        const totalVariantsPromise = Module.aggregate([
-            { $unwind: "$variants" },
-            { $count: "totalVariants" }
-        ]);
+        // // 3. Get total variants by unwinding the variants array in the Modules collection.
+        // const totalVariantsPromise = Module.aggregate([
+        //     { $unwind: "$variants" },
+        //     { $count: "totalVariants" }
+        // ]);
+
+        // TOTAL MODULES
+        const totalModulesPromise = Module.countDocuments();
 
         // 4. Get total completed reviews across all time.
         const totalReviewsAllTimePromise = Review.countDocuments({ status: 'Completed' });
@@ -481,75 +556,55 @@ export const getDashboardStats = async (req, res) => {
             createdAt: { $gte: startDate, $lt: endDate }
         });
 
-        // 6. Aggregation pipeline to find the number of unique variants completed in the year.
-        const completedVariantsPromise = Module.aggregate([
-            { $unwind: "$variants" },
-            // Look up reviews for each module that were created AND completed in the target year.
+        // Aggregation to find the number of unique modules completed in the year.
+        // now much simpler and more efficient.
+        const completedModulesPromise = Review.aggregate([
             {
-                $lookup: {
-                    from: "reviews",
-                    let: { moduleId: "$_id" },
-                    pipeline: [
-                        {
-                            $match: {
-                                $expr: {
-                                    $and: [
-                                        { $eq: ["$module", "$$moduleId"] },
-                                        { $eq: ["$status", "Completed"] }, // Only look for completed reviews
-                                        { $gte: ["$createdAt", startDate] },
-                                        { $lt: ["$createdAt", endDate] }
-                                    ]
-                                }
-                            }
-                        }
-                    ],
-                    as: "completedReviewsInYear"
-                }
-            },
-            // Only consider variants that have at least one completed review in the year.
-            {
+                // First, find all reviews that were completed in the target year.
                 $match: {
-                    "completedReviewsInYear": { $ne: [] }
+                    status: 'Completed',
+                    createdAt: { $gte: startDate, $lt: endDate }
                 }
             },
-            // Count how many such variants exist.
             {
+                // Group the results by the module ID to get a list of unique modules.
+                $group: {
+                    _id: "$module"
+                }
+            },
+            {
+                // Count how many unique modules were found.
                 $count: "completedCount"
             }
         ]);
 
-        // 7. Execute all database queries in parallel.
+        // 5. Execute all database queries in parallel.
         const [
-            totalVariantsResult,
+            totalModules,
             totalReviewsAllTime,
             reviewsForYear,
-            completedVariantsData
+            completedModulesData
         ] = await Promise.all([
-            totalVariantsPromise,
+            totalModulesPromise,
             totalReviewsAllTimePromise,
             reviewsForYearPromise,
-            completedVariantsPromise
+            completedModulesPromise
         ]);
 
-        // 8. Process the aggregation results.
-        const totalVariants = totalVariantsResult.length > 0 ? totalVariantsResult[0].totalVariants : 0;
-        const completedVariantsInYear = completedVariantsData.length > 0 ? completedVariantsData[0].completedCount : 0;
+        // 6. Calculate completion rate against ALL modules in the system.
+        const completionRate = totalModules > 0
+            ? (completedModulesData[0].completedCount / totalModules) * 100 : 0;
 
-        // 9. Calculate completion rate against ALL variants in the system.
-        const completionRate = totalVariants > 0
-            ? (completedVariantsInYear / totalVariants) * 100
-            : 0;
-
-        // 10. Send the final, structured response.
+        // 7. Send the final, structured response.
         res.status(200).json({
             year,
-            totalVariants,
+            totalModules,
             totalReviewsAllTime,
             reviewsForYear,
             completionRate: parseFloat(completionRate.toFixed(1)),
             _debug: {
-                completedVariantsInYear,
-                totalVariantsSystem: totalVariants // Updated debug field for clarity
+                completedModulesData,
+                totalModulesSystem: totalModules // Updated debug field for clarity
             }
         });
 

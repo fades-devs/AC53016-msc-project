@@ -109,50 +109,101 @@ export const getEmailsIncompleteReviews = async (req, res) => {
 
         const results = await Module.aggregate([
 
-            // Deconstruct the variants array to check each one individually
-            {$unwind: '$variants'},
-            // Look up reviews for each specific variant created this year
+            // Stage 1: Look up all reviews for each module from this academic year
             {
                 $lookup: {
-                    from: 'reviews', let: {moduleId: '$_id'},
-                    pipeline: [
-                        {
-                            $match: {$expr: {$and: [{$eq: ['$module', '$$moduleId']},
-                            {$gte: ['$createdAt', startDate]}]}}
-                        }
-                    ], as: 'reviewsThisYear'
+                from: "reviews",
+                localField: "_id",
+                foreignField: "module",
+                pipeline: [
+                    // Only consider reviews created within the current academic year
+                    { $match: { createdAt: { $gte: startDate } } }
+                ],
+                as: "reviewsThisYear"
                 }
             },
-            // Filter for modules that DO NOT have a 'Completed' review
+            // Stage 2: Filter for modules that DO NOT have a 'Completed' review
             {
-                $match: {'reviewsThisYear.status': {$ne: 'Completed'}}
+                $match: {
+                "reviewsThisYear.status": { $ne: "Completed" }
+                }
             },
-            // Now that we have the modules needing reminders, we unwind their variants
-            {
-                $unwind: '$variants'
-            },
-            // Join with the 'users' collection to get lead's details
+            // Stage 3: Join with the 'users' collection to get the lead's details
             {
                 $lookup: {
-                    from: 'users', localField: 'variants.lead', foreignField: '_id', as: 'leadData'
+                from: "users",
+                localField: "lead", // Simplified: points directly to the lead on the module
+                foreignField: "_id",
+                as: "leadData"
                 }
             },
-            // Deconstruct leadData and handle missing leads
+            // Stage 4: Deconstruct leadData and handle missing leads
             {
-                $unwind: {path: '$leadData', preserveNullAndEmptyArrays: true}
+                $unwind: {
+                path: "$leadData",
+                preserveNullAndEmptyArrays: true
+                }
             },
-            // Filter out any variants without a valid lead
+            // Stage 5: Group by email to get a unique list of leads
             {
-                $match: {'leadData.email': {$ne: null}}
+                $group: {
+                _id: "$leadData.email"
+                }
             },
-            // Group by email to get a unique list of leads
+            // Stage 7: Collect all unique emails into a single array
             {
-                $group: {_id: '$leadData.email'}
-            },
-            // Collect all unique emails into a single array
-            {
-                $group: {_id: null, emails: {$push: '$_id'}}
+                $group: {
+                _id: null,
+                emails: { $push: "$_id" }
+                }
             }
+
+            // // Deconstruct the variants array to check each one individually
+            // {$unwind: '$variants'},
+            // // Look up reviews for each specific variant created this year
+            // {
+            //     $lookup: {
+            //         from: 'reviews', let: {moduleId: '$_id'},
+            //         pipeline: [
+            //             {
+            //                 $match: {$expr: {$and: [{$eq: ['$module', '$$moduleId']},
+            //                 {$gte: ['$createdAt', startDate]}]}}
+            //             }
+            //         ], as: 'reviewsThisYear'
+            //     }
+            // },
+            // // Filter for modules that DO NOT have a 'Completed' review
+            // {
+            //     $match: {'reviewsThisYear.status': {$ne: 'Completed'}}
+            // },
+            // // Now that we have the modules needing reminders, we unwind their variants
+            // {
+            //     $unwind: '$variants'
+            // },
+            // // Join with the 'users' collection to get lead's details
+            // {
+            //     $lookup: {
+            //         from: 'users', localField: 'variants.lead', foreignField: '_id', as: 'leadData'
+            //     }
+            // },
+            // // Deconstruct leadData and handle missing leads
+            // {
+            //     $unwind: {path: '$leadData', preserveNullAndEmptyArrays: true}
+            // },
+            // // Filter out any variants without a valid lead
+            // {
+            //     $match: {'leadData.email': {$ne: null}}
+            // },
+            // // Group by email to get a unique list of leads
+            // {
+            //     $group: {_id: '$leadData.email'}
+            // },
+            // // Collect all unique emails into a single array
+            // {
+            //     $group: {_id: null, emails: {$push: '$_id'}}
+            // }
+
+            
         ]);
 
         const emails = results.length > 0 ? results[0].emails : [];
