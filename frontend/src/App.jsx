@@ -6,6 +6,8 @@ import GetReview from './components/GetReview'
 import EditReview from './components/EditReview'
 import DashboardPage from './pages/DashboardPage'
 import NavBar from './components/NavBar'
+import BackToTop from './components/BackToTop'
+import Toolbar from '@mui/material/Toolbar';
 
 import EmailReminder from './components/EmailReminder'
 
@@ -17,6 +19,10 @@ function App() {
     <BrowserRouter>
       {/* The Header component is placed here so it appears on every page */}
       <NavBar/>
+
+      {/* ADD THE INVISIBLE ANCHOR RIGHT AFTER THE HEADER */}
+      <Toolbar id="back-to-top-anchor" />
+
       {/* Define the routes for your application */}
       <main style={{ padding: '20px' }}>
         <Routes>
@@ -32,6 +38,10 @@ function App() {
           <Route path="/send-reminder" element={<EmailReminder />} />
         </Routes>
       </main>
+
+      {/* ADD THE BUTTON COMPONENT AT THE END */}
+      <BackToTop />
+
     </BrowserRouter>
   )
 }
