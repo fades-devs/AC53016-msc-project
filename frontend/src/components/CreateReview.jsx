@@ -383,7 +383,15 @@ const CreateReview = () => {
 
     return (
         <Box component="form" onSubmit={handleSubmit} sx={{ '& .MuiTextField-root': { my: 1 } }}>
-            <Typography variant="h5" gutterBottom>Submit a Module Review</Typography>
+
+            <Stack direction='row' spacing={2} sx={{mt: 2, justifyContent: "space-between"}}>
+                <Typography variant="h5" gutterBottom>Submit a Module Review</Typography>
+                {/* --- Partial Save --- */}
+                <Button variant='outlined' size='large' onClick={handleSaveDraft} disabled={submitLoading || !foundModule}>
+                Save Draft
+                </Button>
+            </Stack>
+
 
             {/* --- Section 1: Module Details --- */}
             <Paper elevation={2} sx={{ p: 3, my: 2 }}>
@@ -510,10 +518,6 @@ const CreateReview = () => {
                     <Stack direction='row' spacing={2} sx={{mt: 2}}>
                         <Button sx={{mt: 2}} type="submit" variant="contained" size="large" disabled={submitLoading || !foundModule}>
                         {submitLoading ? 'Submitting...' : 'Submit Review'}
-                        </Button>
-                        {/* --- Partial Save --- */}
-                        <Button variant='outlined' size='large' onClick={handleSaveDraft} disabled={submitLoading || !foundModule}>
-                            Save Draft
                         </Button>
                     </Stack>
 

@@ -262,11 +262,20 @@ const EditReview = () => {
     return (
         
         <Box>
-            <Typography variant="h5" gutterBottom>Edit Module Review</Typography>
+
+            <Stack direction='row' spacing={2} sx={{mt: 2, justifyContent: "space-between"}}>
+                    <Typography variant="h5" gutterBottom>Edit Module Review</Typography>
+                    <Button variant='outlined' size='large' onClick={() => handleUpdate('In Progress')} disabled={submitLoading}>
+                        {submitLoading ? 'Saving...' : 'Save Changes'}
+                    </Button>
+                </Stack>
 
             {/* Section 1: Module Details (Read-only) */}
             <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+
                 <Typography variant="h6">1. Module Details</Typography>
+
+                
                 {moduleDetails && (
                     <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'action.hover' }}>
                         <Typography><b>Code:</b> {moduleDetails.code}</Typography>
@@ -343,9 +352,6 @@ const EditReview = () => {
                     <Stack direction='row' spacing={2} sx={{mt: 2}}>
                         <Button variant="contained" size="large" onClick={() => handleUpdate('Completed')} disabled={submitLoading}>
                             {submitLoading ? 'Submitting...' : 'Submit Review'}
-                        </Button>
-                        <Button variant='outlined' size='large' onClick={() => handleUpdate('In Progress')} disabled={submitLoading}>
-                            {submitLoading ? 'Saving...' : 'Save Changes'}
                         </Button>
                     </Stack>
                     {submitError && <Alert severity="error" sx={{ mt: 2 }}>{submitError}</Alert>}
