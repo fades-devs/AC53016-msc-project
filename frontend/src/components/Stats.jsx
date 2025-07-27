@@ -11,7 +11,7 @@ import {
     TextField,
     LinearProgress,
     IconButton,
-    InputAdornment
+    InputAdornment, Stack, useTheme
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import RateReviewIcon from '@mui/icons-material/RateReview';
@@ -34,39 +34,33 @@ const useDebounce = (value, delay) => {
 };
 
 // A single stat card component for reusability and cleaner code
-const StatCard = ({ title, value, subtitle, icon, children }) => (
-    <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: '16px', boxShadow: 3 }}>
-        <CardContent sx={{ flexGrow: 1 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <Box>
-                    <Typography variant="h6" color="text.secondary" gutterBottom>
-                        {title}
-                    </Typography>
-                    <Typography variant="h4" component="p" sx={{ fontWeight: 'bold' }}>
-                        {value}
-                    </Typography>
-                    {subtitle && <Typography variant="caption" color="text.secondary">{subtitle}</Typography>}
+const StatCard = ({ title, value, subtitle, icon, children }) => {
+    // UPDATED: useTheme hook to access theme colors
+    const theme = useTheme();
+
+    return (
+        // UPDATED: Added width: '100%' to explicitly force the card to fill its container.
+        <Card variant="outlined" sx={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
+            <CardContent sx={{ flexGrow: 1 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <Box sx={{ flexGrow: 1, pr: 2 }}>
+                        <Typography variant="h6" color="text.secondary" gutterBottom>{title}</Typography>
+                        <Typography variant="h4" component="p" sx={{ fontWeight: 'bold' }}>{value}</Typography>
+                        {subtitle && <Typography variant="caption" color="text.secondary">{subtitle}</Typography>}
+                    </Box>
+                    <Box sx={{ backgroundColor: theme.palette.action.hover, color: 'primary.main', borderRadius: '50%', width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        {icon}
+                    </Box>
                 </Box>
-                <Box sx={{
-                    backgroundColor: 'primary.main',
-                    color: 'white',
-                    borderRadius: '50%',
-                    width: 36,
-                    height: 36,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}>
-                    {icon}
-                </Box>
-            </Box>
-            {children && <Box sx={{ mt: 2 }}>{children}</Box>}
-        </CardContent>
-    </Card>
-);
+                {children && <Box sx={{ mt: 2 }}>{children}</Box>}
+            </CardContent>
+        </Card>
+    );
+
+};
 
 
-const DashboardStats = () => {
+const Stats = () => {
     const [stats, setStats] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -111,88 +105,49 @@ const DashboardStats = () => {
     }
 
     return (
-        <Box sx={{ flexGrow: 1, my: 2 }}>
+        <Stack spacing={3}>
+
             {/* Filter Controls */}
-            <Box sx={{ mb: 4, maxWidth: '300px' }}>
-                <TextField
-                    label="Filter by Year"
-                    name="year"
-                    type="number"
-                    value={year}
-                    onChange={handleYearChange}
-                    variant="outlined"
-                    fullWidth
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                {year && (
-                                    <IconButton onClick={handleClearYear} edge="end">
-                                        <ClearIcon />
-                                    </IconButton>
-                                )}
-                            </InputAdornment>
-                        )
-                    }}
-                />
-            </Box>
-
-            {/* Stats Cards */}
-            {isLoading ? (
-                 <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-                    <CircularProgress />
-                 </Box>
-            ) : stats && (
-                <Grid container spacing={3}>
-                    {/* Card 1: Total Module Variants */}
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StatCard 
-                            title="Total Modules" 
-                            value={stats.totalModules} 
-                            subtitle="All Time"
-                            icon={<SchoolIcon fontSize="small" />}
-                        />
-                    </Grid>
-                    
-                    {/* Card 2: Total Completed Reviews */}
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StatCard 
-                            title="Total Reviews" 
-                            value={stats.totalReviewsAllTime} 
-                            subtitle="All Time, Completed"
-                            icon={<RateReviewIcon fontSize="small" />}
-                        />
-                    </Grid>
-
-                    {/* Card 3: Reviews For Year */}
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StatCard 
-                            title="Reviews This Year" 
-                            value={stats.reviewsForYear} 
-                            subtitle={`Completed in ${stats.year}`}
-                            icon={<EventAvailableIcon fontSize="small" />}
-                        />
-                    </Grid>
-
-                    {/* Card 4: Completion Rate */}
-                    <Grid item xs={12} sm={6} md={3}>
-                        <StatCard 
-                            title="Completion Rate" 
-                            value={`${stats.completionRate.toFixed(1)}%`}
-                            subtitle={`For ${stats.year}`}
-                            icon={<CheckCircleOutlineIcon fontSize="small" />}
-                        >
-                            <LinearProgress 
-                                variant="determinate" 
-                                value={stats.completionRate} 
-                                color="success"
-                                sx={{ height: 8, borderRadius: 4 }}
-                            />
-                        </StatCard>
-                    </Grid>
+            {/* The filter is now in a responsive Grid item, removing the maxWidth limit. */}
+            <Grid container>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <TextField
+                        fullWidth
+                        label="Filter Stats by Year"
+                        type="number"
+                        value={year}
+                        onChange={(e) => setYear(e.target.value)}
+                        variant="outlined"
+                    />
                 </Grid>
+            </Grid>
+
+            {/* STATS CARD */}
+            {isLoading ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+                    <CircularProgress />
+                </Box>
+            ) : stats && (
+                <Box sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 3, // Use theme spacing unit for gap
+                }}>
+                    {/* Each StatCard is now a flex item, told to grow and shrink. */}
+                    <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}><StatCard title="Total Modules" value={stats.totalModules} subtitle="All Time" icon={<SchoolIcon fontSize="small"/>} /></Box>
+                    <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}><StatCard title="Total Reviews" value={stats.totalReviewsAllTime} subtitle="All Time, Completed" icon={<RateReviewIcon fontSize="small" />} /></Box>
+                    <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}><StatCard title="Reviews This Year" value={stats.reviewsForYear} subtitle={`Completed in ${stats.year}`} icon={<EventAvailableIcon fontSize="small" />} /></Box>
+                    <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}>
+                        <StatCard title="Completion Rate" value={`${stats.completionRate.toFixed(1)}%`} subtitle={`For ${stats.year}`} icon={<CheckCircleOutlineIcon fontSize="small" />}>
+                            <LinearProgress variant="determinate" value={stats.completionRate} color="success" sx={{ height: 8, borderRadius: 4 }} />
+                        </StatCard>
+                    </Box>
+                </Box>
             )}
-        </Box>
+            
+
+        </Stack>
     );
 };
 
-export default DashboardStats;
+export default Stats;
