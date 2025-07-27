@@ -17,7 +17,7 @@ import {
     InputAdornment,
     OutlinedInput,
     Checkbox,
-    ListItemText
+    ListItemText, useTheme, Stack
 } from '@mui/material';
 import { 
     BarChart, 
@@ -45,6 +45,9 @@ const useDebounce = (value, delay) => {
 };
 
 const GoodPracticeChart = () => {
+
+    const theme = useTheme(); // Use theme for chart colors
+
     const [chartData, setChartData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -105,7 +108,7 @@ const GoodPracticeChart = () => {
     };
 
     return (
-        <Card sx={{ borderRadius: '16px', boxShadow: 3 }}>
+        <Card variant="outlined" sx={{ height: '100%' }}>
             <CardContent>
                 <Typography variant="h6" gutterBottom>
                     Good Practice by Theme
@@ -137,7 +140,7 @@ const GoodPracticeChart = () => {
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <FormControl fullWidth variant="outlined">
+                        <FormControl fullWidth variant="outlined" sx={{ minWidth: 120 }}>
                             <InputLabel id="area-multi-select-label">Area</InputLabel>
                             <Select
                                 labelId="area-multi-select-label"
@@ -176,27 +179,25 @@ const GoodPracticeChart = () => {
                             <BarChart
                                 data={chartData}
                                 layout="vertical"
-                                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                                margin={{ top: 5, right: 10, left: 5, bottom: 5 }}
                             >
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis type="number" allowDecimals={false} />
                                 <YAxis 
                                     type="category" 
                                     dataKey="theme" 
-                                    width={180} // Increased width for long labels
+                                    width={100} // Increased width for long labels
                                     tick={{ fontSize: 12 }}
                                     interval={0} // Ensure all labels are shown
                                 />
-                                <Tooltip 
-                                    cursor={{fill: 'rgba(206, 206, 206, 0.2)'}}
+                                <Tooltip cursor={{fill: 'rgba(206, 206, 206, 0.2)'}}
                                     contentStyle={{
                                         borderRadius: '12px',
                                         boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
-                                        border: '1px solid #e0e0e0'
-                                    }}
+                                        border: '1px solid #e0e0e0'}}
                                 />
                                 <Legend wrapperStyle={{ paddingTop: '20px' }} />
-                                <Bar dataKey="count" name="Occurrences" fill="#82ca9d" radius={[0, 8, 8, 0]} />
+                                <Bar dataKey="count" name="Occurrences" fill={theme.palette.primary.main} radius={[0, 8, 8, 0]} />
                             </BarChart>
                         </ResponsiveContainer>
                     )}
