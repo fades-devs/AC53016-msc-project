@@ -39,7 +39,7 @@ function backToTop() {
         onClick={handleClick}
         role="presentation"
         // Positions the button at the bottom-right of the screen.
-        sx={{ position: 'fixed', bottom: 16, right: 16, zIndex: 100 }}
+        sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 100 }}
       >
         <Fab size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
