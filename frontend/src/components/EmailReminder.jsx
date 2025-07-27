@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Typography, Box, Paper, Button, CircularProgress, List, ListItem, ListItemText, Collapse } from '@mui/material';
+import { Stack, Typography, Box, Paper, Button, CircularProgress, List, ListItem, ListItemText, Collapse } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
 // The email template to be displayed and sent
@@ -60,23 +60,25 @@ const EmailReminder = () => {
 
     };
 
+    // Centered full-page loader for better UX
     if (isLoading) {
-        return <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}><CircularProgress /></Box>;
+        return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}><CircularProgress /></Box>;
     }
     
+    // Using the Alert component for a consistent error message style
     if (error) {
-        return <Typography color="error" align="center" sx={{ mt: 4 }}>{error}</Typography>;
+        return <Alert severity="error" sx={{ m: 2 }}>{error}</Alert>;
     }
 
     return (
 
-        <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
+        <Stack spacing={4}>
 
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" component="h1">
                 Send Module Review Reminders
             </Typography>
 
-            <Paper elevation={3} sx={{ p: 3, mb: 4 }}>
+            <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                 <Typography variant="h6" gutterBottom>
                     Recipient List ({recipientEmails.length} total)
                 </Typography>
@@ -101,20 +103,22 @@ const EmailReminder = () => {
                         )}
                     </>
                 ) : (
-                    <Typography>No recipients pending reminders.</Typography>
+                    <Typography color="text.secondary">No recipients pending reminders.</Typography>
                 )}
             </Paper>
 
-            <Paper elevation={3} sx={{ p: 3, mb: 4 }}>
+            <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                 <Typography variant="h6" gutterBottom>
                     Email Preview
                 </Typography>
                 <Box component="iframe" srcDoc={emailMessageHtml}
+                    title="Email Preview"
                     sx={{
                         width: '100%',
                         height: '500px',
-                        border: '1px solid #ccc',
-                        borderRadius: '4px'
+                        border: '1px solid',
+                        borderColor: 'divider', // theme's border color
+                        borderRadius: 2 // theme's border radius
                     }}
                 />
             </Paper>
@@ -132,7 +136,7 @@ const EmailReminder = () => {
                 </Button>
             </Box>
 
-        </Container>
+        </Stack>
     )
 
 };
