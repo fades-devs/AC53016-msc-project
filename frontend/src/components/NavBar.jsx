@@ -7,7 +7,7 @@ import {
     IconButton, 
     Menu, 
     MenuItem,
-    Box 
+    Box, useTheme, Container
 } from '@mui/material';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,8 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import AdbIcon from '@mui/icons-material/Adb'; // Example logo icon
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import MenuIcon from '@mui/icons-material/Menu'; // For the mobile hamburger menu
+import SchoolIcon from '@mui/icons-material/School'; // An icon for the logo
 
 /**
  * A responsive navigation bar component built with Material-UI.
@@ -23,81 +25,114 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
  */
 const NavBar = () => {
 
+    const theme = useTheme(); // Access the theme for brand colors
+
     // Hook for programmatic navigation
     const navigate = useNavigate();
 
-    // State management for the "Modules" dropdown menu
+    // State for the main "Modules" dropdown menu
     const [modulesMenuAnchorEl, setModulesMenuAnchorEl] = useState(null);
     const isModulesMenuOpen = Boolean(modulesMenuAnchorEl);
 
-    // State management for the "Profile" dropdown menu
-    const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
-    const isProfileMenuOpen = Boolean(profileMenuAnchorEl);
+    // State for the mobile navigation menu
+    const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
+    const isMobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
-    // --- Handlers for Modules Menu ---
-    const handleModulesMenuOpen = (event) => {
-        setModulesMenuAnchorEl(event.currentTarget);
-    };
-    const handleModulesMenuClose = () => {
-        setModulesMenuAnchorEl(null);
-    };
+    // --- Handlers for Modules Menu (Desktop) ---
+    const handleModulesMenuOpen = (event) => setModulesMenuAnchorEl(event.currentTarget);
+    const handleModulesMenuClose = () => setModulesMenuAnchorEl(null);
 
-    // --- Handlers for Profile Menu ---
-    const handleProfileMenuOpen = (event) => {
-        setProfileMenuAnchorEl(event.currentTarget);
-    };
-    const handleProfileMenuClose = () => {
-        setProfileMenuAnchorEl(null);
-    };
+    // --- Handlers for Mobile Menu ---
+    const handleMobileMenuOpen = (event) => setMobileMenuAnchorEl(event.currentTarget);
+    const handleMobileMenuClose = () => setMobileMenuAnchorEl(null);
 
-    // --- Navigation Handlers ---
-    // This function closes the menu and then navigates
+    // --- Unified Navigation Handler ---
     const handleNavigate = (path) => {
+        // Close both menus, then navigate
         handleModulesMenuClose();
-        handleProfileMenuClose();
+        handleMobileMenuClose();
         navigate(path);
     };
 
     return (
-        // AppBar provides the main top bar structure
-        <AppBar position="static" sx={{ backgroundColor: '#FFFFFF', color: '#333333' }}>
-            <Toolbar>
-                {/* --- Logo and App Name --- */}
-                <Typography variant="h6" component={RouterLink} to="/dashboard" sx={{flexGrow: 1, textDecoration: 'none',
-                        color: 'inherit', '&:hover': { color: 'primary.main',},}}>Enhancement Dashboard</Typography>
-                {/* --- Navigation Links --- */}
-                <Box>
-                    {/* Dashboard Link */}
-                    <Button color="inherit" component={RouterLink} to="/dashboard">Dashboard</Button>
-                    {/* Modules Dropdown Button */}
-                    <Button color="inherit" onClick={handleModulesMenuOpen} endIcon={<ArrowDropDownIcon />}>Modules</Button>
-                    {/* Modules Menu */}
-                    <Menu anchorEl={modulesMenuAnchorEl} open={isModulesMenuOpen} onClose={handleModulesMenuClose}
-                        MenuListProps={{ 'aria-labelledby': 'modules-button' }}>
-                        <MenuItem onClick={() => handleNavigate('/module-list')}>Module List</MenuItem>
-                        <MenuItem onClick={() => handleNavigate('/create-review')}>Submit Review</MenuItem>
-                        <MenuItem onClick={() => handleNavigate('/get-review')}>View Reports</MenuItem>
-                        <MenuItem onClick={() => handleNavigate('/send-reminder')}>Send Reminders</MenuItem>
+        // AppBar uses theme colors for a consistent look
+        <AppBar position="static" elevation={0} color="default" sx={{ bgcolor: 'background.paper', borderBottom: 1, borderColor: 'divider' }}>
+            <Container maxWidth={false}> {/* Use maxWidth={false} to allow it to be full-width */}
+                <Toolbar disableGutters>
+                    {/* --- Logo and App Name --- */}
+                    <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+                        <SchoolIcon sx={{ color: 'primary.main', mr: 1, fontSize: '2rem' }} />
+                        <Typography
+                            variant="h6"
+                            component={RouterLink}
+                            to="/dashboard"
+                            sx={{
+                                color: 'primary.main',
+                                fontWeight: 'bold',
+                                textDecoration: 'none',
+                                '&:hover': { color: 'primary.main' },
+                            }}
+                        >
+                            Module Enhancement
+                        </Typography>
+                    </Box>
+
+                    {/* --- Desktop Navigation Links --- */}
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <Button color="inherit" component={RouterLink} sx={{ fontSize: '1rem', fontWeight: 600 }}
+                         to="/dashboard">Dashboard</Button>
+                        <Button color="inherit" onClick={handleModulesMenuOpen} sx={{ fontSize: '1rem', fontWeight: 600 }}
+                         endIcon={<ArrowDropDownIcon />}>Modules</Button>
+                    </Box>
+
+                    {/* --- Mobile Navigation (Hamburger Menu) --- */}
+                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="navigation menu"
+                            aria-controls="mobile-menu"
+                            aria-haspopup="true"
+                            onClick={handleMobileMenuOpen}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    </Box>
+
+                    {/* --- Menus (both desktop and mobile) --- */}
+
+                    {/* Modules Menu (for Desktop) */}
+                    <Menu
+                        anchorEl={modulesMenuAnchorEl}
+                        open={isModulesMenuOpen}
+                        onClose={handleModulesMenuClose}
+                        MenuListProps={{ 'aria-labelledby': 'modules-button' }}
+                    >
+                        {/* Larger menu items with more padding */}
+                        <MenuItem onClick={() => handleNavigate('/module-list')} sx={{ fontSize: '1rem', py: 1 }}>Module List</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/create-review')} sx={{ fontSize: '1rem', py: 1 }}>Submit Review</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/get-review')} sx={{ fontSize: '1rem', py: 1 }}>View Reports</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/send-reminder')} sx={{ fontSize: '1rem', py: 1 }}>Send Reminders</MenuItem>
                     </Menu>
-                </Box>
-                {/* --- Profile Icon and Dropdown --- */}
-                <Box sx={{ ml: 2 }}>
-                    <IconButton size="large" edge="end" aria-label="account of current user" aria-controls="profile-menu"
-                        aria-haspopup="true" onClick={handleProfileMenuOpen} color="inherit">
-                        <AccountCircle />
-                    </IconButton>
-                    {/* Profile Menu */}
-                    <Menu id="profile-menu" anchorEl={profileMenuAnchorEl} anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
-                        transformOrigin={{vertical: 'top', horizontal: 'right',}} open={isProfileMenuOpen}
-                        onClose={handleProfileMenuClose}>
-                        <MenuItem onClick={() => handleNavigate('/account')}>Account</MenuItem>
-                        <MenuItem onClick={() => handleNavigate('/settings')}>Settings</MenuItem>
-                        <MenuItem onClick={() => handleNavigate('/logout')}>Log Out</MenuItem>
+
+                    {/* Mobile Menu (for smaller screens) */}
+                    <Menu
+                        id="mobile-menu"
+                        anchorEl={mobileMenuAnchorEl}
+                        open={isMobileMenuOpen}
+                        onClose={handleMobileMenuClose}
+                        sx={{ display: { xs: 'block', md: 'none' } }}
+                    >
+                        <MenuItem onClick={() => handleNavigate('/dashboard')} sx={{ fontSize: '1rem', py: 1 }}>Dashboard</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/module-list')} sx={{ fontSize: '1rem', py: 1 }}>Module List</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/create-review')} sx={{ fontSize: '1rem', py: 1 }}>Submit Review</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/get-review')} sx={{ fontSize: '1rem', py: 1 }}>View Reports</MenuItem>
+                        <MenuItem onClick={() => handleNavigate('/send-reminder')} sx={{ fontSize: '1rem', py: 1 }}>Send Reminders</MenuItem>
                     </Menu>
-                </Box>
-            </Toolbar>
+                </Toolbar>
+            </Container>
         </AppBar>
-    )
+    );
 
 
 
