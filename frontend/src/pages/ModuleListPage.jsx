@@ -1,13 +1,13 @@
 import {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
-import {Container, Typography, Table, TableBody, TableCell, TableContainer,
-    TableHead, TableRow, Paper, Box, CircularProgress, Chip, Stack, Button, Grid,
-FormControl, InputLabel, Select, MenuItem, TextField, OutlinedInput, Checkbox, ListItemText, Pagination} from '@mui/material';
-
+import {
+  Box, Typography, Table, TableBody, TableCell, TableContainer,
+  TableHead, TableRow, Paper, CircularProgress, Chip, Stack,
+  Button, Pagination, Alert, useTheme // Import useTheme
+} from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
-
-
 import { Link } from 'react-router-dom';
+import ModuleFilterControls from '../components/ModuleFilterControls';
 
 // --- UPDATE: Import the options from your constants file ---
 import { areaOptions, levelOptions, periodOptions, locationOptions, statusOptions }
@@ -23,7 +23,16 @@ const useDebounce = (value, delay) => {
     return debValue;
 };
 
+// Helper object for Chip colors to keep render logic clean
+const statusColors = {
+  'Completed': 'success',
+  'In Progress': 'warning',
+  'Not Started': 'default',
+};
+
 const ModuleListPage = () => {
+
+    const theme = useTheme(); // Hook to access theme properties
   
     const initialFilters = {area: [], level: [], period: [], location: [], status: [],
         titleSearch: '', codeSearch: '', leadSearch: '', year: new Date().getFullYear(), // Default to current year
@@ -125,42 +134,23 @@ const ModuleListPage = () => {
         setPage(value);
     };
 
-    // Helper function that decides which button to show
+    // Helper function that decides which button to show - using text variants for a less cluttered table
     const renderActions = (module) => {
-        switch(module.status) {
-            case 'Completed':
-                return (
-                    <Stack direction="column">
-                        {/* Use module._id to create a new review for this module */}
-                        {/* rel="noopener noreferrer" is a security best practice for new tabs */}
-                        <Button component={Link} to={`/get-review?code=${module.code}&year=${module.year}`} target='_blank'
-                    rel='noopener noreferrer' align='center' size='small'>View Report</Button>
-                    <Button component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'
-                    rel='noopener noreferrer' align='center' size='small'>Edit Report</Button>
-                    </Stack>
-                    
-                );
-            case 'In Progress':
-                return (
-                    <Stack direction="column">
-                        {/* Use module._id to create a new review for this module */}
-                        {/* rel="noopener noreferrer" is a security best practice for new tabs */}
-                        <Button component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'
-                    rel='noopener noreferrer' align='center' size='small'>Continue Review</Button>
-                    </Stack>
-                );
-            case 'Not Started':
-                return (
-                    <Stack direction="column">
-                        {/* Use module._id to create a new review for this module */}
-                        {/* rel="noopener noreferrer" is a security best practice for new tabs */}
-                        <Button component={Link} to={`/create-review/${module.code}`} target='_blank'
-                    rel='noopener noreferrer' align='center' size='small'>Submit Review</Button>
-                    </Stack>
-                );
-            default:
-                return null;
-        };
+        switch (module.status) {
+        case 'Completed':
+            return (
+            <Stack>
+                <Button size="medium" variant="text" component={Link} to={`/get-review?code=${module.code}&year=${module.year}`} target='_blank'>View Report</Button>
+                <Button size="medium" variant="text" component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'>Edit Report</Button>
+            </Stack>
+            );
+        case 'In Progress':
+            return <Button size="medium" variant="text" component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'>Continue Review</Button>;
+        case 'Not Started':
+            return <Button size="medium" variant="contained" component={Link} to={`/create-review/${module.code}`} target='_blank'>Submit Review</Button>;
+        default:
+            return null;
+        }
     };
 
     // --- UPDATE: Only show full-screen loader on initial load ---
@@ -172,180 +162,96 @@ const ModuleListPage = () => {
         )
     }
 
+    // Use the themed Alert component for errors
     if (error) {
-        return (
-            <Container>
-                <Typography align='center'>{error}</Typography>
-            </Container>
-        )
+        return <Alert severity="error">{error}</Alert>;
     }
 
+
+    // main page render
     return (
 
-    <Container sx={{ mt: 4 }}>
+    <Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-
-            <Typography variant="h4">
-                Module Enhancement Review
-            </Typography>
-
+        {/* 1. Page Header */}
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4, flexWrap: 'wrap', gap: 2 }}>
+            <Typography variant="h4" component="h1">Module Reviews</Typography>
             <Button
-                variant="contained"
-                color="primary"
-                component={Link}
-                to="/send-reminder" // The path to your new reminder page
-                startIcon={<EmailIcon />}>
-                Send Email Reminders
+            variant="contained"
+            color="primary" // Uses theme color
+            component={Link}
+            to="/send-reminder"
+            startIcon={<EmailIcon />}
+            >
+            Send Reminders
             </Button>
-
-        </Box>
-        
-        {/* --- UPDATE: Filter controls wrapped in Grid for better layout --- */}
-        <Box sx={{ mb: 3 }}>
-            <Grid container spacing={2} alignItems="flex-end">
-                {/* --- UPDATE: All Select components now support multi-select --- */}
-                <Grid item xs={12} sm={6} md={4} lg={2}>
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="area-label">Area</InputLabel>
-                    <Select name="area" value={filters.area} onChange={handleFilterChange} label="Area"
-                    input={<OutlinedInput label="Area" />} multiple renderValue={(selected) => selected.join(', ')}>
-                        {areaOptions.map((name) => (
-                            <MenuItem key={name} value={name}>
-                                <Checkbox checked={filters.area.indexOf(name) > -1} />
-                                <ListItemText primary={name} />
-                            </MenuItem>))}
-                    </Select>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={2}>
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="level-label">Level</InputLabel>
-                    <Select name="level" value={filters.level} onChange={handleFilterChange} label="Level"
-                    input={<OutlinedInput label="Level" />} multiple renderValue={(selected) => selected.join(', ')}>
-                        {levelOptions.map((level) => (
-                            <MenuItem key={level} value={level}>
-                                <Checkbox checked={filters.level.indexOf(level) > -1} />
-                                <ListItemText primary={level} />
-                            </MenuItem>))}
-                    </Select>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={2}>
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="period-label">Period</InputLabel>
-                    <Select name="period" value={filters.period} onChange={handleFilterChange} label="Period"
-                    input={<OutlinedInput label="Period" />} multiple renderValue={(selected) => selected.join(', ')}>
-                        {periodOptions.map((name) => (
-                            <MenuItem key={name} value={name}>
-                                <Checkbox checked={filters.period.indexOf(name) > -1} />
-                                <ListItemText primary={name} />
-                            </MenuItem>))}
-                    </Select>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={2}>
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="location-label">Location</InputLabel>
-                    <Select name="location" value={filters.location} onChange={handleFilterChange} label="Location"
-                    input={<OutlinedInput label="Location" />} multiple renderValue={(selected) => selected.join(', ')}>
-                        {locationOptions.map((name) => (
-                            <MenuItem key={name} value={name}>
-                                <Checkbox checked={filters.location.indexOf(name) > -1} />
-                                <ListItemText primary={name} />
-                            </MenuItem>))}
-                    </Select>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={2}>
-                    <FormControl sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="status-label">Status</InputLabel>
-                    <Select name="status" value={filters.status} onChange={handleFilterChange} label="Status"
-                    input={<OutlinedInput label="Status" />} multiple renderValue={(selected) => selected.join(', ')}>
-                        {statusOptions.map((name) => (
-                            <MenuItem key={name} value={name}>
-                                <Checkbox checked={filters.status.indexOf(name) > -1} />
-                                <ListItemText primary={name} />
-                            </MenuItem>))}
-                    </Select>
-                    </FormControl>
-                </Grid>
-                
-                <Grid item xs={12} sm={6} md={3}>
-                    <TextField label="Year" name="year" type="number" value={filters.year} onChange={handleFilterChange} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                    <TextField label="Module Title" name="titleSearch" value={filters.titleSearch} onChange={handleFilterChange} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                    <TextField label="Module Code" name="codeSearch" value={filters.codeSearch} onChange={handleFilterChange} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                    <TextField label="Module Lead" name="leadSearch" value={filters.leadSearch} onChange={handleFilterChange} />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={2}>
-                    {/* --- UPDATE: Clear Filters Button --- */}
-                    <Button fullWidth variant="outlined" onClick={handleClearFilters} sx={{ height: '56px' }}>
-                        Clear
-                    </Button>
-                </Grid>
-            </Grid>
         </Box>
 
+        {/* 2. Filter Component */}
+        <ModuleFilterControls
+            filters={filters}
+            onFilterChange={handleFilterChange}
+            onClearFilters={handleClearFilters}
+        />
+
+        {/* 3. Results Table */}
         <Box sx={{ position: 'relative' }}>
+            {/* Use theme colors for the loading overlay */}
             {isFiltering && (
-                    <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                        backgroundColor: 'rgba(255, 255, 255, 0.7)', zIndex: 1, display: 'flex',
-                        alignItems: 'center', justifyContent: 'center' }}>
-                        <CircularProgress />
-                    </Box>)}
-            <TableContainer component={Paper}>
-                <Table stickyHeader>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Code</TableCell>
-                            <TableCell>Title</TableCell>
-                            <TableCell>Level</TableCell>
-                            <TableCell>Lead</TableCell>
-                            <TableCell>Status</TableCell>
-                            <TableCell>Actions</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {
-                            modules.map((module) => (
-                                // The key now includes the module ID, the variant code, and the unique review ID.
-                                // We use a fallback ('no-review') for modules that haven't been reviewed yet.
-                                <TableRow hover key={`${module._id}-${module.code}-${module.reviewId || 'no-review'}`}>
-                                    <TableCell>{module.code}</TableCell>
-                                    <TableCell>{module.title}</TableCell>
-                                    <TableCell title={module.period}>{module.level}</TableCell>
-                                    <TableCell>{module.moduleLead}</TableCell>
-                                    <TableCell title={module.reviewDate ? new Date(module.reviewDate).toLocaleDateString() : 'No review date'}>
-                                        <Chip label={module.status} color={
-                                            module.status === 'Completed' ? 'success' :
-                                            module.status === 'In Progress' ? 'warning' : 'default'}>
-                                        </Chip>
-                                    </TableCell>
-                                    <TableCell>{renderActions(module)}</TableCell>
-                                </TableRow>
-                            ))
-                        }
-                    </TableBody>
-                </Table>
+            <Box sx={{
+                position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+                backgroundColor: 'action.hover', // Use a theme token for the overlay
+                zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}>
+                <CircularProgress />
+            </Box>
+            )}
+            <TableContainer component={Paper} variant="outlined">
+            <Table stickyHeader>
+                <TableHead>
+                <TableRow>
+                    {['Code', 'Title', 'Level', 'Lead', 'Status', 'Actions'].map(headCell => (
+                    <TableCell key={headCell} sx={{ fontWeight: 'bold', bgcolor: 'background.default' }}>
+                        {headCell}
+                    </TableCell>
+                    ))}
+                </TableRow>
+                </TableHead>
+                <TableBody>
+                {modules.map((module) => (
+                    <TableRow hover key={`${module._id}-${module.code}`}>
+                    <TableCell>{module.code}</TableCell>
+                    <TableCell>{module.title}</TableCell>
+                    <TableCell>{module.level}</TableCell>
+                    <TableCell>{module.moduleLead}</TableCell>
+                    <TableCell>
+                        <Chip label={module.status} color={statusColors[module.status] || 'default'} />
+                    </TableCell>
+                    <TableCell align="center">{renderActions(module)}</TableCell>
+                    </TableRow>
+                ))}
+                </TableBody>
+            </Table>
             </TableContainer>
+
         </Box>
 
-        {/* --- UPDATE: Pagination Component --- */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-            <Pagination count={totalPages} page={page} onChange={handlePageChange} color="primary"
-            showFirstButton showLastButton />
-        </Box>
+        {/* 4. Pagination */}
+        {totalPages > 1 && (
+            <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <Pagination
+                count={totalPages}
+                page={page}
+                onChange={handlePageChange}
+                color="primary"
+                showFirstButton showLastButton
+            />
+            </Box>
+        )}
 
-    </Container>
+    </Box>
+
     )
-
-
 }
 
 export default ModuleListPage

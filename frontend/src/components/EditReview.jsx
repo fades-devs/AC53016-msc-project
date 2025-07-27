@@ -24,6 +24,7 @@ import {
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import DescriptionIcon from '@mui/icons-material/Description';
+import {CloudUpload as CloudUploadIcon} from '@mui/icons-material';
 
 // Import the themes from constants file ---
 import { themes } from '../constants/filterOptions';
@@ -214,8 +215,8 @@ const EditReview = () => {
 
     // --- RENDER LOGIC ---
 
-    if (pageLoading) {
-        return <CircularProgress sx={{ display: 'block', margin: 'auto', mt: 4 }} />;
+if (pageLoading) {
+        return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}><CircularProgress /></Box>;
     }
 
     if (pageError) {
@@ -223,9 +224,18 @@ const EditReview = () => {
     }
     
     // Helper function to render dynamic sections
-    const renderThemedPointSection = (title, field, setter) => (
-        <Stack spacing={2}>
-           <Typography variant="h6">{title}</Typography>
+    const renderThemedPointSection = (title, field, setter, description) => (
+        <Stack spacing={2} sx={{ mt: 4 }}>
+
+            <Box>
+                            <Typography variant="h6">{title}</Typography>
+                            {description && (
+                                <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>
+                                    {description}
+                                </Typography>
+                            )}
+            </Box>
+
            {field.map((point, index) => (
                <Stack direction={{xs: 'column', sm: 'row'}} spacing={2} key={index} alignItems="center">
                    <FormControl fullWidth>
@@ -250,7 +260,7 @@ const EditReview = () => {
     const renderStatementRadioGroup = (label, value, setter) => (
         <FormControl component="fieldset" margin="normal">
             <FormLabel component="legend">{label}</FormLabel>
-            <RadioGroup row value={value} onChange={(e) => setter(e.target.value)}>
+            <RadioGroup value={value} onChange={(e) => setter(e.target.value)}>
                 {['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree'].map(option => (
                     <FormControlLabel key={option} value={option} control={<Radio />} label={option} />
                 ))}
@@ -263,21 +273,18 @@ const EditReview = () => {
         
         <Box>
 
-            <Stack direction='row' spacing={2} sx={{mt: 2, justifyContent: "space-between"}}>
-                    <Typography variant="h5" gutterBottom>Edit Module Review</Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 4, justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Typography variant="h4" component="h1">Edit Module Review</Typography>
                     <Button variant='outlined' size='large' onClick={() => handleUpdate('In Progress')} disabled={submitLoading}>
                         {submitLoading ? 'Saving...' : 'Save Changes'}
                     </Button>
                 </Stack>
 
             {/* Section 1: Module Details (Read-only) */}
-            <Paper elevation={2} sx={{ p: 3, my: 2 }}>
-
+            <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3 }}>
                 <Typography variant="h6">1. Module Details</Typography>
-
-                
                 {moduleDetails && (
-                    <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1, bgcolor: 'action.hover' }}>
+                    <Box sx={{ mt: 2, p: 2, borderRadius: 2, bgcolor: 'action.hover' }}>
                         <Typography><b>Code:</b> {moduleDetails.code}</Typography>
                         <Typography><b>Title:</b> {moduleDetails.title}</Typography>
                         <Typography><b>Area:</b> {moduleDetails.area}</Typography>
@@ -292,25 +299,43 @@ const EditReview = () => {
             {/* The rest of the form */}
             <Box component="form" onSubmit={(e) => e.preventDefault()}>
                 {/* Section 2: Reflective Analysis */}
-                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
-                    <Typography variant="h6">2. Reflective Analysis</Typography>
-                    <TextField fullWidth required label="Enhancement Plan Updates" multiline rows={2} value={enhanceUpdate} onChange={(e) => setEnhanceUpdate(e.target.value)} sx={{my:1}}/>
-                    <TextField fullWidth label="Student Attainment" multiline rows={2} value={studentAttainment} onChange={(e) => setStudentAttainment(e.target.value)} sx={{my:1}}/>
-                    <TextField fullWidth label="Module Feedback" multiline rows={2} value={moduleFeedback} onChange={(e) => setModuleFeedback(e.target.value)} sx={{my:1}}/>
+                <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3 }}>
+                    <Typography variant="h6" gutterBottom>2. Reflective Analysis</Typography>
+                    <Box>
+                        <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+                                                    Provide an update on the enhancement plans from last year's review.
+                                                    Summarize the changes you implemented, the progress of those actions, and their overall impact.</Typography>
+                        <TextField fullWidth required label="Enhancement Plan Updates" multiline rows={2} value={enhanceUpdate} onChange={(e) => setEnhanceUpdate(e.target.value)} sx={{my:1}}/>
+                    </Box>
+                    <Box>
+                    <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+                                                    Based on the 5-year data report, comment on any trends in student attainment,
+                                                    including grades, number of attempts, and performance across different demographic groups.</Typography>
+                        <TextField fullWidth label="Student Attainment" multiline rows={2} value={studentAttainment} onChange={(e) => setStudentAttainment(e.target.value)} sx={{my:1}}/>
+                    </Box>
+                    <Box>
+                        <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>Summarize the key themes and trends from module feedback,
+                                                    considering input from students, staff, and external examiners.</Typography>
+                        <TextField fullWidth label="Module Feedback" multiline rows={2} value={moduleFeedback} onChange={(e) => setModuleFeedback(e.target.value)} sx={{my:1}}/>
+                    </Box>
                     
-                    {renderThemedPointSection("Good Practice", goodPractice, setGoodPractice)}
-                    {renderThemedPointSection("Risks", risks, setRisks)}
+                    {renderThemedPointSection("Good Practice", goodPractice, setGoodPractice,
+                        "Highlight any areas of good practice that enhanced student learning and engagement, noting the specific strategies that worked well."
+                    )}
+                    {renderThemedPointSection("Risks", risks, setRisks,
+                        "Identify any potential risks to the module's delivery (e.g., resource limitations, student performance) and explain how you plan to mitigate them."
+                    )}
 
                     <Stack direction="column" sx={{ mt: 3, borderTop: 1, borderColor: 'divider', pt: 2 }}>
-                        <Typography variant="subtitle1" gutterBottom>Student Statements</Typography>
-                        {renderStatementRadioGroup("Students were actively engaged...", statementEngagement, setStatementEngagement)}
-                        {renderStatementRadioGroup("The teaching room and equipment were suitable...", statementLearning, setStatementLearning)}
-                        {renderStatementRadioGroup("The timetable and scheduling were convenient...", statementTimetable, setStatementTimetable)}
+                        <Typography variant="h6" gutterBottom>Student Statements</Typography>
+                        {renderStatementRadioGroup("Students were actively engaged in the module's activities and learning process. *", statementEngagement, setStatementEngagement)}
+                        {renderStatementRadioGroup("The teaching room and equipment were suitable for the effective delivery of this module. *", statementLearning, setStatementLearning)}
+                        {renderStatementRadioGroup("The timetable and scheduling of this module were convenient to both staff and students. *", statementTimetable, setStatementTimetable)}
                     </Stack>
                 </Paper>
                 
                 {/* Section 3: Enhancement Plans */}
-                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3 }}>
                     <Typography variant="h6">3. Enhancement Plans</Typography>
                     <FormControl component="fieldset">
                         <FormLabel>Any enhancement plans?</FormLabel>
@@ -320,23 +345,33 @@ const EditReview = () => {
                         </RadioGroup>
                     </FormControl>
                     <Collapse in={hasEnhancePlans}>
-                        {renderThemedPointSection("Enhancement Plans", enhancePlans, setEnhancePlans)}
+                        {renderThemedPointSection("Enhancement Plans", enhancePlans, setEnhancePlans,
+                            "Based on your review, outline the specific actions you plan to take to enhance the module for its next delivery, and select the appropriate category for each action."
+                        )}
                     </Collapse>
                 </Paper>
 
                 {/* Section 4: Upload Evidence */}
-                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3 }}>
                     <Typography variant="h6">4. Upload Evidence</Typography>
-                    <Stack direction="row" spacing={2} sx={{ my: 2 }} alignItems="center">
-                        <Button variant="outlined" component="label">Upload New Evidence Report<input type="file" hidden onChange={(e) => setEvidenceUpload(e.target.files[0])} /></Button>
+                    <Typography variant="body1" color="textSecondary" sx={{mb: 2}}>
+                                            Upload the evidence you have reviewed and evaluated as part of your annual module review (Word/Excel/PPT/PDF/Image). *
+                                        </Typography>
+
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ my: 2 }} alignItems="center">
+                        <Button  startIcon={<CloudUploadIcon />} variant="outlined" color="secondary" component="label" sx={{ width: { xs: '100%', sm: 'auto' }, minWidth:"260px" }}>
+                            Upload New Evidence Report<input type="file" hidden onChange={(e) => setEvidenceUpload(e.target.files[0])} />
+                            </Button>
                         {evidenceUpload ? <Typography variant="body1">{evidenceUpload.name}</Typography> : existingEvidenceFile && (
                              <MuiLink href={`http://localhost:5000/${existingEvidenceFile.path}`} target="_blank" rel="noopener noreferrer" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <DescriptionIcon fontSize="small"/> {existingEvidenceFile.name}
                             </MuiLink>
                         )}
                     </Stack>
-                    <Stack direction="row" spacing={2} sx={{ my: 2 }} alignItems="center">
-                        <Button variant="outlined" component="label">Upload New Student Feedback<input type="file" hidden onChange={(e) => setFeedbackUpload(e.target.files[0])} /></Button>
+
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ my: 2 }} alignItems="center">
+                        <Button startIcon={<CloudUploadIcon />} variant="outlined" color="secondary" component="label" sx={{ width: { xs: '100%', sm: 'auto' }, minWidth:"260px" }}>
+                            Upload New Student Feedback<input type="file" hidden onChange={(e) => setFeedbackUpload(e.target.files[0])} /></Button>
                          {feedbackUpload ? <Typography variant="body1">{feedbackUpload.name}</Typography> : existingFeedbackFile && (
                              <MuiLink href={`http://localhost:5000/${existingFeedbackFile.path}`} target="_blank" rel="noopener noreferrer" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <DescriptionIcon fontSize="small"/> {existingFeedbackFile.name}
@@ -346,9 +381,14 @@ const EditReview = () => {
                 </Paper>
                 
                 {/* Section 5: Submission */}
-                <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3 }}>
                     <Typography variant="h6">5. Submission</Typography>
                     <TextField fullWidth required label="Completed By (Full Name)" value={completedBy} onChange={(e) => setCompletedBy(e.target.value)} sx={{my:1}}/>
+                    <Typography variant="body1" color="textSecondary" sx={{my: 2}}>
+                                            Click "Submit" to finalize your annual report.
+                                            Please note that your submission will be accessible to all staff across the University and will be used to inform official quality assurance processes.
+                    </Typography>
+                    
                     <Stack direction='row' spacing={2} sx={{mt: 2}}>
                         <Button variant="contained" size="large" onClick={() => handleUpdate('Completed')} disabled={submitLoading}>
                             {submitLoading ? 'Submitting...' : 'Submit Review'}

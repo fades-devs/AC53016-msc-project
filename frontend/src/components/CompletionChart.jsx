@@ -41,7 +41,15 @@ const useDebounce = (value, delay) => {
 };
 
 const CompletionChart = () => {
+
     const theme = useTheme();
+
+    const STATUS_COLORS = {
+        'Completed': theme.palette.success.main,
+        'In Progress': theme.palette.warning.main,
+        'Not Started': theme.palette.grey[400],
+    };
+
     const [chartData, setChartData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -98,7 +106,7 @@ const CompletionChart = () => {
     };
 
     return (
-        <Card sx={{ borderRadius: '16px', boxShadow: 3 }}>
+        <Card variant="outlined" sx={{ height: '100%' }}>
             <CardContent>
                 <Typography variant="h6" gutterBottom>
                     Module Status Overview
