@@ -153,8 +153,8 @@ const GetReview = () => {
         <Box>
             
             {/* --- UPDATE: Title and Edit Button --- */}
-            <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
-                <Typography variant="h5" gutterBottom sx={{ mb: 0 }}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
+                <Typography variant="h4" component="h1">
                     View Module Review
                 </Typography>
                 {/* This button will only appear when review data is loaded */}
@@ -171,9 +171,9 @@ const GetReview = () => {
             </Stack>
 
             {/* --- Section 1: Search Form --- */}
-            <Paper elevation={2} sx={{ p: 3, my: 2 }}>
-                <Typography variant="h6">1. Find a Review</Typography>
-                <Box component="form" noValidate sx={{ display: 'flex', gap: 2, alignItems: 'center', mt: 2 }}>
+            <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 2 }}>
+                <Typography variant="h6" component="h2" gutterBottom>1. Find a Review</Typography>
+                <Stack component="form" noValidate direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
                     <TextField
                         label="Module Code"
                         value={moduleCodeInput}
@@ -190,45 +190,48 @@ const GetReview = () => {
                     {/* <Button type="submit" variant="contained" disabled={loading}>
                         {loading ? 'Searching...' : 'Search'}
                     </Button> */}
-                </Box>
+                </Stack>
             </Paper>
 
-            {loading && <CircularProgress sx={{ display: 'block', mx: 'auto', my: 4 }} />}
+            {loading && <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}><CircularProgress /></Box>}
             <Collapse in={!!error}><Alert severity="error" sx={{ my: 2 }}>{error}</Alert></Collapse>
 
             {/* --- Display review data only if it exists --- */}
             <Collapse in={!!reviewData}>
                 {reviewData && (
-                    <>
+
+                    <Stack spacing={3}>
                         {/* --- Section 2: Module & Review Details --- */}
-                        <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                        <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                             <Stack spacing={2}>
-                                <Typography variant="h6">2. Module Details</Typography>
+                                <Typography variant="h6" component="h2">2. Module Details</Typography>
                                 <Divider />
-                                <DetailItem label="Title" value={reviewData.module.title} />
-                                <DetailItem label="Area" value={reviewData.module.area} />
-                                <DetailItem label="Level" value={reviewData.module.level} />
-                                <DetailItem label="Period" value={reviewData.module.period} />
-                                <DetailItem label="Location" value={reviewData.module.location} />
-                                <DetailItem label="Module Lead" value={`${reviewData.module.lead?.firstName} ${reviewData.module.lead?.lastName}`} />
-                                <DetailItem label="Review Status" value={reviewData.status} />
-                                <DetailItem label="Review Year" value={new Date(reviewData.createdAt).getFullYear()} />
+                                <Grid container spacing={2}>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Title" value={reviewData.module.title} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Area" value={reviewData.module.area} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Level" value={reviewData.module.level} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Period" value={reviewData.module.period} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Location" value={reviewData.module.location} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Module Lead" value={`${reviewData.module.lead?.firstName} ${reviewData.module.lead?.lastName}`} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Review Status" value={reviewData.status} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Review Year" value={new Date(reviewData.createdAt).getFullYear()} /></Grid>
+                                </Grid>
                             </Stack>
                         </Paper>
 
                         {/* --- Section 3: Reflective Analysis --- */}
-                        <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                        <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                             <Stack spacing={2}>
-                                <Typography variant="h6">3. Reflective Analysis</Typography>
+                                <Typography variant="h6" component="h2">3. Reflective Analysis</Typography>
                                 <Divider />
                                 <DetailItem label="Enhancement Plan Updates" value={reviewData.enhanceUpdate} />
                                 <DetailItem label="Student Attainment" value={reviewData.studentAttainment} />
                                 <DetailItem label="Module Feedback" value={reviewData.moduleFeedback} />
-                                <Divider sx={{ my: 2 }}/>
+                                <Divider />
                                 <ThemedPointDisplay title="Good Practice" points={reviewData.goodPractice} />
                                 <ThemedPointDisplay title="Identified Risks" points={reviewData.risks} />
-                                <Divider sx={{ my: 2 }}/>
-                                <Typography variant="subtitle1" gutterBottom>Student Statements</Typography>
+                                <Divider />
+                                <Typography variant="h6" component="h3">Student Statements</Typography>
                                 <DetailItem label="Students were actively engaged" value={reviewData.statementEngagement} />
                                 <DetailItem label="The teaching room and equipment were suitable" value={reviewData.statementLearning} />
                                 <DetailItem label="The timetable and scheduling were convenient" value={reviewData.statementTimetable} />
@@ -236,16 +239,16 @@ const GetReview = () => {
                         </Paper>
 
                         {/* --- Section 4: Enhancement Plans --- */}
-                        <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                        <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                             <ThemedPointDisplay title="Enhancement Plans" points={reviewData.enhancePlans} />
                         </Paper>
 
                         {/* --- Section 5: Evidence & Submission --- */}
-                        <Paper elevation={2} sx={{ p: 3, my: 2 }}>
+                        <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                              <Stack spacing={2}>
-                                <Typography variant="h6">4. Evidence & Submission</Typography>
+                                <Typography variant="h6" component="h2">4. Evidence & Submission</Typography>
                                 <Divider />
-                                <Stack direction="row" spacing={4}>
+                                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2, sm: 4 }}>
                                     <DetailItem label="Evidence Upload" value={
                                         reviewData.evidenceUpload ? (
                                             <MuiLink href={`http://localhost:5000/${reviewData.evidenceUpload}`} target="_blank" rel="noopener noreferrer" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -263,23 +266,18 @@ const GetReview = () => {
                                         ) : 'No file uploaded.'
                                     }/>
                                 </Stack>
-                                <Divider sx={{ my: 2 }}/>
+                                <Divider />
                                 <DetailItem label="Review Completed By" value={reviewData.completedBy} />
                                 <DetailItem label="Last Updated" value={new Date(reviewData.updatedAt).toLocaleString()} />
                              </Stack>
                         </Paper>
 
-                    </>
+                    </Stack>
                 )}
 
             </Collapse>
 
-
         </Box>
-
-
-
-
 
 
     // <Stack>
