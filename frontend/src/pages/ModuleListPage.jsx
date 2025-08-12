@@ -219,7 +219,7 @@ const ModuleListPage = () => {
                 </TableHead>
                 <TableBody>
                 {modules.map((module) => (
-                    <TableRow hover key={`${module._id}-${module.code}`}>
+                    <TableRow hover key={`${module._id}`}>
                     <TableCell>{module.code}</TableCell>
                     <TableCell>{module.title}</TableCell>
                     <TableCell>{module.level}</TableCell>

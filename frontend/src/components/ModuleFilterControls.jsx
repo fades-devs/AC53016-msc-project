@@ -83,7 +83,7 @@ const ModuleFilterControls = ({ filters, onFilterChange, onClearFilters }) => {
         </Grid>
         
         <Grid item xs={12} sm={6} md={3}>
-          <TextField helperText="Clear to see all years"  fullWidth label="Year" name="year" type="number" value={filters.year} onChange={onFilterChange} />
+          <TextField helperText="Clear to see all modules"  fullWidth label="Year" name="year" type="number" value={filters.year} onChange={onFilterChange} />
         </Grid>
         
         <Grid item xs={12} sm={6} md={3}>

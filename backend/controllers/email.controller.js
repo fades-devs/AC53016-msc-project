@@ -7,6 +7,7 @@ import User from "../models/user.model.js";
 import { sendEmail } from "../utils/sendEmail.js";
 
 
+// HERE I WILL PUT SOME COMMENTS TO EXPLAIN WHAT THEY NEED TO CHANGE TO SEND EMAILS BASED ON THE UNI NOT THE TESTING ONES
 export const sendReminderEmail = async (req, res) => {
 
     const testEmails = ['fadoua.assoufi@gmail.com', 'fades.devs@gmail.com', 'fadouaes01@gmail.com'];
