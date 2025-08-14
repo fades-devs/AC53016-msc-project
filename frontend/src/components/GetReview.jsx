@@ -21,9 +21,7 @@ import EditIcon from '@mui/icons-material/Edit';
 // Helper component to display a key-value pair for module details
 const DetailItem = ({ label, value }) => (
     <Box>
-        <Typography variant="overline" color="text.secondary" sx={{ lineHeight: 1.2 }}>
-            {label}
-        </Typography>
+        <Typography variant="overline" color="text.secondary" sx={{ lineHeight: 1.2 }}>{label}</Typography>
         <Typography>{value || 'N/A'}</Typography>
     </Box>
 );
@@ -81,17 +79,13 @@ const GetReview = () => {
     const debModuleCode = useDebounce(moduleCodeInput, 500);
     const debYear = useDebounce(yearInput, 500);
 
-    // Effect- Update the URL when debounced inputs change ---
-    // This effect's only job is to keep the URL in sync with the user's typing.
+    // EFFECT 1: Effect's job is to keep the URL in sync with the user's typing
     useEffect(() => {
-
         // Only update the URL if the user has typed a module code.
         if (debModuleCode) {
             navigate(`/get-review?code=${debModuleCode}&year=${debYear}`, { replace: true });
         }
     }, [debModuleCode, debYear, navigate]);
-
-
     // --- EFFECT 2: Fetch data when the URL (searchParams) changes ---
     // runs whenever the link is clicked OR the URL is changed by Effect 1.
     useEffect(() => {
@@ -112,7 +106,7 @@ const GetReview = () => {
             setReviewData(null);
 
             try {
-                // UPDATE - new lookup API endpoint
+                // UPDATE - Lookup API endpoint
                 const response = await axios.get(`http://localhost:5000/api/reviews/lookup/by-module`, {params: { code, year }});
                 setReviewData(response.data);
             }

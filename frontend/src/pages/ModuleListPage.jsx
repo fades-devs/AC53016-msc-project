@@ -45,18 +45,18 @@ const ModuleListPage = () => {
     const [totalPages, setTotalPages] = useState(0);
     const [itemsPerPage] = useState(20); // Define how many items per page
 
+    // State to hold the list of modules
+    const [modules, setModules] = useState([]);
+    // --- Differentiated loading states ---
+    const [initialLoading, setInitialLoading] = useState(true); // For the first page load
+    const [isFiltering, setIsFiltering] = useState(false); // For subsequent background searches
+    const [error, setError] = useState(null);
+
     // Debounce only the user-typed inputs - 500ms delay
     const titleSearchDeb = useDebounce(filters.titleSearch, 500);
     const codeSearchDeb = useDebounce(filters.codeSearch, 500);
     const leadSearchDeb = useDebounce(filters.leadSearch, 500);
     const yearDeb = useDebounce(filters.year, 500)
-
-    // State to hold the list of modules
-    const [modules, setModules] = useState([]);
-    // --- UPDATE: Differentiated loading states ---
-    const [initialLoading, setInitialLoading] = useState(true); // For the first page load
-    const [isFiltering, setIsFiltering] = useState(false); // For subsequent background searches
-    const [error, setError] = useState(null);
 
     const fetchModules = useCallback(async() => {
         // --- UPDATE: Set filtering state, not the main loading state ---
@@ -66,7 +66,7 @@ const ModuleListPage = () => {
         try {
                 const params = new URLSearchParams();
 
-                // UPDATE: add page and limit to API request
+                // Add page and limit to API request
                 params.append('page', page);
                 params.append('limit', itemsPerPage);
 
@@ -86,7 +86,7 @@ const ModuleListPage = () => {
                 // GET request to the backend API
                 const response = await axios.get(`http://localhost:5000/api/modules?${params.toString()}`);
 
-                // UPDATE: set state from response object (data from API)
+                // Set state from response object (data from API)
                 setModules(response.data.modules);
                 setTotalPages(response.data.totalPages);
 
@@ -140,14 +140,18 @@ const ModuleListPage = () => {
         case 'Completed':
             return (
             <Stack>
-                <Button size="medium" variant="text" component={Link} to={`/get-review?code=${module.code}&year=${module.year}`} target='_blank'>View Report</Button>
-                <Button size="medium" variant="text" component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'>Edit Report</Button>
+                <Button size="medium" variant="text" component={Link} to={`/get-review?code=${module.code}&year=${module.year}`}
+                target='_blank'>View Report</Button>
+                <Button size="medium" variant="text" component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'>
+                Edit Report</Button>
             </Stack>
             );
         case 'In Progress':
-            return <Button size="medium" variant="text" component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'>Continue Review</Button>;
+            return <Button size="medium" variant="text" component={Link} to={`/edit-review/${module.reviewId}`} target='_blank'>
+                Continue Review</Button>;
         case 'Not Started':
-            return <Button size="medium" variant="contained" component={Link} to={`/create-review/${module.code}`} target='_blank'>Submit Review</Button>;
+            return <Button size="medium" variant="contained" component={Link} to={`/create-review/${module.code}`} target='_blank'>
+                Submit Review</Button>;
         default:
             return null;
         }

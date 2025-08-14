@@ -156,7 +156,7 @@ const CreateReview = () => {
         setter(list);
     };
 
-    // --- UPDATE: Handler to view the previous year's report ---
+    // Handler to view the previous year's report
     const handleViewPreviousReport = () => {
         // Guard clause to ensure module code is entered
         if (!moduleCode.trim()) {
@@ -346,12 +346,8 @@ const CreateReview = () => {
                <Stack direction={{xs: 'column', sm: 'row'}} spacing={2} key={index} alignItems="center">
                    <FormControl fullWidth>
                        <InputLabel>Theme</InputLabel>
-                       <Select
-                           name="theme"
-                           value={point.theme}
-                           label="Theme"
-                           onChange={(e) => handleThemedPointChange(index, e, field, setter)}
-                       >
+                       <Select name="theme" value={point.theme} label="Theme"
+                            onChange={(e) => handleThemedPointChange(index, e, field, setter)}>
                            {themes.map(theme => <MenuItem key={theme} value={theme}>{theme}</MenuItem>)}
                        </Select>
                    </FormControl>
@@ -432,23 +428,11 @@ const CreateReview = () => {
                         View a Previous Report
                     </Typography>
                     <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
-                        <TextField
-                            label="Year"
-                            type="number"
-                            size="small"
-                            value={previousYear}
-                            onChange={(e) => setPreviousYear(e.target.value)}
-                            sx={{ maxWidth: { sm: 120 }, width: '100%' }}
-                        />
-                        <Button
-                            variant="outlined"
-                            color="secondary"
-                            onClick={handleViewPreviousReport}
-                            disabled={!moduleCode.trim()}
-                            sx={{ width: { xs: '100%', sm: 'auto' } }}
-                        >
-                            View Previous Report
-                        </Button>
+                        <TextField label="Year" type="number" size="small" value={previousYear}
+                            onChange={(e) => setPreviousYear(e.target.value)} sx={{ maxWidth: { sm: 120 }, width: '100%' }}/>
+                        <Button variant="outlined" color="secondary" onClick={handleViewPreviousReport}
+                            disabled={!moduleCode.trim()} sx={{ width: { xs: '100%', sm: 'auto' } }}>
+                            View Previous Report</Button>
                     </Stack>
                 </Box>
 

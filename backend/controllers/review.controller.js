@@ -63,12 +63,11 @@ export const getReviewByCodeAndYear = async(req, res) => {
             match.createdAt = { $gte: startDate, $lt: endDate };
         }
 
-        // UPDATE: Find the review using the dynamically built + populate
-        // The 'lead' field is inside the 'variants' array of the 'module' document.
-        const review = await Review.findOne(match).populate({path: 'module', // Populate the 'module' field in the Review document
+        // Find the review using the dynamically built + populate
+        const review = await Review.findOne(match).populate({path: 'module', // Populate the 'module' field
             populate:{
-                path: 'lead', // Within the now-populated module, populate the 'lead' field inside the 'variants' array
-                select: 'firstName lastName email'} // Select which fields from the User model to include
+                path: 'lead', // Within the now-populated module
+                select: 'firstName lastName email'} // fields from the User model to include
             })
 
         if (!review) {return res.status(404).json({ message: "No review has been submitted for this module yet." });}
@@ -116,13 +115,13 @@ export const createReview = async(req, res) => {
 
         if (!moduleId) {return res.status(400).json({message: 'Module ID required'})};
 
-        // UPDATE: file uploads - Multer adds a file object to the request
+        // Multer adds a file object to the request
         const evidenceUploadPath = req.files?.evidenceUpload?.[0]?.path;
         const evidenceUploadOriginalName = req.files?.evidenceUpload?.[0]?.originalname;
         const feedbackUploadPath = req.files?.feedbackUpload?.[0]?.path;
         const feedbackUploadOriginalName = req.files?.feedbackUpload?.[0]?.originalname;
 
-        // Create review document - UPDATE WITH FILE FIELDS
+        // Create review document
         const newReview = new Review({module: moduleId, enhanceUpdate, studentAttainment, moduleFeedback, goodPractice, risks,
             statementEngagement, statementLearning, statementTimetable, completedBy, enhancePlans, status: 'Completed', // Update status
             evidenceUpload: evidenceUploadPath, feedbackUpload: feedbackUploadPath,

@@ -15,7 +15,7 @@ const ThemeSchema = new mongoose.Schema({
   }
 }, { _id: false });
 
-// Review schema
+// Review Schema
 const reviewSchema = new mongoose.Schema({
     status: {
         type: String,
@@ -28,10 +28,8 @@ const reviewSchema = new mongoose.Schema({
         required: true,
         ref: "Module"
     },
-    // variantId: { // The specific variant ID being reviewed
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     // required: true,
-    // },
+    goodPractice: [ThemeSchema],
+
     enhanceUpdate: {
         type: String,
         required: true
@@ -54,7 +52,6 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         enum: ['Strongly agree', 'Agree', 'Disagree', 'Strongly disagree']
     },
-    goodPractice: [ThemeSchema],
     risks: [ThemeSchema],
     enhancePlans: [ThemeSchema],
     completedBy: {

@@ -6,10 +6,10 @@ import {upload} from '../middleware/upload.js'; // import upload middleware
 
 const router = express.Router();
 
-// // @route GET /api/reviews/noncomplete/emails
-// router.get('/noncomplete/emails', getEmailsNonCompleteReviews)
+// @route   GET /api/reviews/:id
+router.get('/:id', getReviewById);
 
-// @route POST /api/reviews - UPDATE: add upload middleware
+// @route POST /api/reviews
 router.post('/', upload, createReview);
 
 // @route POST /api/reviews/draft - UPDATE: for partial save
@@ -20,8 +20,5 @@ router.get('/lookup/by-module', getReviewByCodeAndYear);
 
 // @route PUT /api/reviews/:id
 router.put('/:id', upload, UpdateReview);
-
-// @route   GET /api/reviews/:id
-router.get('/:id', getReviewById);
 
 export default router;

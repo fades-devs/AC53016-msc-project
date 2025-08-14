@@ -113,16 +113,11 @@ export const getModules = async(req,res) => {
                     pipeline: [
                         { $match: { $expr: { $eq: ["$module", "$$moduleId"] } } },
                         // Conditionally add a match stage for the year IF the 'year' query param exists
-                        ...(year ? [{
-                            $match: {
-                                createdAt: {
-                                    $gte: new Date(parseInt(year), 0, 1),
-                                    $lt: new Date(parseInt(year) + 1, 0, 1)
-                                }
-                            }
+                        ...(year ? [{ $match: { createdAt: { $gte: new Date(parseInt(year), 0, 1),
+                                    $lt: new Date(parseInt(year) + 1, 0, 1) }}
                         }] : [])
                     ],
-                    as: "reviewData" // This array now ONLY contains reviews for the specified year
+                    as: "reviewData" // This array contains reviews for the specified year
                 }
             },
 

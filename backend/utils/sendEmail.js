@@ -11,7 +11,6 @@ export const sendEmail = async (subject, message, sendTo, senderDisplayName) => 
 
     // Ensure sendTo is always an array
     const recipients = Array.isArray(sendTo) ? sendTo : [sendTo];
-
     // Create an array of message objects, one for each recipient
     const messages = recipients.map(recipientEmail => ({
         to: recipientEmail,
@@ -21,11 +20,8 @@ export const sendEmail = async (subject, message, sendTo, senderDisplayName) => 
         },
         subject: subject,
         html: message,
-        // This tells SendGrid to treat these as separate sends
-        // even if batched in one API call.
-
+        // Tells SendGrid to treat these as separate sends even if one API call
     }));
-
     try {
         // Use send() with an array of messages for bulk individual sending
         await sgMail.send(messages);

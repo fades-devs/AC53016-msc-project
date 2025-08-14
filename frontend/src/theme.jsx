@@ -2,13 +2,13 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
-  // ## Color Palette (Branded + Accessible) ##
+  // ## Color Palette
   palette: {
     primary: {
       main: '#4365E2', // university brand color
     },
     secondary: {
-      main: '#6c757d', // neutral secondary color for less important elements
+      main: '#6c757d', // neutral secondary color
     },
     success: {
       main: '#28a745', // standard success green
