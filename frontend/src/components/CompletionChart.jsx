@@ -11,6 +11,7 @@ import {
     TextField,
     IconButton,
     InputAdornment,
+    FormControl, InputLabel, Select, OutlinedInput, MenuItem, Checkbox, ListItemText,
     useTheme
 } from '@mui/material';
 import { 
@@ -22,6 +23,9 @@ import {
     ResponsiveContainer 
 } from 'recharts';
 import ClearIcon from '@mui/icons-material/Clear';
+
+import { areaOptions }
+from '../constants/filterOptions';
 
 // Define consistent colors for each status
 const STATUS_COLORS = {
@@ -55,9 +59,15 @@ const CompletionChart = () => {
     const [error, setError] = useState(null);
     
     // Updated filters state to only include year
-    const [year, setYear] = useState(new Date().getFullYear().toString());
+    // const [year, setYear] = useState(new Date().getFullYear().toString());
 
-    const debouncedYear = useDebounce(year, 500);
+    const [filters, setFilters] = useState({
+        year: new Date().getFullYear().toString(),
+        area: [] 
+    });
+    
+
+    const debouncedYear = useDebounce(filters.year, 500);
 
     const fetchChartData = useCallback(async () => {
         setIsLoading(true);
@@ -69,6 +79,8 @@ const CompletionChart = () => {
             params.append('year', debouncedYear);
         }
 
+        filters.area.forEach(item => params.append('area', item));
+
         try {
             // The API endpoint remains the same
             const response = await axios.get(`http://localhost:5000/api/dashboard/stats/review-by-status?${params.toString()}`);
@@ -79,18 +91,22 @@ const CompletionChart = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [debouncedYear]);
+    }, [debouncedYear, JSON.stringify(filters.area)]);
 
     useEffect(() => {
         fetchChartData();
     }, [fetchChartData]);
 
-    const handleYearChange = (e) => {
-        setYear(e.target.value);
+    const handleFilterChange = (e) => {
+        const { name, value } = e.target;
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            [name]: value
+        }));
     };
     
     const handleClearYear = () => {
-         setYear('');
+         setFilters(prev => ({...prev, year: ''}));
     };
     
     // Custom Tooltip for better styling
@@ -119,12 +135,33 @@ const CompletionChart = () => {
                             label="Year"
                             name="year"
                             type="number"
-                            value={year}
-                            onChange={handleYearChange}
+                            value={filters.year}
+                            onChange={handleFilterChange}
                             variant="outlined"
                             fullWidth
                             helperText="Enter the desired year"
                         />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <FormControl fullWidth variant="outlined" sx={{ minWidth: 120 }}>
+                            <InputLabel id="area-multi-select-label">Discipline</InputLabel>
+                            <Select
+                                labelId="area-multi-select-label"
+                                name="area"
+                                multiple
+                                value={filters.area}
+                                onChange={handleFilterChange}
+                                input={<OutlinedInput label="Discipline" />}
+                                renderValue={(selected) => selected.length > 1 ? `${selected.length} selected` : selected.join(', ')}
+                            >
+                                {areaOptions.map(option => (
+                                    <MenuItem key={option} value={option}>
+                                        <Checkbox checked={filters.area.indexOf(option) > -1} />
+                                        <ListItemText primary={option} />
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
                     </Grid>
                 </Grid>
 

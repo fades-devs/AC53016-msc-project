@@ -55,7 +55,7 @@ const GoodPracticeChart = () => {
     // State for filters, defaulting year and making area an array for multi-select
     const [filters, setFilters] = useState({
         year: new Date().getFullYear().toString(),
-        discipline: [] // Changed to array for multi-select
+        area: [] // Changed to array for multi-select
     });
 
     const debouncedYear = useDebounce(filters.year, 500);
@@ -73,7 +73,7 @@ const GoodPracticeChart = () => {
         }
         
         // CORRECTLY APPEND MULTIPLE AREA VALUES
-        filters.discipline.forEach(item => params.append('discipline', item));
+        filters.area.forEach(item => params.append('area', item));
 
         try {
             const response = await axios.get(`http://localhost:5000/api/dashboard/stats/goodpractice-by-theme?${params.toString()}`);
@@ -85,7 +85,7 @@ const GoodPracticeChart = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [debouncedYear, JSON.stringify(filters.discipline)]); // Use JSON.stringify to detect changes in the array
+    }, [debouncedYear, JSON.stringify(filters.area)]); // Use JSON.stringify to detect changes in the array
 
     useEffect(() => {
         fetchChartData();
@@ -104,7 +104,7 @@ const GoodPracticeChart = () => {
     };
 
     const handleClearArea = () => {
-        setFilters(prev => ({...prev, discipline: []}));
+        setFilters(prev => ({...prev, area: []}));
     };
 
     return (
@@ -141,19 +141,19 @@ const GoodPracticeChart = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <FormControl fullWidth variant="outlined" sx={{ minWidth: 120 }}>
-                            <InputLabel id="discipline-multi-select-label">Discipline</InputLabel>
+                            <InputLabel id="area-multi-select-label">Discipline</InputLabel>
                             <Select
-                                labelId="discipline-multi-select-label"
-                                name="discipline"
+                                labelId="area-multi-select-label"
+                                name="area"
                                 multiple
-                                value={filters.discipline}
+                                value={filters.area}
                                 onChange={handleFilterChange}
                                 input={<OutlinedInput label="Discipline" />}
                                 renderValue={(selected) => selected.join(', ')}
                             >
                                 {areaOptions.map(option => (
                                     <MenuItem key={option} value={option}>
-                                        <Checkbox checked={filters.discipline.indexOf(option) > -1} />
+                                        <Checkbox checked={filters.area.indexOf(option) > -1} />
                                         <ListItemText primary={option} />
                                     </MenuItem>
                                 ))}

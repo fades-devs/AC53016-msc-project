@@ -55,7 +55,7 @@ const EnhancementChart = () => {
     // State for filters, defaulting year and making area an array for multi-select
     const [filters, setFilters] = useState({
         year: new Date().getFullYear().toString(),
-        discipline: []
+        area: []
     });
 
     const debouncedYear = useDebounce(filters.year, 500);
@@ -71,7 +71,7 @@ const EnhancementChart = () => {
             params.append('year', debouncedYear);
         }
         
-        filters.discipline.forEach(item => params.append('discipline', item));
+        filters.area.forEach(item => params.append('area', item));
 
         try {
             // UPDATED API ENDPOINT
@@ -84,7 +84,7 @@ const EnhancementChart = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [debouncedYear, JSON.stringify(filters.discipline)]);
+    }, [debouncedYear, JSON.stringify(filters.area)]);
 
     useEffect(() => {
         fetchChartData();
@@ -136,19 +136,19 @@ const EnhancementChart = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <FormControl fullWidth variant="outlined" sx={{ minWidth: 120 }}>
-                            <InputLabel id="discipline-multi-select-label">Discipline</InputLabel>
+                            <InputLabel id="area-multi-select-label">Discipline</InputLabel>
                             <Select
-                                labelId="discipline-multi-select-label"
-                                name="discipline"
+                                labelId="area-multi-select-label"
+                                name="area"
                                 multiple
-                                value={filters.discipline}
+                                value={filters.area}
                                 onChange={handleFilterChange}
                                 input={<OutlinedInput label="Discipline" />}
                                 renderValue={(selected) => selected.join(', ')}
                             >
                                 {areaOptions.map(option => (
                                     <MenuItem key={option} value={option}>
-                                        <Checkbox checked={filters.discipline.indexOf(option) > -1} />
+                                        <Checkbox checked={filters.area.indexOf(option) > -1} />
                                         <ListItemText primary={option} />
                                     </MenuItem>
                                 ))}
