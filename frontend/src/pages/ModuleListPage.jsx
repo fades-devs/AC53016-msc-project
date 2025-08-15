@@ -151,7 +151,7 @@ const ModuleListPage = () => {
                 Continue Review</Button>;
         case 'Not Started':
             return <Button size="medium" variant="contained" component={Link} to={`/create-review/${module.code}`} target='_blank'>
-                Submit Review</Button>;
+                Start Review</Button>;
         default:
             return null;
         }
