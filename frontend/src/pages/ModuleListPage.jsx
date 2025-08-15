@@ -214,7 +214,7 @@ const ModuleListPage = () => {
             <Table stickyHeader>
                 <TableHead>
                 <TableRow>
-                    {['Code', 'Title', 'Level', 'Lead', 'Status', 'Actions'].map(headCell => (
+                    {['Module Code', 'Module Title', 'Level', 'Module Lead', 'Review Status', 'Actions'].map(headCell => (
                     <TableCell key={headCell} sx={{ fontWeight: 'bold', bgcolor: 'background.default' }}>
                         {headCell}
                     </TableCell>
