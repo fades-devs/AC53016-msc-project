@@ -31,12 +31,8 @@ import {
 } from 'recharts';
 import ClearIcon from '@mui/icons-material/Clear';
 
-// --- Hardcoded options for the Area filter ---
-const areaOptions = [
-    "Computing", "Civil Engineering", "Mechanical Engineering", "Anatomy", 
-    "Biomedical Engineering", "Mathematics", "Physics", 
-    "Graduate Apprenticeship Programme", "Leverhulme Research Centre"
-];
+import { areaOptions }
+from '../constants/filterOptions';
 
 // Custom hook for debouncing user input
 const useDebounce = (value, delay) => {
@@ -59,7 +55,7 @@ const EnhancementChart = () => {
     // State for filters, defaulting year and making area an array for multi-select
     const [filters, setFilters] = useState({
         year: new Date().getFullYear().toString(),
-        area: []
+        discipline: []
     });
 
     const debouncedYear = useDebounce(filters.year, 500);
@@ -75,7 +71,7 @@ const EnhancementChart = () => {
             params.append('year', debouncedYear);
         }
         
-        filters.area.forEach(item => params.append('area', item));
+        filters.discipline.forEach(item => params.append('discipline', item));
 
         try {
             // UPDATED API ENDPOINT
@@ -88,7 +84,7 @@ const EnhancementChart = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [debouncedYear, JSON.stringify(filters.area)]);
+    }, [debouncedYear, JSON.stringify(filters.discipline)]);
 
     useEffect(() => {
         fetchChartData();
@@ -140,19 +136,19 @@ const EnhancementChart = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <FormControl fullWidth variant="outlined" sx={{ minWidth: 120 }}>
-                            <InputLabel id="area-multi-select-label">Area</InputLabel>
+                            <InputLabel id="discipline-multi-select-label">Discipline</InputLabel>
                             <Select
-                                labelId="area-multi-select-label"
-                                name="area"
+                                labelId="discipline-multi-select-label"
+                                name="discipline"
                                 multiple
-                                value={filters.area}
+                                value={filters.discipline}
                                 onChange={handleFilterChange}
-                                input={<OutlinedInput label="Area" />}
+                                input={<OutlinedInput label="Discipline" />}
                                 renderValue={(selected) => selected.join(', ')}
                             >
                                 {areaOptions.map(option => (
                                     <MenuItem key={option} value={option}>
-                                        <Checkbox checked={filters.area.indexOf(option) > -1} />
+                                        <Checkbox checked={filters.discipline.indexOf(option) > -1} />
                                         <ListItemText primary={option} />
                                     </MenuItem>
                                 ))}

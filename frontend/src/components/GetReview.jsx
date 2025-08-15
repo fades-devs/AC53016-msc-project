@@ -202,7 +202,7 @@ const GetReview = () => {
                                 <Divider />
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Title" value={reviewData.module.title} /></Grid>
-                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Area" value={reviewData.module.area} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Discipline" value={reviewData.module.area} /></Grid>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Level" value={reviewData.module.level} /></Grid>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Period" value={reviewData.module.period} /></Grid>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Location" value={reviewData.module.location} /></Grid>

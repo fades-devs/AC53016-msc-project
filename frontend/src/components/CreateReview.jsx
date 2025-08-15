@@ -442,7 +442,7 @@ const CreateReview = () => {
                     {foundModule && (
                          <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
                             <Typography><b>Title:</b> {foundModule.title}</Typography>
-                            <Typography><b>Area:</b> {foundModule.area}</Typography>
+                            <Typography><b>Discipline:</b> {foundModule.area}</Typography>
                             <Typography><b>Level:</b> {foundModule.level}</Typography>
                             <Typography><b>Period:</b> {foundModule.period}</Typography>
                             <Typography><b>Location:</b> {foundModule.location}</Typography>

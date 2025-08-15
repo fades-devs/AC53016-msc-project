@@ -287,7 +287,7 @@ if (pageLoading) {
                     <Box sx={{ mt: 2, p: 2, borderRadius: 2, bgcolor: 'action.hover' }}>
                         <Typography><b>Code:</b> {moduleDetails.code}</Typography>
                         <Typography><b>Title:</b> {moduleDetails.title}</Typography>
-                        <Typography><b>Area:</b> {moduleDetails.area}</Typography>
+                        <Typography><b>Discipline:</b> {moduleDetails.area}</Typography>
                         <Typography><b>Level:</b> {moduleDetails.level}</Typography>
                         <Typography><b>Period:</b> {moduleDetails.period}</Typography>
                         <Typography><b>Location:</b> {moduleDetails.location}</Typography>
