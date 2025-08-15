@@ -369,7 +369,7 @@ const CreateReview = () => {
                variant="outlined"
                sx={{ alignSelf: 'flex-start' }}
            >
-               Add Another {title}
+               Add Other {title}
            </Button>
        </Stack>
    );
@@ -477,7 +477,7 @@ const CreateReview = () => {
                         <TextField fullWidth label="Module Feedback" multiline rows={2} value={moduleFeedback} onChange={(e) => setModuleFeedback(e.target.value)}/>
                     </Box>
                     
-                    {renderThemedPointSection("Good Practice", goodPractice, setGoodPractice,
+                    {renderThemedPointSection("Good Practices", goodPractice, setGoodPractice,
                         "Highlight any areas of good practice that enhanced student learning and engagement, noting the specific strategies that worked well.")}
                     {renderThemedPointSection("Risks", risks, setRisks, 
                         "Identify any potential risks to the module's delivery (e.g., resource limitations, student performance) and explain how you plan to mitigate them."
