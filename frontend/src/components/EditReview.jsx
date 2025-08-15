@@ -251,7 +251,7 @@ if (pageLoading) {
                </Stack>
            ))}
            <Button startIcon={<AddCircleOutlineIcon />} onClick={() => handleAddThemedPoint(setter, field)} variant="outlined" sx={{ alignSelf: 'flex-start' }}>
-               Add {title}
+               Add Another {title}
            </Button>
        </Stack>
     );
