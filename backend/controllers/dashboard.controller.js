@@ -528,11 +528,100 @@ export const getCountEnhanceByTheme = async(req, res) => {
 export const getDashboardStats = async (req, res) => {
     try {
         // 1. Determine the target year from query param, or default to the current year.
-        const year = req.query.year ? parseInt(req.query.year, 10) : new Date().getFullYear();
+        const { year, area } = req.query;
+        const targetYear = year ? parseInt(year, 10) : new Date().getFullYear();
+
+        const moduleMatch = {};
+        if (area) {
+            // This now supports multiple areas if you enhance the frontend later
+            const areas = Array.isArray(area) ? area : [area];
+            moduleMatch.area = { $in: areas };
+        }
 
         // 2. Define the start and end dates for the target year.
         const startDate = new Date(year, 0, 1); // January 1st
         const endDate = new Date(year + 1, 0, 1); // January 1st of the next year for a non-inclusive range
+
+        const statsPipeline = [
+            // Stage 1: Filter modules by area (discipline) if provided
+            { $match: moduleMatch },
+            
+            // Stage 2: Look up reviews for each module within the target year
+            {
+                $lookup: {
+                    from: "reviews",
+                    let: { moduleId: "$_id" },
+                    pipeline: [
+                        { 
+                            $match: {
+                                $expr: { $eq: ["$module", "$$moduleId"] },
+                                createdAt: { $gte: startDate, $lt: endDate }
+                            } 
+                        }
+                    ],
+                    as: "reviewsThisYear"
+                }
+            },
+            
+            // Stage 3: Determine the status of the most recent review for the year
+            {
+                $addFields: {
+                    lastReview: { $arrayElemAt: ["$reviewsThisYear", -1] }
+                }
+            },
+            {
+                $addFields: {
+                    status: { $ifNull: ["$lastReview.status", "Not Started"] }
+                }
+            },
+            
+            // Stage 4: Group everything to calculate all stats at once
+            {
+                $group: {
+                    _id: null, // Group all documents into one
+                    totalModules: { $sum: 1 },
+                    completed: {
+                        $sum: { $cond: [{ $eq: ["$status", "Completed"] }, 1, 0] }
+                    },
+                }
+            },
+
+            // Stage 5: Calculate final values and format the output
+            {
+                $project: {
+                    _id: 0,
+                    totalModules: 1,
+                    reviewsForYear: "$completed",
+                    pendingForYear: { $subtract: ["$totalModules", "$completed"] },
+                    completionRate: {
+                        $cond: [
+                            { $eq: ["$totalModules", 0] },
+                            0,
+                            { $multiply: [{ $divide: ["$completed", "$totalModules"] }, 100] }
+                        ]
+                    }
+                }
+            }
+        ];
+
+        const results = await Module.aggregate(statsPipeline);
+
+        // Handle case where no modules match the filter
+        if (results.length === 0) {
+            return res.status(200).json({
+                year: targetYear,
+                totalModules: 0,
+                reviewsForYear: 0,
+                pendingForYear: 0,
+                completionRate: 0,
+            });
+        }
+        
+        // Send the final, structured response
+        res.status(200).json({
+            year: targetYear,
+            ...results[0]
+        });
 
         // --- Overall Statistics ---
 
@@ -542,71 +631,71 @@ export const getDashboardStats = async (req, res) => {
         //     { $count: "totalVariants" }
         // ]);
 
-        // TOTAL MODULES
-        const totalModulesPromise = Module.countDocuments();
+        // // TOTAL MODULES
+        // const totalModulesPromise = Module.countDocuments();
 
-        // 4. Get total completed reviews across all time.
-        const totalReviewsAllTimePromise = Review.countDocuments({ status: 'Completed' });
+        // // 4. Get total completed reviews across all time.
+        // const totalReviewsAllTimePromise = Review.countDocuments({ status: 'Completed' });
 
-        // --- Year-Specific Statistics ---
+        // // --- Year-Specific Statistics ---
 
-        // 5. Get the count of reviews completed within the specified year.
-        const reviewsForYearPromise = Review.countDocuments({
-            status: 'Completed',
-            createdAt: { $gte: startDate, $lt: endDate }
-        });
+        // // 5. Get the count of reviews completed within the specified year.
+        // const reviewsForYearPromise = Review.countDocuments({
+        //     status: 'Completed',
+        //     createdAt: { $gte: startDate, $lt: endDate }
+        // });
 
-        // Aggregation to find the number of unique modules completed in the year.
-        // now much simpler and more efficient.
-        const completedModulesPromise = Review.aggregate([
-            {
-                // First, find all reviews that were completed in the target year.
-                $match: {
-                    status: 'Completed',
-                    createdAt: { $gte: startDate, $lt: endDate }
-                }
-            },
-            {
-                // Group the results by the module ID to get a list of unique modules.
-                $group: {
-                    _id: "$module"
-                }
-            },
-            {
-                // Count how many unique modules were found.
-                $count: "completedCount"
-            }
-        ]);
+        // // Aggregation to find the number of unique modules completed in the year.
+        // // now much simpler and more efficient.
+        // const completedModulesPromise = Review.aggregate([
+        //     {
+        //         // First, find all reviews that were completed in the target year.
+        //         $match: {
+        //             status: 'Completed',
+        //             createdAt: { $gte: startDate, $lt: endDate }
+        //         }
+        //     },
+        //     {
+        //         // Group the results by the module ID to get a list of unique modules.
+        //         $group: {
+        //             _id: "$module"
+        //         }
+        //     },
+        //     {
+        //         // Count how many unique modules were found.
+        //         $count: "completedCount"
+        //     }
+        // ]);
 
-        // 5. Execute all database queries in parallel.
-        const [
-            totalModules,
-            totalReviewsAllTime,
-            reviewsForYear,
-            completedModulesData
-        ] = await Promise.all([
-            totalModulesPromise,
-            totalReviewsAllTimePromise,
-            reviewsForYearPromise,
-            completedModulesPromise
-        ]);
+        // // 5. Execute all database queries in parallel.
+        // const [
+        //     totalModules,
+        //     totalReviewsAllTime,
+        //     reviewsForYear,
+        //     completedModulesData
+        // ] = await Promise.all([
+        //     totalModulesPromise,
+        //     totalReviewsAllTimePromise,
+        //     reviewsForYearPromise,
+        //     completedModulesPromise
+        // ]);
 
-        // 6. Calculate completion rate against ALL modules in the system.
-        const completionRate = totalModules > 0
-            ? (completedModulesData[0].completedCount / totalModules) * 100 : 0;
+        // // 6. Calculate completion rate against ALL modules in the system.
+        // const completionRate = totalModules > 0
+        //     ? (completedModulesData[0].completedCount / totalModules) * 100 : 0;
 
-        // 7. Send the final, structured response.
-        res.status(200).json({
-            year,
-            totalModules,
-            totalReviewsAllTime,
-            reviewsForYear,
-            completionRate: parseFloat(completionRate.toFixed(1)),
-            _debug: {
-                completedModulesData,
-                totalModulesSystem: totalModules // Updated debug field for clarity
-            }
-        });
+        // // 7. Send the final, structured response.
+        // res.status(200).json({
+        //     year,
+        //     totalModules,
+        //     totalReviewsAllTime,
+        //     reviewsForYear,
+        //     completionRate: parseFloat(completionRate.toFixed(1)),
+        //     _debug: {
+        //         completedModulesData,
+        //         totalModulesSystem: totalModules // Updated debug field for clarity
+        //     }
+        // });
 
     } catch (error) {
         console.error('Could not get dashboard statistics:', error);
