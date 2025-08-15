@@ -327,7 +327,7 @@ if (pageLoading) {
                     )}
 
                     <Stack direction="column" sx={{ mt: 3, borderTop: 1, borderColor: 'divider', pt: 2 }}>
-                        <Typography variant="h6" gutterBottom>Student Statements</Typography>
+                        <Typography variant="h6" gutterBottom>Reflections on Student Statements</Typography>
                         {renderStatementRadioGroup("Students were actively engaged in the module's activities and learning process. *", statementEngagement, setStatementEngagement)}
                         {renderStatementRadioGroup("The teaching room and equipment were suitable for the effective delivery of this module. *", statementLearning, setStatementLearning)}
                         {renderStatementRadioGroup("The timetable and scheduling of this module were convenient to both staff and students. *", statementTimetable, setStatementTimetable)}

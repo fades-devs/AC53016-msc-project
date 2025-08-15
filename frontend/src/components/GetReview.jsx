@@ -225,7 +225,7 @@ const GetReview = () => {
                                 <ThemedPointDisplay title="Good Practice" points={reviewData.goodPractice} />
                                 <ThemedPointDisplay title="Identified Risks" points={reviewData.risks} />
                                 <Divider />
-                                <Typography variant="h6" component="h3">Student Statements</Typography>
+                                <Typography variant="h6" component="h3">Reflections on Student Statements</Typography>
                                 <DetailItem label="Students were actively engaged" value={reviewData.statementEngagement} />
                                 <DetailItem label="The teaching room and equipment were suitable" value={reviewData.statementLearning} />
                                 <DetailItem label="The timetable and scheduling were convenient" value={reviewData.statementTimetable} />
