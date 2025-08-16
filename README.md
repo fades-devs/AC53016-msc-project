@@ -1,4 +1,4 @@
-# Module Enhancement Review System
+# Annual Module Enhancement Review System
 
 Full-stack web application designed to streamline the annual module enhancement review process for the university. This system replaces a manual, multi-platform workflow with a centralized and user-friendly interface for submitting, tracking, and analyzing module reviews.
 
