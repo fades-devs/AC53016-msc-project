@@ -251,7 +251,7 @@ if (pageLoading) {
                </Stack>
            ))}
            <Button startIcon={<AddCircleOutlineIcon />} onClick={() => handleAddThemedPoint(setter, field)} variant="outlined" sx={{ alignSelf: 'flex-start' }}>
-               Add {title}
+               Add Other {title}
            </Button>
        </Stack>
     );
@@ -287,7 +287,7 @@ if (pageLoading) {
                     <Box sx={{ mt: 2, p: 2, borderRadius: 2, bgcolor: 'action.hover' }}>
                         <Typography><b>Code:</b> {moduleDetails.code}</Typography>
                         <Typography><b>Title:</b> {moduleDetails.title}</Typography>
-                        <Typography><b>Area:</b> {moduleDetails.area}</Typography>
+                        <Typography><b>Discipline:</b> {moduleDetails.area}</Typography>
                         <Typography><b>Level:</b> {moduleDetails.level}</Typography>
                         <Typography><b>Period:</b> {moduleDetails.period}</Typography>
                         <Typography><b>Location:</b> {moduleDetails.location}</Typography>
@@ -327,7 +327,7 @@ if (pageLoading) {
                     )}
 
                     <Stack direction="column" sx={{ mt: 3, borderTop: 1, borderColor: 'divider', pt: 2 }}>
-                        <Typography variant="h6" gutterBottom>Student Statements</Typography>
+                        <Typography variant="h6" gutterBottom>Reflections on Student Statements</Typography>
                         {renderStatementRadioGroup("Students were actively engaged in the module's activities and learning process. *", statementEngagement, setStatementEngagement)}
                         {renderStatementRadioGroup("The teaching room and equipment were suitable for the effective delivery of this module. *", statementLearning, setStatementLearning)}
                         {renderStatementRadioGroup("The timetable and scheduling of this module were convenient to both staff and students. *", statementTimetable, setStatementTimetable)}

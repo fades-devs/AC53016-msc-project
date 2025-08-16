@@ -141,14 +141,14 @@ const GoodPracticeChart = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <FormControl fullWidth variant="outlined" sx={{ minWidth: 120 }}>
-                            <InputLabel id="area-multi-select-label">Area</InputLabel>
+                            <InputLabel id="area-multi-select-label">Discipline</InputLabel>
                             <Select
                                 labelId="area-multi-select-label"
                                 name="area"
                                 multiple
                                 value={filters.area}
                                 onChange={handleFilterChange}
-                                input={<OutlinedInput label="Area" />}
+                                input={<OutlinedInput label="Discipline" />}
                                 renderValue={(selected) => selected.join(', ')}
                             >
                                 {areaOptions.map(option => (

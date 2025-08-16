@@ -74,11 +74,17 @@ const EmailReminder = () => {
 
         <Stack spacing={4}>
 
-            <Typography variant="h4" component="h1">
-                Send Module Review Reminders
-            </Typography>
+            <Box>
+                <Typography variant="h4" component="h1" sx={{ mb: 0 }}>
+                    Send Module Review Reminders
+                </Typography>
 
-            <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
+                <Typography variant="body1" color="text.secondary">
+                    The sample email below will be sent to module leads with pending reviews.
+                </Typography>
+            </Box>
+
+            {/* <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                 <Typography variant="h6" gutterBottom>
                     Recipient List ({recipientEmails.length} total)
                 </Typography>
@@ -105,7 +111,7 @@ const EmailReminder = () => {
                 ) : (
                     <Typography color="text.secondary">No recipients pending reminders.</Typography>
                 )}
-            </Paper>
+            </Paper> */}
 
             <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                 <Typography variant="h6" gutterBottom>

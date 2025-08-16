@@ -202,7 +202,7 @@ const GetReview = () => {
                                 <Divider />
                                 <Grid container spacing={2}>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Title" value={reviewData.module.title} /></Grid>
-                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Area" value={reviewData.module.area} /></Grid>
+                                    <Grid item xs={12} sm={6} md={4}><DetailItem label="Discipline" value={reviewData.module.area} /></Grid>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Level" value={reviewData.module.level} /></Grid>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Period" value={reviewData.module.period} /></Grid>
                                     <Grid item xs={12} sm={6} md={4}><DetailItem label="Location" value={reviewData.module.location} /></Grid>
@@ -225,7 +225,7 @@ const GetReview = () => {
                                 <ThemedPointDisplay title="Good Practice" points={reviewData.goodPractice} />
                                 <ThemedPointDisplay title="Identified Risks" points={reviewData.risks} />
                                 <Divider />
-                                <Typography variant="h6" component="h3">Student Statements</Typography>
+                                <Typography variant="h6" component="h3">Reflections on Student Statements</Typography>
                                 <DetailItem label="Students were actively engaged" value={reviewData.statementEngagement} />
                                 <DetailItem label="The teaching room and equipment were suitable" value={reviewData.statementLearning} />
                                 <DetailItem label="The timetable and scheduling were convenient" value={reviewData.statementTimetable} />

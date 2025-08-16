@@ -151,7 +151,7 @@ const ModuleListPage = () => {
                 Continue Review</Button>;
         case 'Not Started':
             return <Button size="medium" variant="contained" component={Link} to={`/create-review/${module.code}`} target='_blank'>
-                Submit Review</Button>;
+                Start Review</Button>;
         default:
             return null;
         }
@@ -214,7 +214,7 @@ const ModuleListPage = () => {
             <Table stickyHeader>
                 <TableHead>
                 <TableRow>
-                    {['Code', 'Title', 'Level', 'Lead', 'Status', 'Actions'].map(headCell => (
+                    {['Module Code', 'Module Title', 'Level', 'Module Lead', 'Review Status', 'Actions'].map(headCell => (
                     <TableCell key={headCell} sx={{ fontWeight: 'bold', bgcolor: 'background.default' }}>
                         {headCell}
                     </TableCell>

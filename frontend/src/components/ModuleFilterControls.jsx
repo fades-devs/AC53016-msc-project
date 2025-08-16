@@ -17,13 +17,13 @@ const ModuleFilterControls = ({ filters, onFilterChange, onClearFilters }) => {
         {/* --- Dropdown Select Filters --- */}
         <Grid item xs={12} sm={6} md={3}>
           <FormControl fullWidth sx={{ minWidth: 180 }}>
-            <InputLabel>Area</InputLabel>
+            <InputLabel>Discipline</InputLabel>
             <Select
               multiple
               name="area"
               value={filters.area}
               onChange={onFilterChange}
-              input={<OutlinedInput label="Area" />}
+              input={<OutlinedInput label="Discipline" />}
               // This provides a cleaner look when many options are selected
               renderValue={(selected) => selected.length > 2 ? `${selected.length} areas selected` : selected.join(', ')}
             >
@@ -73,8 +73,8 @@ const ModuleFilterControls = ({ filters, onFilterChange, onClearFilters }) => {
         {/* --- Text & Number Input Filters --- */}
         <Grid item xs={12} sm={6} md={3}>
           <FormControl fullWidth sx={{ minWidth: 180 }}>
-            <InputLabel>Status</InputLabel>
-            <Select multiple name="status" value={filters.status} onChange={onFilterChange} input={<OutlinedInput label="Status" />} renderValue={(selected) => selected.join(', ')}>
+            <InputLabel>Review Status</InputLabel>
+            <Select multiple name="status" value={filters.status} onChange={onFilterChange} input={<OutlinedInput label="Review Status" />} renderValue={(selected) => selected.join(', ')}>
               {statusOptions.map((option) => (
                 <MenuItem key={option} value={option}><Checkbox checked={filters.status.indexOf(option) > -1} /><ListItemText primary={option} /></MenuItem>
               ))}
@@ -83,7 +83,7 @@ const ModuleFilterControls = ({ filters, onFilterChange, onClearFilters }) => {
         </Grid>
         
         <Grid item xs={12} sm={6} md={3}>
-          <TextField helperText="Clear to see all modules"  fullWidth label="Year" name="year" type="number" value={filters.year} onChange={onFilterChange} />
+          <TextField fullWidth label="Year" name="year" type="number" value={filters.year} onChange={onFilterChange} />
         </Grid>
         
         <Grid item xs={12} sm={6} md={3}>

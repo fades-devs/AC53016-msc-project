@@ -369,7 +369,7 @@ const CreateReview = () => {
                variant="outlined"
                sx={{ alignSelf: 'flex-start' }}
            >
-               Add {title}
+               Add Other {title}
            </Button>
        </Stack>
    );
@@ -442,7 +442,7 @@ const CreateReview = () => {
                     {foundModule && (
                          <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
                             <Typography><b>Title:</b> {foundModule.title}</Typography>
-                            <Typography><b>Area:</b> {foundModule.area}</Typography>
+                            <Typography><b>Discipline:</b> {foundModule.area}</Typography>
                             <Typography><b>Level:</b> {foundModule.level}</Typography>
                             <Typography><b>Period:</b> {foundModule.period}</Typography>
                             <Typography><b>Location:</b> {foundModule.location}</Typography>
@@ -477,7 +477,7 @@ const CreateReview = () => {
                         <TextField fullWidth label="Module Feedback" multiline rows={2} value={moduleFeedback} onChange={(e) => setModuleFeedback(e.target.value)}/>
                     </Box>
                     
-                    {renderThemedPointSection("Good Practice", goodPractice, setGoodPractice,
+                    {renderThemedPointSection("Good Practices", goodPractice, setGoodPractice,
                         "Highlight any areas of good practice that enhanced student learning and engagement, noting the specific strategies that worked well.")}
                     {renderThemedPointSection("Risks", risks, setRisks, 
                         "Identify any potential risks to the module's delivery (e.g., resource limitations, student performance) and explain how you plan to mitigate them."
@@ -485,7 +485,7 @@ const CreateReview = () => {
 
                     {/* --- Student Statement Inputs --- */}
                     <Stack direction="column" sx={{ mt: 3, borderTop: 1, borderColor: 'divider', pt: 2 }}>
-                         <Typography variant="h6" gutterBottom>Student Statements</Typography>
+                         <Typography variant="h6" gutterBottom>Reflections on Student Statements</Typography>
                          {renderStatementRadioGroup("Students were actively engaged in the module's activities and learning process. *", statementEngagement, setStatementEngagement)}
                          {renderStatementRadioGroup("The teaching room and equipment were suitable for the effective delivery of this module. *", statementLearning, setStatementLearning)}
                          {renderStatementRadioGroup("The timetable and scheduling of this module were convenient to both staff and students. *", statementTimetable, setStatementTimetable)}
