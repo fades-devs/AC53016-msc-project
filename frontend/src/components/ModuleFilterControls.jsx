@@ -74,7 +74,7 @@ const ModuleFilterControls = ({ filters, onFilterChange, onClearFilters }) => {
         <Grid item xs={12} sm={6} md={3}>
           <FormControl fullWidth sx={{ minWidth: 180 }}>
             <InputLabel>Review Status</InputLabel>
-            <Select multiple name="status" value={filters.status} onChange={onFilterChange} input={<OutlinedInput label="Status" />} renderValue={(selected) => selected.join(', ')}>
+            <Select multiple name="status" value={filters.status} onChange={onFilterChange} input={<OutlinedInput label="Review Status" />} renderValue={(selected) => selected.join(', ')}>
               {statusOptions.map((option) => (
                 <MenuItem key={option} value={option}><Checkbox checked={filters.status.indexOf(option) > -1} /><ListItemText primary={option} /></MenuItem>
               ))}
@@ -83,7 +83,7 @@ const ModuleFilterControls = ({ filters, onFilterChange, onClearFilters }) => {
         </Grid>
         
         <Grid item xs={12} sm={6} md={3}>
-          <TextField helperText="Clear to see all modules"  fullWidth label="Year" name="year" type="number" value={filters.year} onChange={onFilterChange} />
+          <TextField fullWidth label="Year" name="year" type="number" value={filters.year} onChange={onFilterChange} />
         </Grid>
         
         <Grid item xs={12} sm={6} md={3}>

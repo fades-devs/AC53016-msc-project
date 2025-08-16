@@ -46,7 +46,143 @@ export const getModuleByCode = async (req, res) => {
 }
 
 // @route   GET /api/modules - /api/modules?level=1
-export const getModules = async(req,res) => {
+export const getModules = async (req, res) => {
+    try {
+        // --- PAGINATION ---
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 20;
+        const skip = (page - 1) * limit;
+
+        // --- FILTERING ---
+        const { area, level, period, location, titleSearch, codeSearch, status, year, leadSearch } = req.query;
+        // UPDATED: Default the year filter to the current year if not provided
+        const targetYear = year ? parseInt(year, 10) : new Date().getFullYear();
+
+        const buildInQuery = (value) => {
+            const values = Array.isArray(value) ? value : [value];
+            return { $in: values };
+        };
+
+        const initialMatch = {};
+        if (area) initialMatch.area = buildInQuery(area);
+        if (location) initialMatch.location = buildInQuery(location);
+        if (period) initialMatch.period = buildInQuery(period);
+        if (titleSearch) initialMatch.title = { $regex: titleSearch, $options: "i" };
+        if (codeSearch) initialMatch.code = { $regex: codeSearch, $options: "i" };
+        if (level) {
+            const levelValues = Array.isArray(level) ? level.map(l => parseInt(l)) : [parseInt(level)];
+            initialMatch.level = { $in: levelValues };
+        }
+
+        const finalMatch = {};
+        if (status) finalMatch.status = buildInQuery(status);
+
+        // --- AGGREGATION PIPELINE ---
+        const basePipeline = [
+            // Stage 1: Initial match on core module fields
+            { $match: initialMatch },
+
+            // Stage 2: Join with Users to get module lead details
+            {
+                $lookup: {
+                    from: "users",
+                    localField: "lead",
+                    foreignField: "_id",
+                    as: "leadData"
+                }
+            },
+            { $unwind: { path: "$leadData", preserveNullAndEmptyArrays: true } },
+
+            // Stage 3: Add lead's full name to filter on
+            {
+                $addFields: {
+                    moduleLeadName: { $ifNull: [{ $concat: ["$leadData.firstName", " ", "$leadData.lastName"] }, null] }
+                }
+            },
+            // Stage 4: Conditionally filter by lead's name
+            ...(leadSearch ? [{ $match: { moduleLeadName: { $regex: leadSearch, $options: "i" } } }] : []),
+
+            // Stage 5: Join with Reviews using a pipeline that pre-filters by year
+            {
+                $lookup: {
+                    from: "reviews",
+                    let: { moduleId: "$_id" },
+                    pipeline: [
+                        { $match: { $expr: { $eq: ["$module", "$$moduleId"] } } },
+                        // UPDATED: Use the targetYear variable
+                        { $match: { createdAt: { $gte: new Date(targetYear, 0, 1), $lt: new Date(targetYear + 1, 0, 1) } } }
+                    ],
+                    as: "reviewData"
+                }
+            },
+
+            // Stage 6: No filtered out of "Not Started" modules
+            // Continue with ALL modules, even if reviewData is an empty array
+            
+            // Stage 7: Determine the status from the reviewData array
+            {
+                $addFields: {
+                    lastReview: { $arrayElemAt: ["$reviewData", -1] } // Get the most recent review for that year
+                }
+            },
+            {
+                $addFields: {
+                    status: { $ifNull: ["$lastReview.status", "Not Started"] },
+                    lastReviewDate: { $ifNull: ["$lastReview.createdAt", null] },
+                    reviewId: { $ifNull: ["$lastReview._id", null] }
+                }
+            },
+
+            // Stage 8: Final filtering on the calculated status
+            { $match: finalMatch },
+        ];
+
+        // --- PAGINATION & SORTING ---
+        const results = await Module.aggregate([
+            ...basePipeline,
+            {
+                $addFields: {
+                    "sort_title": { "$toLower": "$title" },
+                    "sort_code": { "$toLower": "$code" }
+                }
+            },
+            { $sort: { "sort_title": 1, "sort_code": 1 } },
+            {
+                $facet: {
+                    metadata: [{ $count: 'total' }],
+                    data: [
+                        { $skip: skip }, 
+                        { $limit: limit },
+                        {
+                            $project: {
+                                title: 1, code: 1, area: 1, location: 1, level: 1, period: 1,
+                                status: 1, reviewDate: "$lastReviewDate", reviewId: 1,
+                                moduleLead: { $ifNull: ["$moduleLeadName", "N/A"] },
+                                year: { $ifNull: [{ $year: "$lastReviewDate" }, null] }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]);
+
+        const modules = results[0].data;
+        const totalCount = results[0].metadata[0]?.total || 0;
+        const totalPages = Math.ceil(totalCount / limit);
+
+        res.status(200).json({
+            modules: modules,
+            totalPages: totalPages,
+            currentPage: page
+        });
+
+    } catch (error) {
+        console.error("Error in getModules controller: ", error.message);
+        res.status(500).send("Server Error");
+    }
+};
+
+export const getModulesPrev = async(req,res) => {
 
     try {
         // --- PAGINATION ---
