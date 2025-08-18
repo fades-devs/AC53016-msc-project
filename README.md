@@ -42,8 +42,9 @@ The backend server requires environment variables to function.
 * Navigate to the backend directory: ```cd backend ```
 * Create a new file named .env
 * Copy the content below and paste it into your new .env file.
+* (The values are provided in the user manual - Appendix 6)
 ```bash
-MONGO_URI=mongodb+srv://fadesdevs:brzmRRlcpJ9ISmXd@cluster0.wwu2sdo.mongodb.net/module-review?retryWrites=true&w=majority&appName=Cluster0
+MONGO_URI=mongodb+srv://*******:**********@*****.wwu2sdo.mongodb.net/*******?retryWrites=true&w=majority&appName=******
 PORT=5000
 SENDGRID_API_KEY=YOUR_SENDGRID_API_KEY
 SENDER_EMAIL=YOUR_SENDER_EMAIL@example.com
