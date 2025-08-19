@@ -60,6 +60,7 @@ npm install
 ```
 
 **4. Install Frontend Dependencies**
+
 In your terminal, inside the frontend directory, run:
 ```bash
 npm install
