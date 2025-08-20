@@ -17,7 +17,6 @@ import {
     CheckCircle as CheckCircleIcon,
 } from '@mui/icons-material';
 
-// --- UPDATE: Import the themes from your constants file ---
 import { themes } from '../constants/filterOptions';
 
 // Consistent wrapper for each major section of the form
@@ -26,7 +25,7 @@ const FormSection = ({ title, step, children, ...props }) => (
     <Typography variant="h6" component="h2" gutterBottom>
       {step}. {title}
     </Typography>
-    {/* Stack to ensure consistent vertical spacing for all direct children */}
+    {/* Consistent vertical spacing for all direct children */}
     <Stack spacing={3}>
       {children}
     </Stack>
@@ -46,7 +45,7 @@ const CreateReview = () => {
         return debValue;
     };
 
-    // UPDATE - Get module code from URL if present
+    // Get module code from URL if present
     const { moduleCode: paramModuleCode } = useParams();
     
     // FOR NAVIGATION TO SUBMIT ROUTE AFTER SUBMISSION
@@ -58,11 +57,8 @@ const CreateReview = () => {
     const [lookupLoading, setLookupLoading] = useState(false);
     const [lookupError, setLookupError] = useState('');
 
-    // --- UPDATE: State for the previous report year filter ---
+    // --- State for the previous report year filter ---
     const [previousYear, setPreviousYear] = useState(new Date().getFullYear() - 1);
-
-    // state for date filter
-    // const [dateFilter, setDateFilter] = useState('');
 
     // State for the review form fields
     const [enhanceUpdate, setEnhanceUpdate] = useState('')
@@ -73,7 +69,7 @@ const CreateReview = () => {
     const [hasEnhancePlans, setHasEnhancePlans] = useState(false);
     const [enhancePlans, setEnhancePlans] = useState([{theme: '', description: ''}])
 
-    // --- UPDATE: State for added DB fields ---
+    // --- State for added DB fields ---
     const [statementEngagement, setStatementEngagement] = useState('');
     const [statementLearning, setStatementLearning] = useState('');
     const [statementTimetable, setStatementTimetable] = useState('');
@@ -84,17 +80,15 @@ const CreateReview = () => {
     const [submitError, setSubmitError] = useState('');
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
-    // UPDATE - STATE FOR SAVE DRAFT SUCCESS MESSAGE
+    // STATE FOR SAVE DRAFT SUCCESS MESSAGE
     const [saveSuccess, setSaveSuccess] = useState('');
 
-    // UPDATE: State for file uploads
+    // State for file uploads
     const [evidenceUpload, setEvidenceUpload] = useState(null);
     const [feedbackUpload, setFeedbackUpload] = useState(null);
 
     // Debounce the module code input to prevent API calls on every keystroke
     const debModuleCode = useDebounce(moduleCode, 500) // 500ms delay
-
-    // const yearDeb = useDebounce(dateFilter, 500)
 
     // Effect to trigger the module lookup when the debounced code changes
     useEffect(() => {
@@ -109,12 +103,12 @@ const CreateReview = () => {
             setFoundModule(null);
 
             try {
-                // UPDATE: Use the new API endpoint structure
+                // Use the new API endpoint structure
                 const response = await axios.get(`http://localhost:5000/api/modules/${debModuleCode}`);
 
                 setFoundModule(response.data);
 
-                // UPDATE - If an existing review was found, set the error message
+                // If an existing review was found, set the error message
                 if (response.data.existingReviewId) {
                     setLookupError(`A review for this module has already been submitted for ${new Date().getFullYear()}.`)
                 }
@@ -168,7 +162,7 @@ const CreateReview = () => {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
 
-    // UPDATE: FUNCTION TO RESET THE FORM AFTER SUBMISSION
+    // FUNCTION TO RESET THE FORM AFTER SUBMISSION
     const resetForm = () => {
         setModuleCode('');
         setFoundModule(null);
@@ -196,7 +190,7 @@ const CreateReview = () => {
         navigate('/create-review');
     };
     
-    // --- UPDATE: Submission handler now includes all new fields + FILE UPLOADS ---
+    // --- Submission handler includes all new fields + FILE UPLOADS ---
     const handleSubmit = async(e) => {
         e.preventDefault();
         if (!foundModule) {
@@ -232,15 +226,6 @@ const CreateReview = () => {
         }
 
         try {
-            // SEND FORMDATA OBJECT
-
-            // const reviewData = {
-            //     moduleId: foundModule._id, enhanceUpdate, studentAttainment, moduleFeedback,
-            //     goodPractice: goodPractice.filter(p => p.theme && p.description),
-            //     risks: risks.filter(p => p.theme && p.description),
-            //     // Only include enhancement plans if user chooses Yes
-            //     enhancePlans: hasEnhancePlans ? enhancePlans.filter(p => p.theme && p.description): [],
-            // statementEngagement, statementLearning, statementTimetable, completedBy};
             
             // Axios will automatically set the correct 'Content-Type' header
             await axios.post('http://localhost:5000/api/reviews', formData);
@@ -255,9 +240,8 @@ const CreateReview = () => {
         }
     };
 
-    // UPDATE: PARTIAL SAVE DRAFT HANDLER
+    // PARTIAL SAVE DRAFT HANDLER
     const handleSaveDraft = async(e) => {
-        // No e.preventDefault() as this button is not type="submit"
         if (!foundModule) {
             setSubmitError('You must find and select a valid module before saving a review draft.');
             return;
@@ -311,7 +295,7 @@ const CreateReview = () => {
         }
     };
 
-    // UPDATED: This success message is styled to be cleaner and centered on the page.
+    // This success message is styled to be cleaner and centered
     if (submitSuccess) {
         return (
             <Box textAlign="center" sx={{ py: { xs: 4, md: 8 } }}>
@@ -386,15 +370,6 @@ const CreateReview = () => {
         </FormControl>
     );
 
-//    const handledateFilterChange = (e) => {
-//         setDateFilter(e.target.value);
-//     };
-
-    // // --- UPDATE: Find the specific variant to display its details ---
-    // const specificVariant = foundModule?.variants.find(
-    //     (variant) => variant.code === debModuleCode
-    // );
-
     return (
         <Box component="form" onSubmit={handleSubmit} sx={{ '& .MuiTextField-root': { my: 1 } }}>
 
@@ -422,7 +397,7 @@ const CreateReview = () => {
                 disabled={!!paramModuleCode} error={!!lookupError} helperText={lookupError}
                 InputProps={{ endAdornment: lookupLoading ? <CircularProgress size={20} /> : null }}/>
 
-                {/* --- UPDATE: View Previous Report Section --- */}
+                {/* --- View Previous Report Section --- */}
                 <Box sx={{ my: 2, p: 2, borderRadius: 2, bgcolor: 'action.hover' }}>
                     <Typography variant="subtitle1" gutterBottom>
                         View a Previous Report
@@ -438,7 +413,7 @@ const CreateReview = () => {
 
 
                 <Collapse in={!!foundModule}>
-                    {/* --- Add the correct JSX to display module details here --- */}
+                    {/* --- Display module details --- */}
                     {foundModule && (
                          <Box sx={{ mt: 2, p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 1 }}>
                             <Typography><b>Title:</b> {foundModule.title}</Typography>
@@ -516,7 +491,7 @@ const CreateReview = () => {
                             </Collapse>
                 </Paper>
 
-                {/* --- NEW Section: Upload Evidence --- */}
+                {/* --- Upload Evidence --- */}
                 <Paper variant="outlined" sx={{ p: 3, my: 2 }}>
                     <Typography variant="h6">4. Upload Evidence</Typography>
                     <Typography variant="body1" color="textSecondary" sx={{mb: 2}}>

@@ -74,7 +74,7 @@ const EnhancementChart = () => {
         filters.area.forEach(item => params.append('area', item));
 
         try {
-            // UPDATED API ENDPOINT
+            // API ENDPOINT
             const response = await axios.get(`http://localhost:5000/api/dashboard/stats/enhancement-by-theme?${params.toString()}`);
             const sortedData = response.data.sort((a, b) => b.count - a.count);
             setChartData(sortedData);

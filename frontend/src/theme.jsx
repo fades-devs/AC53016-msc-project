@@ -20,8 +20,8 @@ export const theme = createTheme({
         main: '#ffc107', // standard warning yellow
     },
     background: {
-      default: '#f8f9fa', // very light, clean grey for the main background
-      paper: '#ffffff',   // pure white for Cards, Modals, etc.
+      default: '#f8f9fa', // clean grey for the main background
+      paper: '#ffffff',   // pure white for Cards, Modals, etc
     },
     text: {
       primary: '#212529',   // dark grey for high-contrast, readable text
@@ -29,7 +29,7 @@ export const theme = createTheme({
     },
   },
 
-  // ## Typography (Consistent + Hierarchical)
+  // ## Typography
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     h4: {
@@ -52,7 +52,6 @@ export const theme = createTheme({
 
   // ## Global Component Styles ##
   components: {
-    // style all Cards consistently
     MuiCard: {
       defaultProps: {
         elevation: 0, // flatter, more modern look
@@ -91,7 +90,7 @@ export const theme = createTheme({
             root: {
                 '--TextField-brandBorderColor': '#E0E3E7',
                 '--TextField-brandBorderHoverColor': '#B2BAC2',
-                '--TextField-brandBorderFocusedColor': '#4365E2', // use primary color on focus
+                '--TextField-brandBorderFocusedColor': '#4365E2',
             }
         }
     }

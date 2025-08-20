@@ -84,35 +84,6 @@ const EmailReminder = () => {
                 </Typography>
             </Box>
 
-            {/* <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
-                <Typography variant="h6" gutterBottom>
-                    Recipient List ({recipientEmails.length} total)
-                </Typography>
-                {recipientEmails.length > 0 ? (
-                    <>
-                        <List dense>
-                            {recipientEmails.slice(0, 5).map((email, index) => (
-                                <ListItem key={index} disablePadding><ListItemText primary={email} /></ListItem>
-                            ))}
-                        </List>
-                        <Collapse in={showAllEmails}>
-                            <List dense>
-                                {recipientEmails.slice(5).map((email, index) => (
-                                    <ListItem key={index + 5} disablePadding><ListItemText primary={email} /></ListItem>
-                                ))}
-                            </List>
-                        </Collapse>
-                        {recipientEmails.length > 5 && (
-                            <Button size="small" onClick={() => setShowAllEmails(!showAllEmails)} sx={{ mt: 1 }}>
-                                {showAllEmails ? 'Show Less' : `Show ${recipientEmails.length - 5} More...`}
-                            </Button>
-                        )}
-                    </>
-                ) : (
-                    <Typography color="text.secondary">No recipients pending reminders.</Typography>
-                )}
-            </Paper> */}
-
             <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
                 <Typography variant="h6" gutterBottom>
                     Email Preview
