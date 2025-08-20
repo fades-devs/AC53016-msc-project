@@ -18,11 +18,6 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import MenuIcon from '@mui/icons-material/Menu'; // For the mobile hamburger menu
 import SchoolIcon from '@mui/icons-material/School'; // An icon for the logo
 
-/**
- * A responsive navigation bar component built with Material-UI.
- * It includes a logo, a dashboard link, a "Modules" dropdown menu,
- * and a user profile dropdown menu.
- */
 const NavBar = () => {
 
     const theme = useTheme(); // Access the theme for brand colors
@@ -46,7 +41,7 @@ const NavBar = () => {
     const handleMobileMenuOpen = (event) => setMobileMenuAnchorEl(event.currentTarget);
     const handleMobileMenuClose = () => setMobileMenuAnchorEl(null);
 
-    // --- Unified Navigation Handler ---
+    // --- Navigation Handler ---
     const handleNavigate = (path) => {
         // Close both menus, then navigate
         handleModulesMenuClose();
@@ -57,7 +52,7 @@ const NavBar = () => {
     return (
         // AppBar uses theme colors for a consistent look
         <AppBar position="static" elevation={0} color="default" sx={{ bgcolor: 'background.paper', borderBottom: 1, borderColor: 'divider' }}>
-            <Container maxWidth={false}> {/* Use maxWidth={false} to allow it to be full-width */}
+            <Container maxWidth={false}>
                 <Toolbar disableGutters>
                     {/* --- Logo and App Name --- */}
                     <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
@@ -98,8 +93,6 @@ const NavBar = () => {
                             <MenuIcon />
                         </IconButton>
                     </Box>
-
-                    {/* --- Menus (both desktop and mobile) --- */}
 
                     {/* Modules Menu (for Desktop) */}
                     <Menu

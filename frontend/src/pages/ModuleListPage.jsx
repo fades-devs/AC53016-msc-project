@@ -9,7 +9,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import { Link } from 'react-router-dom';
 import ModuleFilterControls from '../components/ModuleFilterControls';
 
-// --- UPDATE: Import the options from your constants file ---
 import { areaOptions, levelOptions, periodOptions, locationOptions, statusOptions }
 from '../constants/filterOptions';
 
@@ -40,7 +39,7 @@ const ModuleListPage = () => {
 
     const [filters, setFilters] = useState(initialFilters);
 
-    // UPDATE: STATE FOR PAGINATION
+    // STATE FOR PAGINATION
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [itemsPerPage] = useState(20); // Define how many items per page
@@ -59,7 +58,7 @@ const ModuleListPage = () => {
     const yearDeb = useDebounce(filters.year, 500)
 
     const fetchModules = useCallback(async() => {
-        // --- UPDATE: Set filtering state, not the main loading state ---
+        // --- Set filtering state, not the main loading state ---
         setIsFiltering(true);
         setError(null);
 
@@ -96,14 +95,14 @@ const ModuleListPage = () => {
             console.error(err);
         }
         finally {
-            // --- UPDATE: set to false once request is complete - both loading states ---
+            // --- Set to false once request is complete - both loading states ---
             setInitialLoading(false);
             setIsFiltering(false);
         }
     },
-    [ // UPDATE: Depend on the current page
+    [ // Depend on the current page
         page, itemsPerPage,
-        // --- UPDATE: Dependency array now stringifies filters to correctly detect changes in arrays ---
+        // --- Dependency array stringifies filters to correctly detect changes in arrays ---
         JSON.stringify(filters.area), JSON.stringify(filters.level), JSON.stringify(filters.period), 
         JSON.stringify(filters.location), JSON.stringify(filters.status),
         yearDeb, codeSearchDeb, titleSearchDeb, leadSearchDeb]);
@@ -118,23 +117,23 @@ const ModuleListPage = () => {
             ...prevFilters,
             [name]: value
         }));
-        // UPDATE: reset to page 1 whenever filter changes
+        // Reset to page 1 whenever filter changes
         setPage(1);
     };
 
     // Function to clear all filters ---
     const handleClearFilters = () => {
         setFilters(initialFilters);
-        // UPDATE: reset to page 1 when clearing filters
+        //: reset to page 1 when clearing filters
         setPage(1);
     };
 
-    // --- UPDATE: Handler for the Pagination component ---
+    // --- Handler for the Pagination component ---
     const handlePageChange = (event, value) => {
         setPage(value);
     };
 
-    // Helper function that decides which button to show - using text variants for a less cluttered table
+    // Helper function that decides which button to show
     const renderActions = (module) => {
         switch (module.status) {
         case 'Completed':
@@ -157,7 +156,7 @@ const ModuleListPage = () => {
         }
     };
 
-    // --- UPDATE: Only show full-screen loader on initial load ---
+    // --- Only show full-screen loader on initial load ---
     if (initialLoading) {
         return (
             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>

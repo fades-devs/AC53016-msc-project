@@ -9,8 +9,7 @@ import CompletionChart from '../components/CompletionChart';
 
 const DashboardPage = () => {
     return (
-        // The main Box acts as the page container.
-        // respect the padding from App.js's <main> tag.
+        // The main Box acts as the page container
         <Box sx={{ width: '100%' }}>
 
             <Stack spacing={4}>
@@ -22,7 +21,7 @@ const DashboardPage = () => {
                 {/* Statistics Section */}
                 <Stats />
 
-                {/* Charts Section - UPDATED to use a flexbox layout */}
+                {/* Charts Section - flexbox layout */}
                 <Box 
                     sx={{ 
                         display: 'flex', 
@@ -32,9 +31,7 @@ const DashboardPage = () => {
                         alignItems: 'stretch' // Ensures all cards in a row are the same height
                     }}
                 >
-                    {/* Each chart is a flex item. The 'flex' property controls how they grow and shrink. */}
-                    {/* '1 1 30%' means: grow, shrink, and have a base width of about 30%. */}
-                    {/* 'minWidth' ensures they don't get too small before wrapping. */}
+                    {/* Each chart is a flex item - 'flex' property controls how grow and shrink */}
                     
                     {/* Good Practice Chart */}
                     <Box sx={{ flex: '1 1 30%', minWidth: '350px', maxWidth: '500px' }}>
