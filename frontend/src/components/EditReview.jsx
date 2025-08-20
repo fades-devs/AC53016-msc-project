@@ -19,14 +19,15 @@ import {
     FormControl,
     FormLabel,
     Alert, CircularProgress, 
-    Collapse, InputLabel, Select, MenuItem, IconButton, Link as MuiLink
+    Collapse, InputLabel,
+    Select, MenuItem, IconButton,
+    Link as MuiLink
 } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import DescriptionIcon from '@mui/icons-material/Description';
 import {CloudUpload as CloudUploadIcon} from '@mui/icons-material';
 
-// Import the themes from constants file ---
 import { themes } from '../constants/filterOptions';
 
 const EditReview = () => {
@@ -43,14 +44,6 @@ const EditReview = () => {
 
     // State for module details (will be populated from the fetched review)
     const [moduleDetails, setModuleDetails] = useState(null);
-    
-    // // State for the module lookup
-    // const [moduleCode, setModuleCode] = useState(paramModuleCode || ''); // Pre-fill if it's in the URL
-    // const [foundModule, setFoundModule] = useState(null);
-    // const [lookupLoading, setLookupLoading] = useState(false);
-    // const [lookupError, setLookupError] = useState('');
-    // state for date filter
-    // const [dateFilter, setDateFilter] = useState('');
 
     // State for the review form fields
     const [status, setStatus] = useState('');
@@ -82,7 +75,7 @@ const EditReview = () => {
     // Effect to fetch the existing review data when the component mounts
     useEffect(() => {
 
-        // --- FIX: Add a guard clause to prevent fetching if reviewId is missing ---
+        // --- Clause to prevent fetching if reviewId is missing ---
         if (!reviewId) {
             setPageLoading(false);
             setPageError('No review ID was provided in the URL. Please go back and select a review to edit.');
@@ -91,7 +84,7 @@ const EditReview = () => {
 
         const fetchReviewData = async () => {
 
-            // --- FIX: Clear previous errors and set loading state for the new fetch attempt ---
+            // --- Clear previous errors and set loading state for the new fetch attempt ---
             setPageError('');
             setPageLoading(true);
 
@@ -100,7 +93,7 @@ const EditReview = () => {
                 const response = await axios.get(`http://localhost:5000/api/reviews/${reviewId}`);
                 const data = response.data;
 
-                // UPDATE: Compare review year to current to allow edit for only current year reviews
+                // Compare review year to current to allow edit for only current year reviews
                 const reviewYear = new Date(data.createdAt).getFullYear();
                 if (reviewYear < new Date().getFullYear()) {
                     setPageError(`Reviews from previous years cannot be updated. Please select the ${new Date().getFullYear()} review`);
@@ -168,7 +161,7 @@ const EditReview = () => {
         setter(list);
     };
 
-    // --- SUBMISSION HANDLER (Update Logic) ---
+    // --- SUBMISSION HANDLER ---
     const handleUpdate = async (newStatus) => {
 
         setSubmitLoading(true);
@@ -215,7 +208,7 @@ const EditReview = () => {
 
     // --- RENDER LOGIC ---
 
-if (pageLoading) {
+    if (pageLoading) {
         return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh' }}><CircularProgress /></Box>;
     }
 
@@ -280,7 +273,7 @@ if (pageLoading) {
                     </Button>
                 </Stack>
 
-            {/* Section 1: Module Details (Read-only) */}
+            {/* Section 1: Module Details */}
             <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 }, mb: 3 }}>
                 <Typography variant="h6">1. Module Details</Typography>
                 {moduleDetails && (

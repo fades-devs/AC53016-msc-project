@@ -52,7 +52,7 @@ const ThemedPointDisplay = ({ title, points }) => {
 
 const GetReview = () => {
 
-    // UPDATE: Hooks for navigation and URL parameters
+    // Hooks for navigation and URL parameters
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
@@ -79,15 +79,15 @@ const GetReview = () => {
     const debModuleCode = useDebounce(moduleCodeInput, 500);
     const debYear = useDebounce(yearInput, 500);
 
-    // EFFECT 1: Effect's job is to keep the URL in sync with the user's typing
+    // EFFECT 1: keep the URL in sync with the user's typing
     useEffect(() => {
-        // Only update the URL if the user has typed a module code.
+        // Only update the URL if the user has typed a module code
         if (debModuleCode) {
             navigate(`/get-review?code=${debModuleCode}&year=${debYear}`, { replace: true });
         }
     }, [debModuleCode, debYear, navigate]);
     // --- EFFECT 2: Fetch data when the URL (searchParams) changes ---
-    // runs whenever the link is clicked OR the URL is changed by Effect 1.
+    // runs whenever the link is clicked OR the URL is changed by Effect 1
     useEffect(() => {
         const code = searchParams.get('code');
         const year = searchParams.get('year');
@@ -106,7 +106,7 @@ const GetReview = () => {
             setReviewData(null);
 
             try {
-                // UPDATE - Lookup API endpoint
+                // Lookup API endpoint
                 const response = await axios.get(`http://localhost:5000/api/reviews/lookup/by-module`, {params: { code, year }});
                 setReviewData(response.data);
             }
@@ -124,29 +124,13 @@ const GetReview = () => {
         };
 
         fetchReview();
-    }, [searchParams]); // This effect ONLY depends on the URL's search parameters.
-
-
-    // // UPDATE - Handler for the search form submission
-    // const handleSearch = (e) => {
-    //     e.preventDefault();
-    //     if (debModuleCode) {
-    //         // Update the URL, which will trigger the useEffect hook to fetch the data
-    //         navigate(`/get-review?code=${debModuleCode}&year=${debYear}`);
-    //     }
-    // };
-
-    // // Find the specific module variant that matches the searched code
-    // const specificVariant = reviewData?.module.variants.find(
-    //     (variant) => variant.code.toLowerCase() === searchParams.get('code')?.toLowerCase()
-    // );
-
+    }, [searchParams]);
 
     return (
 
         <Box>
             
-            {/* --- UPDATE: Title and Edit Button --- */}
+            {/* --- Title and Edit Button --- */}
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="space-between" alignItems="center" sx={{ mb: 4 }}>
                 <Typography variant="h4" component="h1">
                     View Module Review
@@ -272,82 +256,6 @@ const GetReview = () => {
             </Collapse>
 
         </Box>
-
-
-    // <Stack>
-    //     <Typography variant="h4">Module Review</Typography>
-    //     {/* Module Search Input */}
-        
-    //     {/* Error Display */}
-    //     <Collapse in={!!error}><Alert severity="warning">{error}</Alert></Collapse>
-    //     {/* Review Details Display */}
-    //     <Collapse in={!!reviewData}>
-    //                 {reviewData && (
-    //                     <Grid container spacing={4}>
-    //                         {/* Module Info */}
-    //                         <Grid item xs={12} md={4}>
-    //                             <Stack spacing={2}>
-    //                                 <Typography variant="h6">Module Details</Typography>
-    //                                 <Divider />
-    //                                 <Box>
-    //                                     <Typography variant="overline" color="text.secondary">Code</Typography>
-    //                                     <Typography variant="h5">{reviewData.module.code}</Typography>
-    //                                 </Box>
-    //                                 <Box>
-    //                                     <Typography variant="overline" color="text.secondary">Title</Typography>
-    //                                     <Typography>{reviewData.module.title}</Typography>
-    //                                 </Box>
-    //                                 <Box>
-    //                                     <Typography variant="overline" color="text.secondary">Area</Typography>
-    //                                     <Typography>{reviewData.module.area}</Typography>
-    //                                 </Box>
-    //                                 <Box>
-    //                                     <Typography variant="overline" color="text.secondary">Level</Typography>
-    //                                     <Typography>{reviewData.module.level}</Typography>
-    //                                 </Box>
-    //                                 <Box>
-    //                                     <Typography variant="overline" color="text.secondary">Module Lead</Typography>
-    //                                     <Typography>{reviewData.module.lead.firstName} {reviewData.module.lead.lastName}</Typography>
-    //                                 </Box>
-    //                                 <Box>
-    //                                     <Typography variant="overline" color="text.secondary">Status</Typography>
-    //                                     <Typography>{reviewData.status}</Typography>
-    //                                 </Box>
-    //                             </Stack>
-    //                         </Grid>
-
-    //                         {/* Review Content */}
-    //                         <Grid item xs={12} md={8}>
-    //                             <Stack spacing={3}>
-    //                                 <Typography variant="h6">Reflective Analysis</Typography>
-    //                                 <Divider />
-    //                                 <Box>
-    //                                     <Typography variant="subtitle1" gutterBottom>Enhancement Plan Updates</Typography>
-    //                                     <Typography variant="body2" sx={{whiteSpace: 'pre-wrap'}}>{reviewData.enhanceUpdate || 'N/A'}</Typography>
-    //                                 </Box>
-    //                                  <Box>
-    //                                     <Typography variant="subtitle1" gutterBottom>Student Attainment</Typography>
-    //                                     <Typography variant="body2" sx={{whiteSpace: 'pre-wrap'}}>{reviewData.studentAttainment || 'N/A'}</Typography>
-    //                                 </Box>
-    //                                  <Box>
-    //                                     <Typography variant="subtitle1" gutterBottom>Module Feedback</Typography>
-    //                                     <Typography variant="body2" sx={{whiteSpace: 'pre-wrap'}}>{reviewData.moduleFeedback || 'N/A'}</Typography>
-    //                                 </Box>
-    //                                 <Divider />
-    //                             </Stack>
-    //                         </Grid>
-
-    //                         <Grid>
-    //                             <ThemedPointDisplay title="Good Practice" points={reviewData.goodPractice} />
-    //                             <ThemedPointDisplay title="Identified Risks" points={reviewData.risks} />
-    //                             <ThemedPointDisplay title="Enhancement Plans" points={reviewData.enhancePlans} />
-    //                         </Grid>
-    //                     </Grid>
-    //                 )}
-    //             </Collapse>
-    // </Stack>
-
-
 
     );
 };

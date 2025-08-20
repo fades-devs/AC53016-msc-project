@@ -37,13 +37,13 @@ const useDebounce = (value, delay) => {
     return debouncedValue;
 };
 
-// A single stat card component for reusability and cleaner code
+// Stat card component for reusability and cleaner code
 const StatCard = ({ title, value, subtitle, icon, children }) => {
-    // UPDATED: useTheme hook to access theme colors
+    // useTheme hook to access theme colors
     const theme = useTheme();
 
     return (
-        // UPDATED: Added width: '100%' to explicitly force the card to fill its container.
+        // Added width: '100%' to force the card to fill its container
         <Card variant="outlined" sx={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
             <CardContent sx={{ flexGrow: 1 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -124,7 +124,6 @@ const Stats = () => {
         <Stack spacing={3}>
 
             {/* Filter Controls */}
-            {/* The filter is now in a responsive Grid item, removing the maxWidth limit. */}
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6} md={4} lg={3}>
                     <TextField
@@ -170,7 +169,7 @@ const Stats = () => {
                     flexWrap: 'wrap',
                     gap: 3, // Use theme spacing unit for gap
                 }}>
-                    {/* Each StatCard is now a flex item, told to grow and shrink. */}
+                    {/* Each StatCard is a flex item, to grow and shrink. */}
                     <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}><StatCard title="Total Modules" value={stats.totalModules} subtitle={filters.area.length ? filters.area.join(', ') : 'All Disciplines'} icon={<SchoolIcon fontSize="small"/>} /></Box>
                     <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}><StatCard title="Pending Reviews" value={stats.pendingForYear} subtitle={`For ${stats.year}`} icon={<HourglassEmptyIcon fontSize="small" />} /></Box>
                     <Box sx={{ flex: '1 1 280px', maxWidth: '450px' }}><StatCard title="Completed Reviews" value={stats.reviewsForYear} subtitle={`In ${stats.year}`} icon={<EventAvailableIcon fontSize="small" />} /></Box>

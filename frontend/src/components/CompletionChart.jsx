@@ -9,9 +9,9 @@ import {
     Typography, 
     Grid, 
     TextField,
-    IconButton,
-    InputAdornment,
-    FormControl, InputLabel, Select, OutlinedInput, MenuItem, Checkbox, ListItemText,
+    FormControl, InputLabel, Select,
+    OutlinedInput, MenuItem,
+    Checkbox, ListItemText,
     useTheme
 } from '@mui/material';
 import { 
@@ -22,16 +22,15 @@ import {
     Legend, 
     ResponsiveContainer 
 } from 'recharts';
-import ClearIcon from '@mui/icons-material/Clear';
 
 import { areaOptions }
 from '../constants/filterOptions';
 
 // Define consistent colors for each status
 const STATUS_COLORS = {
-    'Completed': '#2e7d32', // nice green
-    'In Progress': '#ed6c02', // warm orange
-    'Not Started': '#bdbdbd', // neutral grey
+    'Completed': '#2e7d32',
+    'In Progress': '#ed6c02',
+    'Not Started': '#bdbdbd',
 };
 
 // Custom hook for debouncing user input
@@ -57,9 +56,6 @@ const CompletionChart = () => {
     const [chartData, setChartData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-    
-    // Updated filters state to only include year
-    // const [year, setYear] = useState(new Date().getFullYear().toString());
 
     const [filters, setFilters] = useState({
         year: new Date().getFullYear().toString(),
@@ -128,7 +124,7 @@ const CompletionChart = () => {
                     Module Status Overview
                 </Typography>
                 
-                {/* Filter Controls - Area filter removed */}
+                {/* Filter Controls */}
                 <Grid container spacing={2} sx={{ mb: 3 }}>
                     <Grid item xs={12} sm={6} md={4}>
                         <TextField
