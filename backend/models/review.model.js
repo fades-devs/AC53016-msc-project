@@ -60,13 +60,13 @@ const reviewSchema = new mongoose.Schema({
         trim: true
     },
 
-    // UPDATE: fields for file upload
+    // Fields for file upload
     evidenceUpload: {
-        type: String // store the file path here
+        type: String // store the file path
     },
     evidenceUpload_originalName: {type: String},
     feedbackUpload: {
-        type: String // store the file path here
+        type: String // store the file path
     },
     feedbackUpload_originalName: {type: String}
 

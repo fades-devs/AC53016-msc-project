@@ -1,7 +1,6 @@
 import express from 'express';
 import {createReview, getReviewByCodeAndYear, saveDraft, UpdateReview} from "../controllers/review.controller.js";
 import {getReviewById} from "../controllers/review.controller.js";
-
 import {upload} from '../middleware/upload.js'; // import upload middleware
 
 const router = express.Router();
@@ -12,7 +11,7 @@ router.get('/:id', getReviewById);
 // @route POST /api/reviews
 router.post('/', upload, createReview);
 
-// @route POST /api/reviews/draft - UPDATE: for partial save
+// @route POST /api/reviews/draft
 router.post('/draft', upload, saveDraft)
 
 // @route   GET /api/reviews/lookup/by-module?code=AC11001&year=2025

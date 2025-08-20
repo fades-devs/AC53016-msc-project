@@ -7,14 +7,14 @@ import User from "../models/user.model.js";
 import { sendEmail } from "../utils/sendEmail.js";
 
 
-// HERE I WILL PUT SOME COMMENTS TO EXPLAIN WHAT THEY NEED TO CHANGE TO SEND EMAILS BASED ON THE UNI NOT THE TESTING ONES
 export const sendReminderEmail = async (req, res) => {
 
-    const testEmails = ['fadoua.assoufi@gmail.com', 'fades.devs@gmail.com', 'fadouaes01@gmail.com'];
+    // Replace
+    const testEmails = ['fades.devs@gmail.com', 'fadouaes01@gmail.com'];
 
     try {
 
-        // Fetch the list of emails directly from the database
+        // The commented section below is for when the university switches to @dundee accounts
         // This is a mock of calling another controller/service function
         // const mockRequest = {}; // Mock req/res if needed by the function
         // const mockResponse = {
@@ -123,7 +123,7 @@ export const getEmailsIncompleteReviews = async (req, res) => {
                 as: "reviewsThisYear"
                 }
             },
-            // Stage 2: Filter for modules that DO NOT have a 'Completed' review
+            // Stage 2: Filter for modules that DO NOT have completed review
             {
                 $match: {
                 "reviewsThisYear.status": { $ne: "Completed" }
@@ -133,7 +133,7 @@ export const getEmailsIncompleteReviews = async (req, res) => {
             {
                 $lookup: {
                 from: "users",
-                localField: "lead", // Simplified: points directly to the lead on the module
+                localField: "lead",
                 foreignField: "_id",
                 as: "leadData"
                 }
@@ -159,52 +159,6 @@ export const getEmailsIncompleteReviews = async (req, res) => {
                 }
             }
 
-            // // Deconstruct the variants array to check each one individually
-            // {$unwind: '$variants'},
-            // // Look up reviews for each specific variant created this year
-            // {
-            //     $lookup: {
-            //         from: 'reviews', let: {moduleId: '$_id'},
-            //         pipeline: [
-            //             {
-            //                 $match: {$expr: {$and: [{$eq: ['$module', '$$moduleId']},
-            //                 {$gte: ['$createdAt', startDate]}]}}
-            //             }
-            //         ], as: 'reviewsThisYear'
-            //     }
-            // },
-            // // Filter for modules that DO NOT have a 'Completed' review
-            // {
-            //     $match: {'reviewsThisYear.status': {$ne: 'Completed'}}
-            // },
-            // // Now that we have the modules needing reminders, we unwind their variants
-            // {
-            //     $unwind: '$variants'
-            // },
-            // // Join with the 'users' collection to get lead's details
-            // {
-            //     $lookup: {
-            //         from: 'users', localField: 'variants.lead', foreignField: '_id', as: 'leadData'
-            //     }
-            // },
-            // // Deconstruct leadData and handle missing leads
-            // {
-            //     $unwind: {path: '$leadData', preserveNullAndEmptyArrays: true}
-            // },
-            // // Filter out any variants without a valid lead
-            // {
-            //     $match: {'leadData.email': {$ne: null}}
-            // },
-            // // Group by email to get a unique list of leads
-            // {
-            //     $group: {_id: '$leadData.email'}
-            // },
-            // // Collect all unique emails into a single array
-            // {
-            //     $group: {_id: null, emails: {$push: '$_id'}}
-            // }
-
-            
         ]);
 
         const emails = results.length > 0 ? results[0].emails : [];
@@ -216,82 +170,3 @@ export const getEmailsIncompleteReviews = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 };
-
-
-// @route GET /api/email/incomplete
-export const getEmailsIncompleteReviewsOld = async (req, res) => {
-
-    try {
-
-        const results = await Review.aggregate([
-
-            // Find all reviews that are not completed
-            {
-                $match: {status: {$in: ["Not Started", "In Progress"]}}
-            },
-            // Join with the 'modules' collection to get module data
-            {
-                $lookup: {
-                    from: "modules",
-                    localField: "module",
-                    foreignField: "_id",
-                    as: "moduleData"
-                }
-            },
-            // Deconstruct the moduleData array
-            {
-                $unwind: {path: "$moduleData", preserveNullAndEmptyArrays: true}
-            },
-            // Deconstruct the variants array to get each variant as a separate doc
-            {
-                $unwind: '$moduleData.variants'
-            },
-            // Join with the 'users' collection to get the lead's details for EACH variant
-            {
-                $lookup: {
-                    from: "users",
-                    localField: "moduleData.variants.lead",
-                    foreignField: "_id",
-                    as: "leadData"
-                }
-            },
-            // Deconstruct the leadData array
-            {
-                $unwind: {path: "$leadData", preserveNullAndEmptyArrays: true}
-            },
-            // Add a new stage to filter out any records where a lead wasn't found
-            {
-                $match: {
-                "leadData": { $ne: null } // <-- CHANGE: Ensures we only process valid leads
-                }
-            },
-            // Group by email to get a unique list of all leads
-            {
-                $group: { _id: '$leadData.email'}
-            },
-            // Collect all unique emails into a single array
-            {
-                $group: {_id: null, emails: {$push: '$_id'}}
-            }
-            // {
-            //     $addFields: {
-            //         leadName: { $ifNull: [{ $concat: ["$leadData.firstName", " ", "$leadData.lastName"] }, 'N/A'] },
-            //         leadEmail: { $ifNull: ["$leadData.email", "N/A"]}
-            //     }
-            // },
-            // {
-            //     $project: {
-            //         _id: 0, leadName: 1, leadEmail: 1
-            //     }
-            // }
-        ]);
-
-        const emails = results.length > 0 ? results[0].emails : [];
-        res.status(200).json(emails);
-    }
-    catch (error) {
-        console.log("Error in getting user emails for incomplete reviews: ", error);
-        res.status(500).json({message: "Server Error", success: false});
-    }
-
-}
