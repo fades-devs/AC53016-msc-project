@@ -2,6 +2,8 @@
 
 Full-stack web application designed to streamline the annual module enhancement review process for the university. This system replaces a manual, multi-platform workflow with a centralized and user-friendly interface for submitting, tracking, and analyzing module reviews.
 
+[![VIDEO DEMO](http://img.youtube.com/vi/O6Df_Vett5I/0.jpg)](http://www.youtube.com/watch?v=O6Df_Vett5I "Application Demo")
+
 ---
 
 ## 🚀 Tech Stack
